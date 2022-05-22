@@ -1,6 +1,6 @@
 function App() {
   return (
-    <div className="ml-10 bg-red-200">
+    <div className="flex h-screen justify-center items-center">
       <p className="font-normal bg-red-200">Hola</p>
     </div>
   );
