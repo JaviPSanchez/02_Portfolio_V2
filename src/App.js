@@ -1,8 +1,13 @@
+import { Routes, Route } from "react-router-dom";
+import Landing from "./components/Landing";
+import Main from "./components/Main";
+
 function App() {
   return (
-    <div className="flex h-screen justify-center items-center">
-      <p className="font-normal bg-red-200">Hola</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/main" element={<Main />} />
+    </Routes>
   );
 }
 
