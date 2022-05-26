@@ -14,6 +14,11 @@ body,
   padding: 0;
 }
 
+body {
+  background: #f1f4f8;
+  position: fixed;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
