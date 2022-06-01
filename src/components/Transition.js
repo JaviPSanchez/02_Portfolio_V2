@@ -5,7 +5,8 @@ function Transition({ timeline }) {
   const trans = useRef(null);
   useEffect(() => {
     timeline.to(trans.current, {
-      duration: 8,
+      duration: 10,
+      // delay: 0.5,
       x: 4000,
       ease: Power4.easeOut,
     });
@@ -13,7 +14,7 @@ function Transition({ timeline }) {
   return (
     <div>
       <div
-        className="absolute z-200 bg-[#f1f4f8] w-full top-0 h-screen"
+        className="absolute z-200 w-full bg-black top-0 h-screen"
         ref={trans}
       ></div>
     </div>

@@ -1,8 +1,7 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { softShadows, OrbitControls, CameraShake } from "@react-three/drei";
-
-import Header from "./Header";
+import LandingHeader from "./LandingHeader";
 
 // soft Shadows
 softShadows();
@@ -37,7 +36,7 @@ const Buildings = () => {
 export default function Landing() {
   return (
     <>
-      <Header />
+      <LandingHeader />
       <Canvas
         shadows
         colorManagement
