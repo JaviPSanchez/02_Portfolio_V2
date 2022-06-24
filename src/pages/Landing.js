@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { softShadows, OrbitControls, CameraShake } from "@react-three/drei";
-import LandingHeader from "./LandingHeader";
+import LandingHeader from "../components/LandingHeader";
 
 // soft Shadows
 softShadows();

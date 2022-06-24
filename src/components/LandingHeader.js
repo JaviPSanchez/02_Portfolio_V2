@@ -4,6 +4,7 @@ import styles from "../styles/Global";
 import { gsap, Power3 } from "gsap";
 
 export default function Header() {
+  const navigate = useNavigate();
   let nameItem = useRef(null);
   let sectorItem = useRef(null);
   let buttomItem = useRef(null);
@@ -31,10 +32,9 @@ export default function Header() {
     });
   }, []);
 
-  const navigate = useNavigate();
   const handleMain = (e) => {
     e.preventDefault();
-    navigate("/main");
+    navigate("/about");
   };
 
   return (
