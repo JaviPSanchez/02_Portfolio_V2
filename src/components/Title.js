@@ -16,10 +16,10 @@ const Title = ({ lineContent, lineContent2 }) => {
   }, [line1, line2]);
   return (
     <h1 class="font-Rubik text-6xl uppercase font-normal">
-      <div className=" h-16">
+      <div className="h-16">
         <div ref={(el) => (line1 = el)}>{lineContent}</div>
       </div>
-      <div className="h-16">
+      <div className=" h-16">
         <div ref={(el) => (line2 = el)}>{lineContent2}</div>
       </div>
     </h1>

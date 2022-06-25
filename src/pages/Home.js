@@ -1,18 +1,18 @@
 import React, { useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { softShadows, OrbitControls, CameraShake } from "@react-three/drei";
-import LandingHeader from "../components/LandingHeader";
-
+import HomeHeader from "../components/HomeHeader";
+import { motion } from "framer-motion";
 // soft Shadows
 softShadows();
 
 let cube = [];
-for (let i = 0; i < 300; ++i) {
+for (let i = 0; i < 600; ++i) {
   const obj = {
-    x: (Math.random() * (10.0 - -10) + -10).toFixed(2),
+    x: (Math.random() * (10.0 - -50) + -20).toFixed(2),
     y: 0,
-    z: (Math.random() * (10.0 - -10) + -10).toFixed(2),
-    rHeight: Math.random() * 6,
+    z: (Math.random() * (10.0 - -30) + -20).toFixed(2),
+    rHeight: Math.random() * 3,
   };
   cube.push(obj);
 }
@@ -25,7 +25,7 @@ const Buildings = () => {
       <boxBufferGeometry attach="geometry" args={[1, item.rHeight, 1]} />
       <meshLambertMaterial
         attach="material"
-        color="greylight"
+        color="#ededed"
         transparent="true"
         opacity={0.7}
       />
@@ -33,16 +33,21 @@ const Buildings = () => {
   ));
 };
 
-export default function Landing() {
+export default function Home() {
   return (
-    <>
-      <LandingHeader />
+    <motion.div
+      className="h-full"
+      initial={{ width: 0 }}
+      animate={{ width: "100%" }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.4 } }}
+    >
+      <HomeHeader />
       <Canvas
         shadows
         colorManagement
         camera={{ position: [5, 5, 10], fov: 75, ncp: 0.1, fcp: 1000 }}
       >
-        <fog attach="fog" args={["#ffffff", 0.1, 100]} />
+        {/* <fog attach="fog" args={["#ebebeb", 0.2, 100]} /> */}
         <ambientLight intensity={0.3} />
         <directionalLight
           castShadow
@@ -57,14 +62,14 @@ export default function Landing() {
           shadow-camera-bottom={-10}
         />
         <pointLight position={[10, 10, 100]} intensity={0.5} />
-        <pointLight position={[0, -10, 0]} intensity={1.5} />
+
         <group>
           <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
             position={[0, -3, 0]}
           >
-            <planeBufferGeometry attach="geometry" args={[2000, 4000]} />
+            <planeBufferGeometry attach="geometry" args={[8000, 8000]} />
             <shadowMaterial attach="material" opacity={0.1} />
           </mesh>
         </group>
@@ -81,6 +86,6 @@ export default function Landing() {
           rollFrequency={0.1}
         />
       </Canvas>
-    </>
+    </motion.div>
   );
 }
