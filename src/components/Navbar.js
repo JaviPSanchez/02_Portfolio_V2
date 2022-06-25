@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="fixed z-40 ">
+    <div>
       <div className="text-4xl flex justify-center items-center my-10 ">
-        <Link className="mx-10" to="/">
+        <Link className="mx-10" to="/home">
           Home
         </Link>
         <Link className="mx-10" to="/about">
@@ -18,6 +18,9 @@ export default function Header() {
           Blog
         </Link>
       </div>
+      <section className="h-screen">
+        <Outlet />
+      </section>
     </div>
   );
 }

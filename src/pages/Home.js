@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 softShadows();
 
 let cube = [];
-for (let i = 0; i < 600; ++i) {
+for (let i = 0; i < 800; ++i) {
   const obj = {
     x: (Math.random() * (10.0 - -50) + -20).toFixed(2),
     y: 0,
@@ -19,7 +19,6 @@ for (let i = 0; i < 600; ++i) {
 
 const Buildings = () => {
   const mesh = useRef(null);
-
   return cube.map((item, index) => (
     <mesh castShadow key={index} position={[item.x, item.y, item.z]} ref={mesh}>
       <boxBufferGeometry attach="geometry" args={[1, item.rHeight, 1]} />
@@ -36,10 +35,10 @@ const Buildings = () => {
 export default function Home() {
   return (
     <motion.div
-      className="h-full"
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.4 } }}
+      className="h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
     >
       <HomeHeader />
       <Canvas
@@ -47,7 +46,7 @@ export default function Home() {
         colorManagement
         camera={{ position: [5, 5, 10], fov: 75, ncp: 0.1, fcp: 1000 }}
       >
-        {/* <fog attach="fog" args={["#ebebeb", 0.2, 100]} /> */}
+        {/* <fog attach="fog" args={["#ebebeb", 0.5, 100]} /> */}
         <ambientLight intensity={0.3} />
         <directionalLight
           castShadow
@@ -67,9 +66,9 @@ export default function Home() {
           <mesh
             receiveShadow
             rotation={[-Math.PI / 2, 0, 0]}
-            position={[0, -3, 0]}
+            position={[-2, -2, -2]}
           >
-            <planeBufferGeometry attach="geometry" args={[8000, 8000]} />
+            <planeBufferGeometry attach="geometry" args={[100, 100]} />
             <shadowMaterial attach="material" opacity={0.1} />
           </mesh>
         </group>
