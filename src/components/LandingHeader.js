@@ -9,7 +9,6 @@ export default function Header() {
   let sectorItem = useRef(null);
   let buttomItem = useRef(null);
   useEffect(() => {
-    // nameItem.style.display = "none";
     gsap.to(nameItem, {
       opacity: 1,
       duration: 1,

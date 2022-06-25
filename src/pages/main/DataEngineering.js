@@ -1,22 +1,19 @@
 import React from "react";
-import { useNavigate } from "react-router";
-import styles from "../../styles/Global";
+import Title from "../../components/Title";
+// import styles from "../../styles/Global";
 import Header from "../../components/Header";
 export default function DataEngineering() {
-  const navigate = useNavigate();
-  const handleBack = (e) => {
-    e.preventDefault();
-    navigate("/about");
-  };
   return (
-    <>
+    <div className="flex flex-col justify-center items-center">
       <Header />
-      <div className=" flex flex-col justify-center items-center">
-        <button className={`${styles.button}`} onClick={handleBack}>
-          Back
-        </button>
-        <div className="text-8xl">Data Engineering</div>
+      <div className="relative mt-20 flex flex-col justify-center items-center w-[1280px] min-w-[1280px]">
+        <Title lineContent="This is the" lineContent2=" Data Engineer page" />
+        <p className="absolute top-60 right-40 right w-1/3 text-4xl">
+          A character his cache I succeed employed entire been it find the more
+          and may the to his their five and towards in lay rippedup, what and so
+          endure before for her been decades the few to than would was concept.
+        </p>
       </div>
-    </>
+    </div>
   );
 }
