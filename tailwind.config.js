@@ -28,5 +28,10 @@ module.exports = {
       Rubik: ["Rubik", "sans-serif"],
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("child", "& > *");
+      addVariant("child-hover", "& > *:hover");
+    },
+  ],
 };

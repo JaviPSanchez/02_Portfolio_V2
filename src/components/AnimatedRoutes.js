@@ -18,7 +18,7 @@ export default function AnimatedRoutes() {
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navbar />}>
-          <Route path="home" element={<Home />} />
+          <Route index path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="projects" element={<Projects />} />
           <Route path="blog" element={<Blog />} />

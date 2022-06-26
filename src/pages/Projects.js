@@ -7,9 +7,9 @@ export default function Projects() {
   return (
     <motion.div
       className="relative top-40 flex flex-col justify-between items-center w-[1280px] min-w-[1280px]"
-      initial={{ width: 0 }}
-      animate={{ width: "100%" }}
-      exit={{ x: window.innerWidth, transition: { duration: 0.2 } }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 1 } }}
     >
       <Title lineContent="This is the" lineContent2=" Projects page" />
       <p className="absolute top-60 right-40 right w-1/3 text-4xl">
