@@ -9,6 +9,10 @@ module.exports = {
         grey3: "#ECF2F4",
         grey4: "#CCDBE0",
         grey5: "#f1f4f8",
+        primary: "#06283D",
+        secondary: "#1363DF",
+        tertiary: "#47B5FF",
+        quaternary: "#DFF6FF",
       },
       lineHeight: {
         12: "1.2",

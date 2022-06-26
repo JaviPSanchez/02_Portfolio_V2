@@ -1,31 +1,31 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "./Logo";
+import styles from "../styles/Global";
 export default function Header() {
   return (
     <>
-      <div className="sticky w-full flex justify-between items-center text-4xl">
-        <div className="flex justify-items-start mx-10">
+      <div className="fixed z-20 left-[50%] translate-x-[-50%] flex items-center text-4xl">
+        <div className="mx-10">
           <Logo />
         </div>
         <div className="flex child:my-10 child:mx-10">
-          <Link className="mx-10" to="/">
+          <Link className={`${styles.button}`} to="/">
             Home
           </Link>
-          <Link className="mx-10" to="/about">
+          <Link className={`${styles.button}`} to="/about">
             About
           </Link>
-          <Link className="mx-10" to="/projects">
+          <Link className={`${styles.button}`} to="/projects">
             Projects
           </Link>
-          <Link className="mx-10" to="/blog">
+          <Link className={`${styles.button}`} to="/blog">
             Blog
           </Link>
         </div>
       </div>
-      <section className="h-screen">
-        <Outlet />
-      </section>
+
+      <Outlet />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../components/Title";
+// import Title from "../components/Title";
 import { motion } from "framer-motion";
 // import styles from "../../styles/Global";
 
@@ -11,7 +11,7 @@ export default function Projects() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <Title lineContent="This is the" lineContent2=" Projects page" />
+      {/* <Title lineContent="This is the" lineContent2=" Projects page" /> */}
       <p className="absolute top-60 right-40 right w-1/3 text-4xl">
         A character his cache I succeed employed entire been it find the more
         and may the to his their five and towards in lay rippedup, what and so

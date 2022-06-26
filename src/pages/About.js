@@ -1,20 +1,42 @@
 import React from "react";
-import Title from "../components/Title";
 import { motion } from "framer-motion";
+import VerticalChart from "../components/Charts/VerticalChart";
+// import {styles} from "../styles/Global"
+
 export default function About() {
   return (
     <motion.div
-      className="mt-10"
+      className="flex justify-center items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <Title lineContent="This is the" lineContent2=" About page" />
-      <p className="absolute top-40 right-40 w-1/3 text-4xl">
-        A character his cache I succeed employed entire been it find the more
-        and may the to his their five and towards in lay rippedup, what and so
-        endure before for her been decades the few to than would was concept.
-      </p>
+      <div className="w-11/12 h-full flex my-60 bg-grey1 text-4xl drop-shadow-xl rounded-lg overflow-hidden">
+        <div className="w-1/6 shrink flex  items-center bg-primary text-white rounded-lg">
+          <div>
+            <img src={"../../assets/images/javi.jpg"}></img>
+          </div>
+          Sidebar
+        </div>
+        <div className="w-full p-10 ">
+          <div className="flex">
+            <div className="w-1/2">
+              <VerticalChart />
+            </div>
+            <div className="w-1/2">
+              <VerticalChart />
+            </div>
+          </div>
+          <div className="flex">
+            <div className="w-1/2">
+              <VerticalChart />
+            </div>
+            <div className="w-1/2">
+              <VerticalChart />
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 }
