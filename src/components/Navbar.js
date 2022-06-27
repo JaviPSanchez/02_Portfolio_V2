@@ -13,7 +13,7 @@ export default function Header() {
           <Link className={`${styles.button}`} to="/">
             Home
           </Link>
-          <Link className={`${styles.button}`} to="/about">
+          <Link className={`${styles.button}`} to="/about/me">
             About
           </Link>
           <Link className={`${styles.button}`} to="/projects">
@@ -24,7 +24,6 @@ export default function Header() {
           </Link>
         </div>
       </div>
-
       <Outlet />
     </>
   );
