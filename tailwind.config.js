@@ -1,5 +1,12 @@
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./src/sections/**/*.{js,jsx}"],
+  // media : system's color strategy
+  darkMode: "class",
+  content: [
+    "./public/index.html",
+    "./src/**/*.{html,js}",
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./src/sections/**/*.{js,jsx}",
+  ],
   theme: {
     extend: {
       colors: {

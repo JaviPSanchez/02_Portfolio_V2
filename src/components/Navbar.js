@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "./Logo";
-import styles from "../styles/Global";
+import { styles } from "../styles/Global";
+import Toggle from "./Toggle";
 export default function Header() {
   return (
     <>
@@ -22,6 +23,9 @@ export default function Header() {
           <Link className={`${styles.button}`} to="/blog">
             Blog
           </Link>
+        </div>
+        <div>
+          <Toggle />
         </div>
       </div>
       <Outlet />
