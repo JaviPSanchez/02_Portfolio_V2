@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, Outlet } from "react-router-dom";
-import VerticalChart from "../components/Charts/VerticalChart";
 import pictureJavi from "../assets/images/javi.jpg";
 import DashboardSVG from "../assets/svg/dashboard";
+import MarketingSVG from "../assets/svg/leaderboard";
 import EmailSVG from "../assets/svg/mail";
 import PsySVG from "../assets/svg/psychologues";
-import MarketingSVG from "../assets/svg/leaderboard";
 import PieChartSVG from "../assets/svg/pie_chart";
 
 const initialData = [
@@ -24,27 +23,27 @@ const initialData = [
     isActive: false,
     icon: (fillColor) => <MarketingSVG fillColor={fillColor} />,
   },
-  // {
-  //   id: 2,
-  //   title: "Patients",
-  //   path: "patients",
-  //   isActive: false,
-  //   icon: (fillColor) => <PsySVG fillColor={fillColor} />,
-  // },
-  // {
-  //   id: 3,
-  //   title: "Psychologues",
-  //   path: "psychologues",
-  //   isActive: false,
-  //   icon: (fillColor) => <EmailSVG fillColor={fillColor} />,
-  // },
-  // {
-  //   id: 4,
-  //   title: "Contenus",
-  //   path: "contenus",
-  //   isActive: false,
-  //   icon: (fillColor) => <PieChartSVG fillColor={fillColor} />,
-  // },
+  {
+    id: 2,
+    title: "Patients",
+    path: "patients",
+    isActive: false,
+    icon: (fillColor) => <PsySVG fillColor={fillColor} />,
+  },
+  {
+    id: 3,
+    title: "Psychologues",
+    path: "psychologues",
+    isActive: false,
+    icon: (fillColor) => <EmailSVG fillColor={fillColor} />,
+  },
+  {
+    id: 4,
+    title: "Contenus",
+    path: "contenus",
+    isActive: false,
+    icon: (fillColor) => <PieChartSVG fillColor={fillColor} />,
+  },
 ];
 
 export default function About() {
@@ -59,7 +58,7 @@ export default function About() {
 
   return (
     <motion.div
-      className="flex h-full pt-48 pb-10 justify-center items-center"
+      className="flex h-5/6 pb-10 justify-center items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}

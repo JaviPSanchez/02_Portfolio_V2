@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -7,7 +7,6 @@ import Projects from "./pages/Projects";
 import Navbar from "./components/Navbar";
 import Me from "./components/About/Me";
 import Skills from "./components/About/Skills";
-import Other from "./components/About/Other";
 
 function App() {
   return (

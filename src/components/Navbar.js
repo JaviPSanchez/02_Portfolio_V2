@@ -1,13 +1,13 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "./Logo";
-import { styles } from "../styles/Global";
+import styles from "../styles/Global";
 import Toggle from "./Toggle";
 export default function Header() {
   return (
     <>
-      <div className="fixed z-20 left-[50%] translate-x-[-50%] flex items-center text-4xl">
-        <div className="mx-10">
+      <div className="w-full flex justify-around items-center">
+        <div>
           <Logo />
         </div>
         <div className="flex child:my-10 child:mx-10">
@@ -28,6 +28,7 @@ export default function Header() {
           <Toggle />
         </div>
       </div>
+
       <Outlet />
     </>
   );
