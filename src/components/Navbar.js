@@ -17,8 +17,8 @@ export default function Header() {
           <Link className={`${styles.button}`} to="/about/me">
             About
           </Link>
-          <Link className={`${styles.button}`} to="/projects">
-            Projects
+          <Link className={`${styles.button}`} to="/academy">
+            Academy
           </Link>
           <Link className={`${styles.button}`} to="/blog">
             Blog

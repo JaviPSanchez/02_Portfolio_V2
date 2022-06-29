@@ -4,9 +4,7 @@ import { Link, Outlet } from "react-router-dom";
 import pictureJavi from "../assets/images/javi.jpg";
 import DashboardSVG from "../assets/svg/dashboard";
 import MarketingSVG from "../assets/svg/leaderboard";
-import EmailSVG from "../assets/svg/mail";
 import PsySVG from "../assets/svg/psychologues";
-import PieChartSVG from "../assets/svg/pie_chart";
 
 const initialData = [
   {
@@ -25,24 +23,10 @@ const initialData = [
   },
   {
     id: 2,
-    title: "Patients",
-    path: "patients",
+    title: "Projects",
+    path: "projects",
     isActive: false,
     icon: (fillColor) => <PsySVG fillColor={fillColor} />,
-  },
-  {
-    id: 3,
-    title: "Psychologues",
-    path: "psychologues",
-    isActive: false,
-    icon: (fillColor) => <EmailSVG fillColor={fillColor} />,
-  },
-  {
-    id: 4,
-    title: "Contenus",
-    path: "contenus",
-    isActive: false,
-    icon: (fillColor) => <PieChartSVG fillColor={fillColor} />,
   },
 ];
 
@@ -58,12 +42,12 @@ export default function About() {
 
   return (
     <motion.div
-      className="flex h-5/6 pb-10 justify-center items-center"
+      className="h-full flex justify-center my-10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <div className="w-11/12 h-full flex my-60 bg-grey1 text-4xl drop-shadow-xl rounded-lg overflow-hidden">
+      <div className="w-11/12 h-2/3 flex bg-grey1 text-4xl drop-shadow-xl rounded-lg">
         <div className="w-1/6 shrink flex-col items-center bg-primary text-white rounded-lg drop-shadow-xl">
           <div className="overflow-hidden w-1/2 rounded-full mx-auto mt-10">
             <img height={60} width={100} src={pictureJavi} alt="" />
@@ -95,7 +79,7 @@ export default function About() {
             </ul>
           </div>
         </div>
-        <div className="w-1/2 p-10">
+        <div className="w-full p-10">
           <Outlet />
         </div>
       </div>
