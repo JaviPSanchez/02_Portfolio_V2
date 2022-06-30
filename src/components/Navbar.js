@@ -10,14 +10,14 @@ export default function Header() {
         <div>
           <Logo />
         </div>
-        <div className="flex child:my-10 child:mx-10">
+        <div className="flex child:my-10 child:mx-6">
           <Link className={`${styles.button}`} to="/">
             Home
           </Link>
           <Link className={`${styles.button}`} to="/about/me">
             About
           </Link>
-          <Link className={`${styles.button}`} to="/academy">
+          <Link className={`${styles.button}`} to="/academy/login">
             Academy
           </Link>
           <Link className={`${styles.button}`} to="/blog">

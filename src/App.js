@@ -6,8 +6,11 @@ import Blog from "./pages/Blog";
 import Academy from "./pages/Academy";
 import Navbar from "./components/Navbar";
 import Me from "./components/About/Me";
-import Skills from "./components/About/Skills";
-import Projects from "./components/About/Projects";
+import WebDev from "./components/About/WebDev";
+import Apps from "./components/About/Apps";
+import Data from "./components/About/Data";
+import Login from "./components/Academy/Login";
+import SignUp from "./components/Academy/Signup";
 
 function App() {
   return (
@@ -18,10 +21,14 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about/*" element={<About />}>
               <Route path="me" element={<Me />} />
-              <Route path="skills" element={<Skills />} />
-              <Route path="projects" element={<Projects />} />
+              <Route path="web" element={<WebDev />} />
+              <Route path="apps" element={<Apps />} />
+              <Route path="data" element={<Data />} />
             </Route>
-            <Route path="academy" element={<Academy />} />
+            <Route path="/academy/*" element={<Academy />}>
+              <Route path="login" element={<Login />} />
+              <Route path="signup" element={<SignUp />} />
+            </Route>
             <Route path="blog" element={<Blog />} />
           </Route>
         </Routes>
