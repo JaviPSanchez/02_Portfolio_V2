@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link, Outlet } from "react-router-dom";
-import pictureJavi from "../assets/images/javi.jpg";
+import pictureJavi from "../assets/images/javi.png";
 import DashboardSVG from "../assets/svg/dashboard";
 import MarketingSVG from "../assets/svg/leaderboard";
 import PsySVG from "../assets/svg/psychologues";
@@ -16,7 +16,7 @@ const initialData = [
   },
   {
     id: 1,
-    title: "WebDev",
+    title: "Web",
     path: "web",
     isActive: false,
     icon: (fillColor) => <MarketingSVG fillColor={fillColor} />,
@@ -60,7 +60,7 @@ export default function About() {
     >
       <div className="w-11/12 h-5/6 flex bg-grey1 text-4xl drop-shadow-xl rounded-lg">
         <div className="w-1/6 shrink bg-primary text-white rounded-lg">
-          <div className="overflow-hidden w-full rounded-lg">
+          <div className="overflow-hidden w-full rounded-lg p-6 mt-6">
             <img src={pictureJavi} alt="pictureJavi" />
           </div>
           <div className="flex justify-center items-center mt-10">
