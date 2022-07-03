@@ -23,9 +23,9 @@ const Buildings = () => {
       <boxBufferGeometry attach="geometry" args={[1, item.rHeight, 1]} />
       <meshLambertMaterial
         attach="material"
-        color="#DFF6FF"
+        color="#fff"
         transparent="true"
-        opacity={0.6}
+        opacity={0.8}
       />
     </mesh>
   ));

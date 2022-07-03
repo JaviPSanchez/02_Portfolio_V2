@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .clip-paralelipedo {
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+  }
+}
+
 * {
   box-sizing: border-box;
 }

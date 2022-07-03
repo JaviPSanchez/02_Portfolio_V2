@@ -52,7 +52,7 @@ export default function SideBar() {
   };
 
   return (
-    <div className="w-1/6 shrink bg-primary text-white rounded-lg">
+    <div className="w-1/6 shrink bg-primary text-white rounded-lg text-4xl">
       <div className="overflow-hidden w-full rounded-lg p-6 mt-6">
         <img src={pictureJavi} alt="pictureJavi" />
       </div>
@@ -67,10 +67,10 @@ export default function SideBar() {
                     className="flex flex-row mb-6"
                     onClick={() => isActiveHandler(id)}
                   >
-                    {icon(isActive ? "#0CC1A7" : "#ffffff")}
+                    {icon(isActive ? "#e3ac1b" : "#ffffff")}
                     <span
                       className={
-                        isActive ? "text-[#0CC1A7] ml-3" : "text-white ml-3"
+                        isActive ? "text-[#e3ac1b] ml-3" : "text-white ml-3"
                       }
                     >
                       {title}
