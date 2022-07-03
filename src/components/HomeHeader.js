@@ -46,7 +46,9 @@ export default function Header() {
           }}
           className="font-Rubik text-9xl font-bold uppercase text-black mt-12 translate-y-12 opacity-0 text-center"
         >
-          <p>Data Developer</p>
+          <p className="text-transparent text-8xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Data Developer
+          </p>
         </div>
       </div>
     </div>

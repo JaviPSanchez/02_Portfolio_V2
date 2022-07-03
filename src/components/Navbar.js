@@ -10,7 +10,7 @@ export default function Header() {
         <div>
           <Logo />
         </div>
-        <div className="flex child:my-10 child:mx-6">
+        <div className="flex child:my-10 child:mx-6 child:shadow-lg">
           <Link className={`${styles.button}`} to="/">
             Home
           </Link>
@@ -22,6 +22,9 @@ export default function Header() {
           </Link>
           <Link className={`${styles.button}`} to="/blog">
             Blog
+          </Link>
+          <Link className={`${styles.button}`} to="/contact">
+            Contact
           </Link>
         </div>
         <div>

@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 import Academy from "./pages/Academy";
 import Navbar from "./components/Navbar";
 import Me from "./components/About/Me";
@@ -30,6 +31,7 @@ function App() {
               <Route path="signup" element={<SignUp />} />
             </Route>
             <Route path="blog" element={<Blog />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
       </AnimatePresence>
