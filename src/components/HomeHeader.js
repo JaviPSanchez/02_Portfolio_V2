@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap, Power3 } from "gsap";
+import Container from "./Container";
 
 export default function Header() {
   let nameItem = useRef(null);
@@ -29,7 +30,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute top-[30%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex justify-center items-center">
+    <Container>
       <div className=" flex flex-col justify-center items-center">
         <h1
           ref={(element) => {
@@ -51,6 +52,6 @@ export default function Header() {
           </p>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
