@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { months } from "./data";
+import { months } from "./DataCharts";
 // https://fakerjs.dev/guide/#installation
 import { faker } from "@faker-js/faker";
 

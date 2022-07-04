@@ -24,12 +24,16 @@ const cards = [
 
 export default function WebDev() {
   return (
-    <div className="flex flex-col justify-start items-center w-full h-full p-2">
+    <div className="flex flex-col justify-start items-center w-full h-full">
       <Search />
 
-      <div className="grid grid-rows-2 grid-cols-4 gap-10 w-full bg-grey1 rounded-xl mt-4 p-4 overflow-scroll overflow-x-hidden scrollbar-hide">
+      <div className="w-full flex flex-wrap bg-grey1 rounded-xl mt-4 p-4 overflow-scroll overflow-x-hidden scrollbar-hide">
         {cards.map((item) => {
-          return <div key={item.id}>{item.element}</div>;
+          return (
+            <div className="w-1/3 p-10" key={item.id}>
+              {item.element}
+            </div>
+          );
         })}
       </div>
     </div>
