@@ -1,7 +1,7 @@
 import React from "react";
 import Search from "../SearchBar";
 import Card from "../Card";
-import project1 from "../../assets/images/gallery1.jpg";
+import project1 from "../../assets/images/project1.jpg";
 const dataCards = [
   {
     id: 1,

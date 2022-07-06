@@ -11,7 +11,7 @@ export default function About() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <div className="w-11/12 h-5/6 flex bg-grey4">
+      <div className="w-11/12 h-5/6 flex bg-transparent">
         <Sidebar />
         <div className="w-full ml-8">
           <Outlet />

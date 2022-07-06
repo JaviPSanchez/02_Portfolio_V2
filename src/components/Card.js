@@ -6,9 +6,10 @@ export default function Example({ image, title }) {
   return (
     <div className="flex flex-col justify-center items-center bg-quaternary hover:bg-grey5 w-full h-full rounded-lg p-2 drop-shadow-md">
       <div className="relative">
-        <div className="w-full rounded-lg overflow-hidden">
+        <div className="rounded-lg overflow-hidden">
           <img
-            className="max-w-full object-contain"
+            width={800}
+            className="max-w-full max-h-full object-contain"
             src={image}
             alt="picture1"
           />

@@ -23,3 +23,13 @@ body,
   margin: 0;
   padding: 0;
 }
+
+body {
+  background: radial-gradient(
+    ellipse at right bottom,
+    #eeb1bf 5%,
+    #d42dab 25%,
+    #4d1d63 50%,
+    #030243 100%
+  );
+}
