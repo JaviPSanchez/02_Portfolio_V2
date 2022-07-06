@@ -4,7 +4,7 @@ import Tag from "./Tag";
 
 export default function Example({ image, title }) {
   return (
-    <div className="flex flex-col justify-center items-center bg-quaternary hover:bg-grey5 w-full h-full rounded-lg p-2 drop-shadow-md">
+    <div className="flex flex-col justify-center items-center bg-dark1 hover:bg-primary w-full h-full rounded-lg p-2 drop-shadow-md">
       <div className="relative">
         <div className="rounded-lg overflow-hidden">
           <img
