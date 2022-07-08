@@ -35,7 +35,7 @@ export default function Header() {
           ref={(element) => {
             nameItem = element;
           }}
-          className="font-Rubik text-3xl font-normal text-black translate-y-12 opacity-0"
+          className="font-Rubik text-3xl font-normal text-white translate-y-12 opacity-0"
         >
           Hi, glad to see you here!
         </h1>

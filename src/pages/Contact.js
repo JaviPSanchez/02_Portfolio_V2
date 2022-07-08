@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import Content from "../components/Contact/Content";
 export default function Contact() {
   return (
     <motion.div
@@ -9,7 +9,9 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <div className="bg-white h-full w-full text-8xl text-center">Contact</div>
+      <div className="flex flex-col justify-center items-center bg-grey5 dark:bg-dark2 h-screen w-1/3 my-10 rounded-xl">
+        <Content />
+      </div>
     </motion.div>
   );
 }
