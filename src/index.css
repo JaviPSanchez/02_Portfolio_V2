@@ -27,8 +27,8 @@ body,
 body {
   background: radial-gradient(
     ellipse at right bottom,
-    #eeb1bf 5%,
-    #d42dab 25%,
+    #ff8a05 5%,
+    #ff5478 15%,
     #4d1d63 50%,
     #030243 100%
   );

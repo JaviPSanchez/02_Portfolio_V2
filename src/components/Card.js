@@ -1,6 +1,7 @@
 import React from "react";
-import styles from "../styles/Global";
+// import styles from "../styles/Global";
 import Tag from "./Tag";
+import Button from "./Button";
 
 export default function Example({ image, title }) {
   return (
@@ -17,9 +18,10 @@ export default function Example({ image, title }) {
         </div>
       </div>
       <div className="w-fit mb-10">
-        <button onClick={() => "Click"} className={`${styles.button}`}>
+        <Button text={title} />
+        {/* <button onClick={() => "Click"} className={`${styles.button}`}>
           {title}
-        </button>
+        </button> */}
       </div>
     </div>
   );
