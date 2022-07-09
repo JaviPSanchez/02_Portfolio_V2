@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import BlogCard from "../components/Blog/BlogCard";
 import ExploreTags from "../components/Blog/ExploreTags";
-import { blogCards, dataTopics } from "../components/Blog/BlogData";
+import post from "../components/Blog/BlogData";
 
 export default function Blog() {
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [activeTopic, setActiveTopic] = useState(0);
+  const [activeTopic, setActiveTopic] = useState("All");
 
   useEffect(() => {
     fecthData();
   }, []);
 
   const fecthData = () => {
-    const tags = dataTopics;
+    const tags = post;
     setPopular(tags);
     setFiltered(tags);
   };
@@ -29,11 +29,16 @@ export default function Blog() {
       <div className="w-11/12 h-full my-10 flex flex-row bg-transparent">
         <div className="flex flex-col items-start w-2/3 h-full child:p-4">
           <h1 className="font-Rubik text-6xl text-white">Blog's:</h1>
-          <div className="w-full h-full grid grid-cols-fit gap-8 overflow-scroll overflow-x-hidden scrollbar-hide">
-            {blogCards.map((item) => {
-              return <BlogCard id={item.id} title={item.title} />;
-            })}
-          </div>
+          <motion.div
+            layout
+            className="w-full h-full grid grid-cols-fit grid-flow-row gap-8 overflow-scroll overflow-x-hidden scrollbar-hide"
+          >
+            <AnimatePresence>
+              {filtered.map((item) => {
+                return <BlogCard id={item.id} title={item.title} />;
+              })}
+            </AnimatePresence>
+          </motion.div>
         </div>
         <div className="flex flex-col justify-start items-left w-1/3 h-full ml-10 child:p-4">
           <div className="flex flex-col items-start h-1/3">

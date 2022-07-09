@@ -1,66 +1,49 @@
-const blogCards = [
+const post = [
   {
     id: 1,
-    title: "Blog 1",
+    title: "Post 1",
+    topic: ["All", "Machine Learning"],
   },
   {
     id: 2,
-    title: "Blog 2",
+    title: "Post 2",
+    topic: ["All", "Machine Learning", "Deep Learning"],
   },
   {
     id: 3,
-    title: "Blog 3",
+    title: "Post 3",
+    topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
   },
   {
     id: 4,
-    title: "Blog 4",
+    title: "Post 4",
+    topic: ["All", "Natural language Processing"],
   },
   {
     id: 5,
-    title: "Blog 4",
+    title: "Post 5",
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
   },
   {
     id: 6,
-    title: "Blog 4",
+    title: "Post 6",
+    topic: ["All", "Machine Learning", "Natural language Processing"],
   },
   {
     id: 7,
-    title: "Blog 4",
-  },
-  {
-    id: 8,
-    title: "Blog 4",
-  },
-  {
-    id: 9,
-    title: "Blog 4",
-  },
-  {
-    id: 10,
-    title: "Blog 4",
-  },
-];
-const dataTopics = [
-  {
-    id: 1,
-    title: "All",
-  },
-  {
-    id: 2,
-    title: "Machine Learning",
-  },
-  {
-    id: 3,
-    title: "Natural language Processing",
-  },
-  {
-    id: 4,
-    title: "Deployment",
-  },
-  {
-    id: 5,
-    title: "Deep Learning",
+    title: "Post 7",
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
   },
 ];
 
-export { blogCards, dataTopics };
+export default post;
