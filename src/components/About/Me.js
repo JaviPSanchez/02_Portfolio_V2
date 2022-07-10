@@ -1,7 +1,7 @@
 import React from "react";
 import VerticalChart from "../Charts/VerticalChart";
 import Polar from "../Charts/PolarChart";
-import badges from "./DataAbout";
+import { badges } from "./DataAbout";
 
 export default function Me() {
   return (

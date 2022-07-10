@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Button({ text }) {
+function Button({ text }) {
   return (
     <button
       type="submit"
@@ -15,3 +15,16 @@ export default function Button({ text }) {
     </button>
   );
 }
+
+function ButtonNormal({ text }) {
+  return (
+    <button
+      type="submit"
+      className="font-Rubik skew-y-[-3deg] bg-grey5 text-black hover:text-white hover:bg-black text-center py-4 px-6 mt-12  left-2 drop-shadow-md border-solid border border-black uppercase text-4xl duration-200"
+    >
+      {text}
+    </button>
+  );
+}
+
+export { Button, ButtonNormal };

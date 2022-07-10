@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import { db } from "../../utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import Button from "../Button";
+import { Button } from "../Button";
 import { useFormik } from "formik";
 import basicSchema from "../../schemas";
 import styles from "../../styles/Global";
@@ -9,7 +9,7 @@ import styles from "../../styles/Global";
 const onSubmit = async (values, actions) => {
   console.log(values);
   console.log(actions);
-  // await new Promise((resolve) => setTimeout(resolve, 1000));
+
   try {
     const docRef = await addDoc(collection(db, "contacts"), {
       name: values.name,
@@ -37,8 +37,6 @@ const Content = () => {
       validationSchema: basicSchema,
       onSubmit,
     });
-
-  console.log(errors);
 
   return (
     <form
@@ -96,11 +94,11 @@ const Content = () => {
         type="text"
         className={
           errors.message && touched.message
-            ? `${styles.inputError}, h-[250px]`
-            : `${styles.inputCorrect}, h-[250px]`
+            ? `${styles.textareaError}`
+            : `${styles.textareaCorrect}`
         }
         placeholder="Message"
-        value={values.textarea}
+        value={values.message}
         onChange={handleChange}
         onBlur={handleBlur}
       ></textarea>
