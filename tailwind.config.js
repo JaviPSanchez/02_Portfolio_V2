@@ -29,6 +29,7 @@ module.exports = {
         quaternary: "#DFF6FF",
         dark1: "#030243",
         dark2: "#385364",
+        error: "#fc8181",
       },
       lineHeight: {
         12: "1.2",

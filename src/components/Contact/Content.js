@@ -1,65 +1,112 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { db } from "../../utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import Button from "../Button";
+import { useFormik } from "formik";
+import basicSchema from "../../schemas";
+import styles from "../../styles/Global";
+
+const onSubmit = async (values, actions) => {
+  console.log(values);
+  console.log(actions);
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    const docRef = await addDoc(collection(db, "contacts"), {
+      name: values.name,
+      email: values.email,
+      message: values.message,
+      created: Timestamp.now(),
+    });
+
+    alert("Your message has been submitted👍");
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+  actions.resetForm();
+};
 
 const Content = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } =
+    useFormik({
+      initialValues: {
+        name: "",
+        email: "",
+        message: "",
+      },
+      validationSchema: basicSchema,
+      onSubmit,
+    });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const docRef = await addDoc(collection(db, "contacts"), {
-        name: name,
-        email: email,
-        message: message,
-        created: Timestamp.now(),
-      });
-
-      alert("Your message has been submitted👍");
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
+  console.log(errors);
 
   return (
     <form
+      autoComplete="off"
       className="flex flex-col justify-center items-center w-5/6 h-5/6 font-Rubik"
       onSubmit={handleSubmit}
     >
       <h1 className="text-6xl mb-14 font-bold uppercase">Contact Me 🚀</h1>
 
-      <label className="text-2xl w-full mb-2 p-4">Name</label>
+      <label htmlFor="name" className="text-2xl w-full mb-2 p-4">
+        Name
+      </label>
       <input
-        className="text-2xl w-full mb-4 rounded-xl p-4"
+        id="name"
+        type="text"
+        className={
+          errors.name && touched.name
+            ? `${styles.inputError}`
+            : `${styles.inputCorrect}`
+        }
         placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={values.name}
+        onChange={handleChange}
+        onBlur={handleBlur}
       />
+      {errors.name && touched.name && (
+        <p className="text-error text-xl self-start ml-2">{errors.name}</p>
+      )}
 
-      <label className="text-2xl w-full mb-2 p-4">Email</label>
+      <label htmlFor="email" className="text-2xl w-full mb-2 p-4">
+        Email
+      </label>
       <input
-        className="text-2xl w-full mb-4 p-4 rounded-xl"
+        id="email"
+        type="email"
+        className={
+          errors.email && touched.email
+            ? `${styles.inputError}`
+            : `${styles.inputCorrect}`
+        }
         placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={values.email}
+        onChange={handleChange}
+        onBlur={handleBlur}
       />
+      {errors.email && touched.email && (
+        <p className="text-error text-xl self-start ml-2">{errors.email}</p>
+      )}
 
-      <label className="text-2xl w-full mb-2 p-4">Message</label>
+      <label htmlFor="message" className="text-2xl w-full mb-2 p-4">
+        Message
+      </label>
       <textarea
-        className="text-2xl w-full h-1/2 mb-20 rounded-xl p-4"
+        id="message"
+        type="text"
+        className={
+          errors.message && touched.message
+            ? `${styles.inputError}, h-[250px]`
+            : `${styles.inputCorrect}, h-[250px]`
+        }
         placeholder="Message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        value={values.textarea}
+        onChange={handleChange}
+        onBlur={handleBlur}
       ></textarea>
+      {errors.message && touched.message && (
+        <p className="text-error text-xl self-start ml-2">{errors.message}</p>
+      )}
       <Button text={"Submit"} />
     </form>
   );
