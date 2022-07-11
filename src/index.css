@@ -9,11 +9,9 @@
     clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
   }
 }
-
 * {
   box-sizing: border-box;
 }
-
 html,
 body,
 #root {
@@ -24,7 +22,7 @@ body,
   padding: 0;
 }
 
-body {
+/* body {
   background: radial-gradient(
     ellipse at right bottom,
     #ff8a05 5%,
@@ -32,4 +30,22 @@ body {
     #4d1d63 50%,
     #030243 100%
   );
-}
+} */
+
+/* body {
+  background-image: linear-gradient(
+    to right bottom,
+    #030243,
+    #00174e,
+    #002656,
+    #00345b,
+    #1a425f,
+    #20445d,
+    #26465c,
+    #2c485a,
+    #234053,
+    #1a384b,
+    #113044,
+    #06283d
+  );
+} */

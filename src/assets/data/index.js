@@ -1,5 +1,5 @@
 import Bell from "../../assets/svg/bell";
-import Card from "../Card";
+import Card from "../../components/Card";
 import project1 from "../../assets/images/project1.jpg";
 import project2 from "../../assets/images/project2.jpg";
 import project3 from "../../assets/images/project3.jpg";
@@ -98,4 +98,52 @@ const dataProjects = [
   },
 ];
 
-export { badges, webProjects, dataProjects };
+const blogPosts = [
+  {
+    id: 1,
+    element: <Card image={project4} title={"Post 1"} />,
+    topic: ["All", "Machine Learning"],
+  },
+  {
+    id: 2,
+    element: <Card image={project4} title={"Post 2"} />,
+    topic: ["All", "Machine Learning", "Deep Learning"],
+  },
+  {
+    id: 3,
+    element: <Card image={project4} title={"Post 3"} />,
+    topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
+  },
+  {
+    id: 4,
+    element: <Card image={project4} title={"Post 4"} />,
+    topic: ["All", "Natural language Processing"],
+  },
+  {
+    id: 5,
+    element: <Card image={project4} title={"Post 5"} />,
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
+  },
+  {
+    id: 6,
+    element: <Card image={project4} title={"Post 6"} />,
+    topic: ["All", "Machine Learning", "Natural language Processing"],
+  },
+  {
+    id: 7,
+    element: <Card image={project4} title={"Post 7"} />,
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
+  },
+];
+
+export { badges, webProjects, dataProjects, blogPosts };

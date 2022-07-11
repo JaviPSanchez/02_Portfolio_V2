@@ -9,7 +9,7 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <div className="flex flex-col justify-center items-center bg-grey5 dark:bg-dark2 h-screen w-1/3 my-10 rounded-xl">
+      <div className="flex flex-col justify-center items-center bg-grey4 dark:bg-dark2 h-screen w-1/3 my-10 rounded-xl shadow-xl">
         <Content />
       </div>
     </motion.div>

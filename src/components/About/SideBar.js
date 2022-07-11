@@ -52,7 +52,7 @@ export default function SideBar() {
   };
 
   return (
-    <div className="w-1/6 shrink bg-dark1 dark:dark1 text-white rounded-lg text-4xl ">
+    <div className="w-1/6 shrink bg-dark2 dark:bg-dark2 text-white rounded-lg text-4xl shadow-xl">
       <div className="overflow-hidden w-full rounded-lg p-6 mt-6">
         <img src={pictureJavi} alt="pictureJavi" />
       </div>

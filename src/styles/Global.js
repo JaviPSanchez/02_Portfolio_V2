@@ -1,4 +1,6 @@
 const styles = {
+  backgroundGradient:
+    "bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500",
   tag: "font-Rubik skew-y-[-3deg] bg-grey5 text-black text-center absolute py-1 px-2 -bottom-5 left-2 drop-shadow-md border-solid border border-black uppercase text-xl",
   textareaCorrect:
     "resize-none h-[250px] text-2xl w-full mb-4 p-4 rounded-xl border-2 border-grey4 focus:placeholder-gray-200 focus:bg-white focus:border-grey4 focus:outline-none",

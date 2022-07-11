@@ -35,7 +35,7 @@ export default function Header() {
           ref={(element) => {
             nameItem = element;
           }}
-          className="font-Rubik text-3xl font-normal text-white translate-y-12 opacity-0"
+          className="font-Rubik text-3xl font-normal text-black dark:text-white translate-y-12 opacity-0"
         >
           Hi, glad to see you here!
         </h1>
@@ -44,7 +44,7 @@ export default function Header() {
           ref={(element) => {
             sectorItem = element;
           }}
-          className="font-Rubik text-9xl font-bold uppercase text-black mt-12 translate-y-12 opacity-0 text-center"
+          className="font-Rubik text-9xl font-bold uppercase text-black dark:text-white mt-12 translate-y-12 opacity-0 text-center"
         >
           <p className="text-transparent text-8xl bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]">
             Data Developer

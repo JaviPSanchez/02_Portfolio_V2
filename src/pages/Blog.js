@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import BlogCard from "../components/Blog/BlogCard";
 import ExploreTags from "../components/Blog/ExploreTags";
-import post from "../components/Blog/BlogData";
+import { blogPosts } from "../assets/data";
 
 export default function Blog() {
   const [popular, setPopular] = useState([]);
@@ -14,7 +13,7 @@ export default function Blog() {
   }, []);
 
   const fecthData = () => {
-    const tags = post;
+    const tags = blogPosts;
     setPopular(tags);
     setFiltered(tags);
   };
@@ -35,7 +34,7 @@ export default function Blog() {
           >
             <AnimatePresence>
               {filtered.map((item) => {
-                return <BlogCard id={item.id} title={item.title} />;
+                return <div>{item.element}</div>;
               })}
             </AnimatePresence>
           </motion.div>
