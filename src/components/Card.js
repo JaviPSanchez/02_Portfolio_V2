@@ -6,7 +6,7 @@ import { ButtonNormal } from "./Button";
 
 export default function Example({ image, title }) {
   return (
-    <div className="flex flex-col justify-center items-center bg-dark2 dark:bg-dark2 w-full h-full rounded-lg p-2 shadow-xl">
+    <div className="flex flex-col justify-center items-center bg-grey5 dark:bg-dark2 w-full h-full rounded-lg p-2 shadow-xl">
       <div className="relative">
         <div className="rounded-lg overflow-hidden">
           <img

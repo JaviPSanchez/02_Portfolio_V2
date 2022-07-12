@@ -22,6 +22,32 @@ body,
   padding: 0;
 }
 
+#tooltip-canvas {
+  position: absolute;
+  top: 200px;
+  left: 75px;
+}
+
+.btn-reload {
+  position: absolute;
+  top: 280px;
+  left: 50%;
+  width: 30px;
+  margin-left: -15px;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.btn-reload:hover {
+  opacity: 1;
+}
+
 /* body {
   background: radial-gradient(
     ellipse at right bottom,
