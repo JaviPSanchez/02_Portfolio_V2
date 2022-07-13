@@ -19,7 +19,7 @@ import {
 } from "../../assets/images";
 import Card from "../../components/Card";
 
-const badges = [
+const badgesFront = [
   {
     id: 1,
     image: <img src={html} alt="html" />,
@@ -55,6 +55,42 @@ const badges = [
   {
     id: 9,
     image: <img src={gsap} alt="gsap" />,
+  },
+];
+const badgesBack = [
+  {
+    id: 1,
+    image: <img src={html} alt="html" />,
+  },
+  {
+    id: 2,
+    image: <img src={css} alt="css" />,
+  },
+  {
+    id: 3,
+    image: <img src={js} alt="js" />,
+  },
+  {
+    id: 4,
+    image: <img src={react} alt="react" />,
+  },
+];
+const badgesData = [
+  {
+    id: 1,
+    image: <img src={html} alt="html" />,
+  },
+  {
+    id: 2,
+    image: <img src={css} alt="css" />,
+  },
+  {
+    id: 3,
+    image: <img src={js} alt="js" />,
+  },
+  {
+    id: 4,
+    image: <img src={react} alt="react" />,
   },
 ];
 
@@ -144,4 +180,11 @@ const blogPosts = [
   },
 ];
 
-export { badges, webProjects, dataProjects, blogPosts };
+export {
+  badgesFront,
+  badgesBack,
+  badgesData,
+  webProjects,
+  dataProjects,
+  blogPosts,
+};

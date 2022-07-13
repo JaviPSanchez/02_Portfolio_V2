@@ -1,53 +1,71 @@
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-
 import { Doughnut } from "react-chartjs-2";
-import Bars from "../../assets/svg/bars";
+// import Bars from "../../assets/svg/bars";
 // import { faker } from "@faker-js/faker";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const options = {
-  indexAxis: "y",
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "right",
-    },
-    title: {
-      display: true,
-      text: "Chart.js Horizontal Bar Chart",
-    },
-  },
-};
-
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: "Dataset 2",
-      data: [400, 540, 290],
-      backgroundColor: ["#9787FF", "#FF55B8", "#888888"],
-    },
-  ],
-};
-
 export default function App() {
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    indexAxis: "y",
+    plugins: {
+      legend: {
+        position: "top",
+        align: "start",
+        labels: {
+          boxWidth: 7,
+          usePointStyle: true,
+          pointStyle: "circle",
+        },
+      },
+    },
+    elements: {
+      arc: {
+        weight: 0.5,
+        borderWidth: 3,
+        borderRadius: {
+          outerStart: 50,
+          outerEnd: 50,
+          innerStart: 50,
+          innerEnd: 50,
+        },
+      },
+    },
+    cutout: 100,
+  };
+  const data = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    datasets: [
+      {
+        label: "Dataset 2",
+        data: [400, 540, 290],
+        backgroundColor: ["#9787FF", "#FF55B8", "#888888"],
+        hoverOffset: 5,
+      },
+    ],
+  };
+  const plugins = [
+    {
+      beforeDraw: function (chart) {
+        var width = chart.width,
+          height = chart.height,
+          ctx = chart.ctx;
+        ctx.restore();
+        var fontSize = (10).toFixed(2);
+        ctx.font = fontSize + "em sans-serif";
+        ctx.textBaseline = "top";
+        var text = "Foo-bar",
+          textX = Math.round((width - ctx.measureText(text).width) / 2),
+          textY = height / 2;
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+      },
+    },
+  ];
   return (
-    <>
-      <Doughnut options={options} data={data} />
-      {/* <canvas id="canvas" height="200"></canvas> */}
-      {/* <canvas id="tooltip-canvas" width="150" height="100"></canvas> */}
-      <button type="button" id="reload" class="btn-reload">
-        <Bars fillColor={"#AAAAAA"} />
-      </button>
-    </>
+    <Doughnut type="doughnut" options={options} data={data} plugins={plugins} />
   );
 }
 
