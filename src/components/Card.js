@@ -2,11 +2,9 @@ import React from "react";
 import Tag from "./Tag";
 import { ButtonNormal } from "./Button";
 
-// bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]
-
 export default function Example({ image, title }) {
   return (
-    <div className="flex flex-col justify-center items-center bg-grey5 dark:bg-dark2 w-full h-full rounded-lg p-2 shadow-xl">
+    <div className="card--item-1 flex flex-col justify-center items-center  dark:bg-dark2 w-full h-full rounded-lg p-2 shadow-xl">
       <div className="relative">
         <div className="rounded-lg overflow-hidden">
           <img

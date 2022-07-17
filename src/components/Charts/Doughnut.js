@@ -26,56 +26,79 @@ export default function DoughnutChart() {
           pointStyle: "circle",
         },
       },
-    },
-    elements: {
-      arc: {
-        weight: 0.5,
-        borderWidth: 3,
-        borderRadius: {
-          outerStart: 50,
-          outerEnd: 50,
-          innerStart: 50,
-          innerEnd: 50,
-        },
+      tooltip: {
+        enabled: false,
       },
     },
+
     cutout: "80%",
   };
 
-  const plugins = [
-    {
-      afterDraw: function (chart, args, options) {
-        const {
-          ctx,
-          chartArea: { left, right, top, bottom, width, height },
-        } = chart;
-        ctx.save();
-        // console.log(ctx);
+  const showValueHover = {
+    id: "showValueHover",
+    afterDraw: function (chart, args, options) {
+      const {
+        ctx,
+        chartArea: { left, right, top, bottom, width, height },
+      } = chart;
+      ctx.save();
+      // console.log(ctx);
 
-        if (chart._active.length > 0) {
-          const textLabel = chart.config.data.labels[chart._active[0].index];
-          const numberLabel =
-            chart.config.data.datasets[chart._active[0].datasetIndex].data[
-              chart._active[0].index
-            ];
-          const color =
-            chart.config.data.datasets[chart._active[0].datasetIndex]
-              .backgroundColor[chart._active[0].index];
+      if (chart._active.length > 0) {
+        const textLabel = chart.config.data.labels[chart._active[0].index];
+        const numberLabel =
+          chart.config.data.datasets[chart._active[0].datasetIndex].data[
+            chart._active[0].index
+          ];
+        const color =
+          chart.config.data.datasets[chart._active[0].datasetIndex]
+            .backgroundColor[chart._active[0].index];
 
-          ctx.font = "Rubik 16px";
-          ctx.textAlign = "center";
-          ctx.fillStyle = color;
-          // ctx.fillText("Test", left = x, top = y);
-          ctx.fillText(
-            `${textLabel}: ${numberLabel}`,
-            width / 2,
-            height / 2 + top
-          );
-        }
-        ctx.restore();
-      },
+        ctx.font = "bolder 18px Rubik";
+        ctx.textAlign = "center";
+        ctx.fillStyle = color;
+        // ctx.fillText("Test", left = x, top = y);
+        ctx.fillText(
+          `${textLabel}: ${numberLabel}`,
+          width / 2,
+          height / 2 + top
+        );
+      }
+      ctx.restore();
     },
-  ];
+  };
+
+  const stackedText = {
+    id: "stackedText",
+    afterDatasetDraw(chart, args, options) {
+      const {
+        ctx,
+        data,
+        chartArea: { left, right, top, bottom, width, height },
+      } = chart;
+      console.log(data.datasets[0].data[0]);
+      ctx.save();
+      const fontHeight = 40;
+      ctx.font = `bolder ${fontHeight}px Rubik`;
+      ctx.textAlign = "center";
+      ctx.fillStyle = "blue";
+      ctx.fillText("Hola", width / 2, height / 3);
+      ctx.restore();
+
+      ctx.font = "bolder 20px Rubik";
+      ctx.textAlign = "center";
+      ctx.fillStyle = "black";
+      ctx.fillText("Hola", width / 2, height / 3 + fontHeight);
+
+      // ctx.fillStyle = "black";
+      // ctx.fillRect(width / 2, top, 1, bottom);
+      // ctx.fillRect(left, height / 2 + top, right, 1);
+
+      ctx.restore();
+    },
+  };
+
+  const plugins = [showValueHover, stackedText];
 
   useEffect(function () {
     const chart = chartRef.current;
@@ -108,8 +131,15 @@ export default function DoughnutChart() {
           label: "Mis datos (Gradient)",
           data: [400, 540, 290],
           hoverOffset: 5,
-          // backgroundColor: ["#9787FF", "#FF55B8", "#888888"],
           backgroundColor: createGradientColor(),
+          borderWidth: 10,
+          borderColor: "transparent",
+          borderRadius: {
+            outerStart: 50,
+            outerEnd: 50,
+            innerStart: 50,
+            innerEnd: 50,
+          },
         },
       ],
     });

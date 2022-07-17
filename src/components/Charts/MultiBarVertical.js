@@ -2,8 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Chart, registerables } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
+// import ChartDataLabels from "chartjs-plugin-datalabels";
 
 Chart.register(...registerables);
+
+const labels = ["Formation", "Experience", "Certification"];
 
 export default function App() {
   const chartRef = useRef(null);
@@ -12,18 +15,23 @@ export default function App() {
   });
 
   const options = {
+    categoryPercentage: 0.5,
+    barPercentage: 1,
     responsive: true,
     scales: {
       x: {
         display: true, // show/ hide x-axis
         grid: {
-          display: false, // show/hide grid line in x-axis
+          display: true, // show/hide grid line in x-axis
         },
       },
       y: {
-        display: false, // same as x-axis
+        display: true, // same as x-axis
+        beginAtZero: true,
+        //Evita llegar hasta arriba del grafico
+        grace: "20%",
         grid: {
-          display: false,
+          display: true,
         },
       },
     },
@@ -40,7 +48,46 @@ export default function App() {
     },
   };
 
-  // const plugins = [];
+  const multiBarlogo = {
+    id: "multiBarLogo",
+    afterDatasetDraw(chart, args, options) {
+      const { ctx } = chart;
+      ctx.save();
+      // console.log(chart);
+      // console.log(chart.getDatasetMeta(0).data[0].x);
+
+      const image = new Image();
+      image.src = require("../../assets/images/html.png");
+
+      for (let i = 0; i <= labels.length - 1; i++) {
+        ctx.drawImage(
+          image,
+          chart.getDatasetMeta(0).data[i].x - 35 / 2,
+          chart.getDatasetMeta(0).data[i].y - 35,
+          35,
+          35
+        );
+        ctx.drawImage(
+          image,
+          chart.getDatasetMeta(1).data[i].x - 35 / 2,
+          chart.getDatasetMeta(1).data[i].y - 35,
+          35,
+          35
+        );
+        ctx.drawImage(
+          image,
+          chart.getDatasetMeta(2).data[i].x - 35 / 2,
+          chart.getDatasetMeta(2).data[i].y - 35,
+          35,
+          35
+        );
+      }
+
+      ctx.restore();
+    },
+  };
+
+  const plugins = [multiBarlogo];
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -66,41 +113,41 @@ export default function App() {
       return [gradientBlue, gradientRed, gradientGrey];
     }
 
-    const labels = ["Formation", "Experience", "Certification"];
-
     setChartData({
       labels,
       datasets: [
         {
           label: "Weekly Sales",
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
           backgroundColor: createGradientColor(),
-          borderColor: "#FFFFFF",
-          borderWidth: 1,
+          borderColor: "transparent",
+          borderWidth: 5,
           borderRadius: 100,
-          barThickness: 20,
+          barThickness: 30,
         },
         {
           label: "Weekly Sales",
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
           backgroundColor: createGradientColor(),
-          borderColor: "#FFFFFF",
-          borderWidth: 1,
-          borderRadius: 20,
-          barThickness: 20,
+          borderColor: "transparent",
+          borderWidth: 5,
+          borderRadius: 100,
+          barThickness: 30,
         },
         {
           label: "Weekly Sales",
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+          data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
           backgroundColor: createGradientColor(),
-          borderColor: "#FFFFFF",
-          borderWidth: 1,
-          borderRadius: 20,
-          barThickness: 20,
+          borderColor: "transparent",
+          borderWidth: 5,
+          borderRadius: 100,
+          barThickness: 30,
         },
       ],
     });
   }, []);
 
-  return <Bar ref={chartRef} options={options} data={chartData} />;
+  return (
+    <Bar ref={chartRef} options={options} data={chartData} plugins={plugins} />
+  );
 }
