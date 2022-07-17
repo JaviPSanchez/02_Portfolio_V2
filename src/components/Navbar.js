@@ -43,7 +43,7 @@ export default function Header() {
           {pages.map((item) => {
             return (
               <Link
-                id={item.id}
+                key={item.id}
                 className="relative skew-y-[-3deg] p-1 inline-flex items-center justify-center overflow-hidden group rounded-md"
                 to={item.to}
               >

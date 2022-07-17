@@ -1,17 +1,23 @@
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { useEffect, useRef, useState } from "react";
+import { Chart as ChartJS, registerables } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 // import Bars from "../../assets/svg/bars";
 // import { faker } from "@faker-js/faker";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(...registerables);
 
-export default function App() {
+export default function DoughnutChart() {
+  const chartRef = useRef(null);
+  const [chartData, setChartData] = useState({
+    datasets: [],
+  });
   const options = {
     responsive: true,
     maintainAspectRatio: false,
     indexAxis: "y",
     plugins: {
       legend: {
+        display: false,
         position: "top",
         align: "start",
         labels: {
@@ -33,39 +39,89 @@ export default function App() {
         },
       },
     },
-    cutout: 100,
+    cutout: "80%",
   };
-  const data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
-    datasets: [
-      {
-        label: "Dataset 2",
-        data: [400, 540, 290],
-        backgroundColor: ["#9787FF", "#FF55B8", "#888888"],
-        hoverOffset: 5,
-      },
-    ],
-  };
+
   const plugins = [
     {
-      beforeDraw: function (chart) {
-        var width = chart.width,
-          height = chart.height,
-          ctx = chart.ctx;
-        ctx.restore();
-        var fontSize = (10).toFixed(2);
-        ctx.font = fontSize + "em sans-serif";
-        ctx.textBaseline = "top";
-        var text = "Foo-bar",
-          textX = Math.round((width - ctx.measureText(text).width) / 2),
-          textY = height / 2;
-        ctx.fillText(text, textX, textY);
+      afterDraw: function (chart, args, options) {
+        const {
+          ctx,
+          chartArea: { left, right, top, bottom, width, height },
+        } = chart;
         ctx.save();
+        // console.log(ctx);
+
+        if (chart._active.length > 0) {
+          const textLabel = chart.config.data.labels[chart._active[0].index];
+          const numberLabel =
+            chart.config.data.datasets[chart._active[0].datasetIndex].data[
+              chart._active[0].index
+            ];
+          const color =
+            chart.config.data.datasets[chart._active[0].datasetIndex]
+              .backgroundColor[chart._active[0].index];
+
+          ctx.font = "Rubik 16px";
+          ctx.textAlign = "center";
+          ctx.fillStyle = color;
+          // ctx.fillText("Test", left = x, top = y);
+          ctx.fillText(
+            `${textLabel}: ${numberLabel}`,
+            width / 2,
+            height / 2 + top
+          );
+        }
+        ctx.restore();
       },
     },
   ];
+
+  useEffect(function () {
+    const chart = chartRef.current;
+    if (!chart) {
+      return;
+    }
+    console.log(chart);
+
+    function createGradientColor(color) {
+      const ctx = chart.ctx;
+      const gradientBlue = ctx.createLinearGradient(0, 0, 0, 150);
+      gradientBlue.addColorStop(0, "#5555FF");
+      gradientBlue.addColorStop(1, "#9787FF");
+
+      const gradientRed = ctx.createLinearGradient(0, 0, 0, 150);
+      gradientRed.addColorStop(0, "#FF55B8");
+      gradientRed.addColorStop(1, "#FF8787");
+
+      const gradientGrey = ctx.createLinearGradient(0, 0, 0, 150);
+      gradientGrey.addColorStop(0, "#888888");
+      gradientGrey.addColorStop(1, "#AAAAAA");
+
+      return [gradientBlue, gradientRed, gradientGrey];
+    }
+
+    setChartData({
+      labels: ["January", "February", "March"],
+      datasets: [
+        {
+          label: "Mis datos (Gradient)",
+          data: [400, 540, 290],
+          hoverOffset: 5,
+          // backgroundColor: ["#9787FF", "#FF55B8", "#888888"],
+          backgroundColor: createGradientColor(),
+        },
+      ],
+    });
+  }, []);
+
   return (
-    <Doughnut type="doughnut" options={options} data={data} plugins={plugins} />
+    <Doughnut
+      ref={chartRef}
+      options={options}
+      data={chartData}
+      plugins={plugins}
+    />
   );
 }
 
