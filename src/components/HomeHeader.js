@@ -29,7 +29,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="absolute top-[30%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex justify-center items-center">
+    <div className="absolute top-[25%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex justify-center items-center">
       <div className=" flex flex-col justify-center items-center">
         <h1
           ref={(element) => {
@@ -47,7 +47,7 @@ export default function Header() {
           className="font-Rubik text-9xl font-bold uppercase text-black dark:text-white mt-12 translate-y-12 opacity-0 text-center"
         >
           <p className="text-transparent text-8xl bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]">
-            Data Developer
+            Things I do
           </p>
         </div>
       </div>

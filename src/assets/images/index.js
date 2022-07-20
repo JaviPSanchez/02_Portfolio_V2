@@ -15,6 +15,7 @@ import data1 from "./data1.png";
 import data2 from "./data1.png";
 import data3 from "./data1.png";
 import data4 from "./data1.png";
+import front from "./front-end.png";
 
 export {
   html,
@@ -34,4 +35,5 @@ export {
   data2,
   data3,
   data4,
+  front,
 };

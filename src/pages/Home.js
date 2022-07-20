@@ -1,7 +1,7 @@
-import React from "react";
 import HomeHeader from "../components/HomeHeader";
-import { motion } from "framer-motion";
+import HomeCards from "../components/HomeCards";
 import BackScreen from "../components/BackScreen";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
       <HomeHeader />
+      <HomeCards />
       <BackScreen />
     </motion.div>
   );

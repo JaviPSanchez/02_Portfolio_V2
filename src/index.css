@@ -57,31 +57,17 @@ body,
 .card--item-3 {
   background-image: linear-gradient(90deg, #888888 0%, #aaaaaa 100%);
 }
-
-/* body {
-  background: radial-gradient(
-    ellipse at right bottom,
-    #ff8a05 5%,
-    #ff5478 15%,
-    #4d1d63 50%,
-    #030243 100%
+.card--item-4 {
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255, 0.3),
+    rgb(255, 255, 255, 0)
   );
-} */
-
-/* body {
-  background-image: linear-gradient(
-    to right bottom,
-    #030243,
-    #00174e,
-    #002656,
-    #00345b,
-    #1a425f,
-    #20445d,
-    #26465c,
-    #2c485a,
-    #234053,
-    #1a384b,
-    #113044,
-    #06283d
-  );
-} */
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 32px;
+}
