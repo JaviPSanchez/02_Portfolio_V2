@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Logo from "./Logo";
-// import styles from "../styles/Global";
 import Toggle from "./Toggle";
 
 const pages = [

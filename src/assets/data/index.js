@@ -7,7 +7,6 @@ import {
   tail,
   three,
   motion,
-  gsap,
   web1,
   web2,
   web3,
@@ -16,6 +15,22 @@ import {
   data2,
   data3,
   data4,
+  front,
+  software,
+  science,
+  node,
+  flask,
+  fastAPI,
+  postgre,
+  firebase,
+  mongo,
+  sql,
+  python,
+  spark,
+  databricks,
+  aws,
+  azure,
+  powerbi,
 } from "../../assets/images";
 import Card from "../../components/Card";
 
@@ -52,45 +67,61 @@ const badgesFront = [
     id: 8,
     image: <img src={three} alt="three" />,
   },
-  {
-    id: 9,
-    image: <img src={gsap} alt="gsap" />,
-  },
 ];
 const badgesBack = [
   {
     id: 1,
-    image: <img src={html} alt="html" />,
+    image: <img src={node} alt="html" />,
   },
   {
     id: 2,
-    image: <img src={css} alt="css" />,
+    image: <img src={flask} alt="css" />,
   },
   {
     id: 3,
-    image: <img src={js} alt="js" />,
+    image: <img src={fastAPI} alt="js" />,
   },
   {
     id: 4,
-    image: <img src={react} alt="react" />,
+    image: <img src={postgre} alt="react" />,
+  },
+  {
+    id: 5,
+    image: <img src={firebase} alt="react" />,
+  },
+  {
+    id: 6,
+    image: <img src={mongo} alt="react" />,
   },
 ];
 const badgesData = [
   {
     id: 1,
-    image: <img src={html} alt="html" />,
+    image: <img src={sql} alt="html" />,
   },
   {
     id: 2,
-    image: <img src={css} alt="css" />,
+    image: <img src={python} alt="css" />,
   },
   {
     id: 3,
-    image: <img src={js} alt="js" />,
+    image: <img src={spark} alt="js" />,
   },
   {
     id: 4,
-    image: <img src={react} alt="react" />,
+    image: <img src={databricks} alt="react" />,
+  },
+  {
+    id: 5,
+    image: <img src={aws} alt="react" />,
+  },
+  {
+    id: 6,
+    image: <img src={azure} alt="react" />,
+  },
+  {
+    id: 7,
+    image: <img src={powerbi} alt="react" />,
   },
 ];
 
@@ -180,6 +211,30 @@ const blogPosts = [
   },
 ];
 
+const HomeCards = [
+  {
+    id: 1,
+    title: "Front Development",
+    image: front,
+    years: 3,
+    text: "years trying to find the best way to communicate",
+  },
+  {
+    id: 2,
+    title: "Software Engineering",
+    image: software,
+    years: 2,
+    text: "years giving life and shape to my apps",
+  },
+  {
+    id: 3,
+    title: "Data Science",
+    image: science,
+    years: 2,
+    text: "years predicting the future...",
+  },
+];
+
 export {
   badgesFront,
   badgesBack,
@@ -187,4 +242,5 @@ export {
   webProjects,
   dataProjects,
   blogPosts,
+  HomeCards,
 };

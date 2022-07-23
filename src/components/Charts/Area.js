@@ -9,6 +9,9 @@ const options = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
+    tooltip: {
+      enabled: false,
+    },
     legend: {
       display: false,
       position: "top",

@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-// import Bars from "../../assets/svg/bars";
-// import { faker } from "@faker-js/faker";
 
 ChartJS.register(...registerables);
 
@@ -54,15 +52,12 @@ export default function DoughnutChart() {
           chart.config.data.datasets[chart._active[0].datasetIndex]
             .backgroundColor[chart._active[0].index];
 
-        ctx.font = "bolder 18px Rubik";
+        ctx.font = `bolder ${0.02 * window.innerWidth}px Rubik`;
         ctx.textAlign = "center";
         ctx.fillStyle = color;
         // ctx.fillText("Test", left = x, top = y);
-        ctx.fillText(
-          `${textLabel}: ${numberLabel}`,
-          width / 2,
-          height / 2 + top
-        );
+        ctx.fillText(`${textLabel}`, width / 2, height / 1.6 + top);
+        ctx.fillText(`${numberLabel}`, width / 2, height / 1.4 + top);
       }
       ctx.restore();
     },
@@ -76,24 +71,22 @@ export default function DoughnutChart() {
         data,
         chartArea: { left, right, top, bottom, width, height },
       } = chart;
-      console.log(data.datasets[0].data[0]);
-      ctx.save();
-      const fontHeight = 40;
-      ctx.font = `bolder ${fontHeight}px Rubik`;
-      ctx.textAlign = "center";
-      ctx.fillStyle = "blue";
-      ctx.fillText("Hola", width / 2, height / 3);
-      ctx.restore();
+      console.log(window.innerWidth);
 
-      ctx.font = "bolder 20px Rubik";
+      // console.log(data.datasets[0].data[0]);
+      ctx.save();
+      ctx.font = ctx.font = `bolder ${0.03 * window.innerWidth}px Rubik`;
       ctx.textAlign = "center";
       ctx.fillStyle = "black";
-      ctx.fillText("Hola", width / 2, height / 3 + fontHeight);
+      ctx.fillText("Total", width / 2, height / 2.5);
+      ctx.restore();
 
-      // ctx.fillStyle = "black";
-      // ctx.fillRect(width / 2, top, 1, bottom);
-      // ctx.fillRect(left, height / 2 + top, right, 1);
-
+      ctx.beginPath();
+      ctx.lineWidth = 8;
+      ctx.lineCap = "round";
+      ctx.moveTo(left + width / 4, height / 2 + top);
+      ctx.lineTo(right - width / 4, height / 2 + top);
+      ctx.stroke();
       ctx.restore();
     },
   };
@@ -105,13 +98,13 @@ export default function DoughnutChart() {
     if (!chart) {
       return;
     }
-    console.log(chart);
+    // console.log(chart);
 
     function createGradientColor(color) {
       const ctx = chart.ctx;
-      const gradientBlue = ctx.createLinearGradient(0, 0, 0, 150);
-      gradientBlue.addColorStop(0, "#5555FF");
-      gradientBlue.addColorStop(1, "#9787FF");
+      const gradientFront = ctx.createLinearGradient(0, 0, 0, 150);
+      gradientFront.addColorStop(0, "#5555FF");
+      gradientFront.addColorStop(1, "#9787FF");
 
       const gradientRed = ctx.createLinearGradient(0, 0, 0, 150);
       gradientRed.addColorStop(0, "#FF55B8");
@@ -121,16 +114,16 @@ export default function DoughnutChart() {
       gradientGrey.addColorStop(0, "#888888");
       gradientGrey.addColorStop(1, "#AAAAAA");
 
-      return [gradientBlue, gradientRed, gradientGrey];
+      return [gradientFront, gradientRed, gradientGrey];
     }
 
     setChartData({
-      labels: ["January", "February", "March"],
+      labels: ["Front-end", "Back-end", "Data Science"],
       datasets: [
         {
-          label: "Mis datos (Gradient)",
-          data: [400, 540, 290],
-          hoverOffset: 5,
+          label: "Skills",
+          data: [4, 2, 6],
+          hoverOffset: 10,
           backgroundColor: createGradientColor(),
           borderWidth: 10,
           borderColor: "transparent",
