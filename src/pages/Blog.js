@@ -32,7 +32,7 @@ export default function Blog() {
           </h1>
           <motion.div
             layout
-            className="w-full h-full grid grid-cols-fit grid-flow-row gap-8 overflow-scroll overflow-x-hidden scrollbar-hide"
+            className="w-full h-fit grid grid-cols-fit grid-flow-row gap-8 overflow-scroll overflow-x-hidden scrollbar-hide"
           >
             <AnimatePresence>
               {filtered.map((item) => {

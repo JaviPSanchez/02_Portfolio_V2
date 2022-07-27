@@ -9,17 +9,14 @@ const Toggle = () => {
       {theme === "dark" ? (
         <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 bg-white shadow-none p-2 focus:outline-none text-lg rounded-full outline-none ring-transparent cursor-pointer"
+          className="bg-white p-2 rounded-full cursor-pointer"
         >
-          <Sun
-            className="absolute transition-all delay-150 ease-linear"
-            fillColor={"#000000"}
-          />
+          <Sun fillColor={"#000000"} />
         </button>
       ) : (
         <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 bg-white focus:outline-none shadow-none p-2 text-lg rounded-full outline-none ring-transparent cursor-pointer"
+          className="bg-white p-2 rounded-full cursor-pointer"
         >
           <Moon fillColor={"#000000"} />
         </button>

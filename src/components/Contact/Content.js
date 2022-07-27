@@ -44,7 +44,9 @@ const Content = () => {
       className="flex flex-col justify-center items-center w-5/6 h-5/6 font-Rubik"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-6xl mb-14 font-bold uppercase">Contact Me 🚀</h1>
+      <h1 className="text-6xl mb-14 font-bold uppercase dark:text-white">
+        Contact Me 🚀
+      </h1>
 
       <label htmlFor="name" className="text-2xl w-full mb-2 p-4">
         Name

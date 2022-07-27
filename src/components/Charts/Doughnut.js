@@ -52,7 +52,7 @@ export default function DoughnutChart() {
           chart.config.data.datasets[chart._active[0].datasetIndex]
             .backgroundColor[chart._active[0].index];
 
-        ctx.font = `bolder ${0.02 * window.innerWidth}px Rubik`;
+        ctx.font = `bolder ${0.03 * window.innerWidth}px Rubik`;
         ctx.textAlign = "center";
         ctx.fillStyle = color;
         // ctx.fillText("Test", left = x, top = y);
@@ -77,8 +77,8 @@ export default function DoughnutChart() {
       ctx.save();
       ctx.font = ctx.font = `bolder ${0.03 * window.innerWidth}px Rubik`;
       ctx.textAlign = "center";
-      ctx.fillStyle = "black";
-      ctx.fillText("Total", width / 2, height / 2.5);
+      ctx.fillStyle = `white`;
+      ctx.fillText("Total projects", width / 2, height / 2.5);
       ctx.restore();
 
       ctx.beginPath();

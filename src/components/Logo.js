@@ -1,10 +1,9 @@
 import React from "react";
 
 export default function Logo() {
-  const logo = "</JP>";
   return (
-    <div className="font-Rubik text-4xl font-bold text-black dark:text-white">
-      {logo}
+    <div className="bg-white rounded-full h-20 w-20 font-Rubik text-4xl font-bold text-black p-4 flex justify-center items-center">
+      <span>JP</span>
     </div>
   );
 }
