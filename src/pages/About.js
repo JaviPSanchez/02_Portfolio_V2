@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Outlet } from "react-router-dom";
-// import Sidebar from "../components/About/SideBar";
-import SidebarTest from "../components/About/SideBarTest";
+import Sidebar from "../components/About/SideBar";
 
 export default function About() {
   return (
@@ -13,8 +12,8 @@ export default function About() {
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
       <div className="w-11/12 h-5/6 flex bg-transparent">
-        {/* <Sidebar /> */}
-        <SidebarTest />
+        <Sidebar />
+
         <div className="w-full ml-8">
           <Outlet />
         </div>
