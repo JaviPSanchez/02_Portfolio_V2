@@ -7,7 +7,6 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Me from "./components/About/Me";
 import WebDev from "./components/About/WebDev";
-import Apps from "./components/About/Apps";
 import Data from "./components/About/Data";
 
 function App() {
@@ -16,11 +15,10 @@ function App() {
       <AnimatePresence>
         <Routes>
           <Route path="/" element={<Navbar />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/about/*" element={<About />}>
+            <Route index path="/" element={<Home />} />
+            <Route path="/about" element={<About />}>
               <Route path="me" element={<Me />} />
               <Route path="web" element={<WebDev />} />
-              <Route path="apps" element={<Apps />} />
               <Route path="data" element={<Data />} />
             </Route>
             <Route path="blog" element={<Blog />} />

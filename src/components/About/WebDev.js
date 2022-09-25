@@ -3,11 +3,14 @@ import { webProjects } from "../../assets/data";
 
 export default function WebDev() {
   return (
-    <div className="flex flex-col justify-start items-center w-full h-full">
-      <div className="w-full flex flex-wrap bg-transparent rounded-xl overflow-scroll overflow-x-hidden scrollbar-hide">
+    <div className="w-full h-full flex flex-col justify-start items-center">
+      <div className="w-full flex flex-wrap bg-white dark:bg-dark2 rounded-xl overflow-scroll overflow-x-hidden scrollbar-hide">
         {webProjects.map((item) => {
           return (
-            <div className="w-1/3 p-10" key={item.id}>
+            <div
+              className="w-1/3 p-10 hover:scale-105 duration-500 cursor-pointer"
+              key={item.id}
+            >
               {item.element}
             </div>
           );

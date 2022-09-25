@@ -4,115 +4,145 @@ import { Bar } from "react-chartjs-2";
 
 Chart.register(...registerables);
 
-const options = {
-  categoryPercentage: 0.5,
-  barPercentage: 1,
-  responsive: true,
-  scales: {
-    x: {
-      display: true, // show/ hide x-axis
-      position: "top",
-      grid: {
-        display: false, // show/hide grid line in x-axis
-      },
-      ticks: {},
-    },
-    y: {
-      display: true,
-      ticks: {
-        stepSize: 0.5,
-        maxTicksLevel: 16,
-        callback: (context, index) => {
-          console.log(context);
-          return context;
-        },
-      },
-      grace: "20%",
-      beginAtZero: true,
-      min: 2007,
-      max: 2023,
-      grid: {
-        display: true,
-      },
-    },
-  },
-  layout: {
-    padding: 10,
-  },
-
-  plugins: {
-    tooltip: {
-      enabled: false,
-      // yAlign: "bottom",
-      callbacks: {
-        label: (context) => {
-          console.log(context.parsed.x);
-        },
-      },
-    },
-    legend: {
-      display: false,
-      position: "top",
-    },
-    title: {
-      display: false,
-      text: "Chart.js Bar Chart",
-    },
-  },
-};
-
-const multiBarlogo1 = {
-  id: "multiBarLogo",
-  afterDatasetDraw(chart, args, options) {
-    const { ctx } = chart;
-    ctx.save();
-    // console.log(chart);
-    console.log(chart.getDatasetMeta(0));
-
-    const image1 = new Image();
-    const image2 = new Image();
-    const image3 = new Image();
-    const image4 = new Image();
-    const image5 = new Image();
-    image1.src = require("../../assets/images/html.png");
-    image2.src = require("../../assets/images/css.png");
-    image3.src = require("../../assets/images/js.png");
-    image4.src = require("../../assets/images/three.png");
-    image5.src = require("../../assets/images/python.png");
-
-    ctx.drawImage(
-      image1,
-      chart.getDatasetMeta(0).data[0].x - 35 / 2,
-      chart.getDatasetMeta(0).data[0].y - 35,
-      35,
-      35
-    );
-    ctx.drawImage(
-      image2,
-      chart.getDatasetMeta(0).data[1].x - 35 / 2,
-      chart.getDatasetMeta(0).data[1].y - 35,
-      35,
-      35
-    );
-    ctx.drawImage(
-      image3,
-      chart.getDatasetMeta(0).data[2].x - 35 / 2,
-      chart.getDatasetMeta(0).data[2].y - 35,
-      35,
-      35
-    );
-
-    ctx.restore();
-  },
-};
-
-const plugins = [multiBarlogo1];
-
 export default function App() {
   const chartRef = useRef(null);
   const [chartData, setChartData] = useState({
     datasets: [],
   });
+
+  const options = {
+    maintainAspectRatio: false,
+    responsive: true,
+    scales: {
+      xAxes: {
+        display: true, // show/hide x-axis
+        position: "top",
+        grid: {
+          display: false, // show/hide grid line in x-axis
+          // color: "red",
+          borderColor: "transparent",
+        },
+        ticks: {
+          font: {
+            size: 18,
+            family: "Rubik",
+            weight: "bold",
+          },
+          color: (localStorage["current-theme"] = "light" ? "white" : "black"),
+        },
+      },
+      yAxes: {
+        display: true,
+        ticks: {
+          font: {
+            size: 18,
+            family: "Rubik",
+            weight: "bold",
+          },
+          color: "white",
+
+          stepSize: 1,
+          maxTicksLevel: 16,
+          callback: (context, index) => {
+            // console.log(context);
+            return context;
+          },
+        },
+        grace: "20%",
+        beginAtZero: true,
+        min: 2007,
+        max: 2023,
+        grid: {
+          display: true,
+          color: "white",
+          borderColor: "transparent",
+          borderDash: [12],
+          lineWidth: 1.5,
+          tickColor: "transparent",
+        },
+      },
+    },
+    plugins: {
+      tooltip: {
+        enabled: false,
+        // yAlign: "bottom",
+        callbacks: {
+          label: (context) => {
+            console.log(context.parsed.x);
+          },
+        },
+      },
+      legend: {
+        display: false,
+        position: "top",
+      },
+      title: {
+        display: false,
+        text: "Chart.js Bar Chart",
+      },
+    },
+  };
+
+  const multiBarlogo1 = {
+    id: "multiBarLogo",
+    afterDatasetDraw(chart, args, options) {
+      const { ctx } = chart;
+      ctx.save();
+      // console.log(chart);
+      console.log(chart.getDatasetMeta(0));
+
+      const image1 = new Image();
+      const image2 = new Image();
+      const image3 = new Image();
+      const image4 = new Image();
+      const image5 = new Image();
+      image1.src = require("../../assets/images/html.png");
+      image2.src = require("../../assets/images/css.png");
+      image3.src = require("../../assets/images/js.png");
+      image4.src = require("../../assets/images/three.png");
+      image5.src = require("../../assets/images/python.png");
+
+      ctx.drawImage(
+        image1,
+        chart.getDatasetMeta(0).data[0].x - 35 / 2,
+        chart.getDatasetMeta(0).data[0].y - 35,
+        35,
+        35
+      );
+      ctx.drawImage(
+        image2,
+        chart.getDatasetMeta(0).data[1].x - 35 / 2,
+        chart.getDatasetMeta(0).data[1].y - 35,
+        35,
+        35
+      );
+      ctx.drawImage(
+        image3,
+        chart.getDatasetMeta(0).data[2].x - 35 / 2,
+        chart.getDatasetMeta(0).data[2].y - 35,
+        35,
+        35
+      );
+      ctx.drawImage(
+        image4,
+        chart.getDatasetMeta(1).data[0].x - 35 / 2,
+        chart.getDatasetMeta(1).data[0].y - 35,
+        35,
+        35
+      );
+      ctx.drawImage(
+        image5,
+        chart.getDatasetMeta(1).data[1].x - 35 / 2,
+        chart.getDatasetMeta(1).data[1].y - 35,
+        35,
+        35
+      );
+
+      ctx.restore();
+    },
+  };
+
+  const plugins = [multiBarlogo1];
 
   useEffect(() => {
     const chart = chartRef.current;

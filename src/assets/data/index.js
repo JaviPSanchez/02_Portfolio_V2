@@ -61,86 +61,66 @@ const badgesFront = [
   },
   {
     id: 7,
-    image: <img src={motion} alt="motion" />,
-  },
-  {
-    id: 8,
     image: <img src={three} alt="three" />,
   },
 ];
 const badgesBack = [
   {
     id: 1,
-    image: <img src={node} alt="html" />,
+    image: <img src={node} alt="node" />,
   },
   {
     id: 2,
-    image: <img src={flask} alt="css" />,
+    image: <img src={flask} alt="flask" />,
   },
   {
     id: 3,
-    image: <img src={fastAPI} alt="js" />,
+    image: <img src={fastAPI} alt="fastAPI" />,
   },
   {
     id: 4,
-    image: <img src={postgre} alt="react" />,
+    image: <img src={postgre} alt="postgres" />,
   },
   {
     id: 5,
-    image: <img src={firebase} alt="react" />,
+    image: <img src={firebase} alt="firebase" />,
   },
   {
     id: 6,
-    image: <img src={mongo} alt="react" />,
+    image: <img src={mongo} alt="mongo" />,
   },
 ];
 const badgesData = [
   {
     id: 1,
-    image: <img src={sql} alt="html" />,
+    image: <img src={sql} alt="sql" />,
   },
   {
     id: 2,
-    image: <img src={python} alt="css" />,
-  },
-  {
-    id: 3,
-    image: <img src={spark} alt="js" />,
-  },
-  {
-    id: 4,
-    image: <img src={databricks} alt="react" />,
+    image: <img src={python} alt="python" />,
   },
   {
     id: 5,
-    image: <img src={aws} alt="react" />,
-  },
-  {
-    id: 6,
-    image: <img src={azure} alt="react" />,
-  },
-  {
-    id: 7,
-    image: <img src={powerbi} alt="react" />,
+    image: <img src={aws} alt="aws" />,
   },
 ];
 
 const webProjects = [
   {
     id: 1,
-    element: <Card image={web1} title={"1. Portfolio V1"} />,
+    element: <Card image={web1} title={"1. Landing Page"} />,
   },
   {
     id: 2,
-    element: <Card image={web2} title={"2. Beer"} />,
+    element: <Card image={web2} title={"2. Portfolio V1"} />,
   },
   {
     id: 3,
-    element: <Card image={web3} title={"3. Crypto"} />,
+    element: <Card image={web3} title={"3. Beer Web"} />,
   },
   {
     id: 4,
-    element: <Card image={web4} title={"4. Other"} />,
+    element: <Card image={web4} title={"4. Crypto"} />,
   },
 ];
 

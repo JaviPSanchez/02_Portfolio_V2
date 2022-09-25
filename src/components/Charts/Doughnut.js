@@ -9,10 +9,10 @@ export default function DoughnutChart() {
   const [chartData, setChartData] = useState({
     datasets: [],
   });
+
   const options = {
     responsive: true,
     maintainAspectRatio: false,
-    indexAxis: "y",
     plugins: {
       legend: {
         display: false,
@@ -52,7 +52,7 @@ export default function DoughnutChart() {
           chart.config.data.datasets[chart._active[0].datasetIndex]
             .backgroundColor[chart._active[0].index];
 
-        ctx.font = `bolder ${0.03 * window.innerWidth}px Rubik`;
+        ctx.font = `bolder ${0.002 * window.innerWidth}rem Rubik`;
         ctx.textAlign = "center";
         ctx.fillStyle = color;
         // ctx.fillText("Test", left = x, top = y);
@@ -75,7 +75,7 @@ export default function DoughnutChart() {
 
       // console.log(data.datasets[0].data[0]);
       ctx.save();
-      ctx.font = ctx.font = `bolder ${0.03 * window.innerWidth}px Rubik`;
+      ctx.font = `bolder ${0.002 * window.innerWidth}rem Rubik`;
       ctx.textAlign = "center";
       ctx.fillStyle = `white`;
       ctx.fillText("Total projects", width / 2, height / 2.5);
@@ -147,151 +147,3 @@ export default function DoughnutChart() {
     />
   );
 }
-
-/*
-
-const chartRef = useRef();
-
-  useEffect(() => {
-    const canvas = document.getElementById("canvas").getContext("2d");
-    console.log(canvas);
-
-    const tooltipCanvas = document
-      .getElementById("tooltip-canvas")
-      .getContext("2d");
-
-    const gradientBlue = canvas.createLinearGradient(0, 0, 0, 150);
-    gradientBlue.addColorStop(0, "#5555FF");
-    gradientBlue.addColorStop(1, "#9787FF");
-
-    const gradientRed = canvas.createLinearGradient(0, 0, 0, 150);
-    gradientRed.addColorStop(0, "#FF55B8");
-    gradientRed.addColorStop(1, "#FF8787");
-
-    const gradientGrey = canvas.createLinearGradient(0, 0, 0, 150);
-    gradientGrey.addColorStop(0, "#888888");
-    gradientGrey.addColorStop(1, "#AAAAAA");
-
-    window.arcSpacing = 0.15;
-    window.segmentHovered = false;
-
-    function textInCenter(value, label) {
-      const ctx = tooltipCanvas.getContext("2d");
-      ctx.clearRect(0, 0, tooltipCanvas.width, tooltipCanvas.height);
-
-      ctx.restore();
-
-      // Draw value
-      ctx.fillStyle = "#333333";
-      ctx.font = "24px sans-serif";
-      ctx.textBaseline = "middle";
-
-      // Define text position
-      const textPosition = {
-        x: Math.round((tooltipCanvas.width - ctx.measureText(value).width) / 2),
-        y: tooltipCanvas.height / 2,
-      };
-
-      ctx.fillText(value, textPosition.x, textPosition.y);
-
-      // Draw label
-      ctx.fillStyle = "#AAAAAA";
-      ctx.font = "8px sans-serif";
-
-      // Define text position
-      const labelTextPosition = {
-        x: Math.round((tooltipCanvas.width - ctx.measureText(label).width) / 2),
-        y: tooltipCanvas.height / 2,
-      };
-
-      ctx.fillText(label, labelTextPosition.x, labelTextPosition.y - 20);
-      ctx.save();
-    }
-
-    ChartJS.elements.Arc.prototype.draw = function () {
-      const ctx = this._chart.ctx;
-      const vm = this._view;
-      const sA = vm.startAngle;
-      const eA = vm.endAngle;
-
-      ctx.beginPath();
-      ctx.arc(
-        vm.x,
-        vm.y,
-        vm.outerRadius,
-        sA + window.arcSpacing,
-        eA - window.arcSpacing
-      );
-      ctx.strokeStyle = vm.backgroundColor;
-      ctx.lineWidth = vm.borderWidth;
-      ctx.lineCap = "round";
-      ctx.stroke();
-      ctx.closePath();
-    };
-
-    chartRef.current = new ChartJS(canvas, {
-      type: "doughnut",
-      data: {
-        labels: ["Pink", "Grey", "Blue"],
-        datasets: [
-          {
-            data: [400, 540, 290],
-            backgroundColor: [gradientRed, gradientGrey, gradientBlue],
-          },
-        ],
-      },
-      cutoutPercentage: 80,
-      elements: {
-        arc: {
-          borderWidth: 12,
-        },
-      },
-      legend: {
-        display: false,
-      },
-      animation: {
-        onComplete: function (animation) {
-          if (!window.segmentHovered) {
-            const value = this.config.data.datasets[0].data.reduce(function (
-              a,
-              b
-            ) {
-              return a + b;
-            },
-            0);
-            const label = "T O T A L";
-
-            textInCenter(value, label);
-          }
-        },
-      },
-      tooltips: {
-        enabled: false,
-        custom: function (tooltip) {
-          if (tooltip.body) {
-            const line = tooltip.body[0].lines[0],
-              parts = line.split(": ");
-            textInCenter(parts[1], parts[0].split("").join(" ").toUpperCase());
-            window.segmentHovered = true;
-          } else {
-            window.segmentHovered = false;
-          }
-        },
-      },
-    });
-
-    function addData(chart, label, data) {
-      chart.data.labels.push(label);
-      chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(data);
-      });
-      ChartJS.update();
-    }
-
-    document.getElementById("reload").addEventListener("click", function () {
-      addData(window.chart, "TEST", 300);
-    });
-
-    return () => chartRef.current.destroy();
-  }, []);
-*/

@@ -3,8 +3,8 @@ import React from "react";
 import FrontStack from "./TechStack/FrontStack";
 import BackStack from "./TechStack/BackStack";
 import DataStack from "./TechStack/DataStack";
-import Skills from "./TechStack/Skills";
 import Experience from "./TechStack/Experience";
+import TotalProjects from "./TechStack/TotalProjects";
 
 export default function Me() {
   return (
@@ -12,7 +12,7 @@ export default function Me() {
       <FrontStack />
       <BackStack />
       <DataStack />
-      <Skills />
+      <TotalProjects />
       <Experience />
     </div>
   );
