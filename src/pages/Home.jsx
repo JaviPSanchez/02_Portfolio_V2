@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import Contact from "../components/Contact/Contact";
+import Projects from "../components/SectionProjects/Projects";
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
     >
       <header className="w-full h-[450px] bg-blue-400">Header</header>
       <section className="w-full h-[450px] bg-blue-200">About</section>
-      <section className="w-full h-[450px] bg-pink-400">Projects</section>
+      <Projects />
+      <Contact />
       <footer className="w-full h-[450px] bg-red-400">Footer</footer>
     </motion.div>
   );

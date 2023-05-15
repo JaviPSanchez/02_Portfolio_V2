@@ -26,8 +26,8 @@ import {
   sql,
   python,
   aws,
-} from "../images";
-
+} from "../images/index";
+import Card from "../../components/Card";
 // const badgesFront = [
 //   {
 //     id: 1,
@@ -137,72 +137,74 @@ import {
 //   },
 // ];
 
-// const blogPosts = [
-//   {
-//     id: 1,
-//     element: <Card image={data1} title={"Post 1"} />,
-//     topic: ["All", "Machine Learning"],
-//   },
-//   {
-//     id: 2,
-//     element: <Card image={data1} title={"Post 2"} />,
-//     topic: ["All", "Machine Learning", "Deep Learning"],
-//   },
-//   {
-//     id: 3,
-//     element: <Card image={data1} title={"Post 3"} />,
-//     topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
-//   },
-//   {
-//     id: 4,
-//     element: <Card image={data1} title={"Post 4"} />,
-//     topic: ["All", "Natural language Processing"],
-//   },
-//   {
-//     id: 5,
-//     element: <Card image={data1} title={"Post 5"} />,
-//     topic: [
-//       "All",
-//       "Machine Learning",
-//       "Natural language Processing",
-//       "Deployment",
-//     ],
-//   },
-//   {
-//     id: 6,
-//     element: <Card image={data2} title={"Post 6"} />,
-//     topic: ["All", "Machine Learning", "Natural language Processing"],
-//   },
-//   {
-//     id: 7,
-//     element: <Card image={data4} title={"Post 7"} />,
-//     topic: [
-//       "All",
-//       "Machine Learning",
-//       "Natural language Processing",
-//       "Deployment",
-//     ],
-//   },
-// ];
+export const BlogPosts = () => {
+  [
+    {
+      id: 1,
+      element: <Card image={data1} title="Post 1" />,
+      topic: ["All", "Machine Learning"],
+    },
+    {
+      id: 2,
+      element: <Card image={data1} title={"Post 2"} />,
+      topic: ["All", "Machine Learning", "Deep Learning"],
+    },
+    {
+      id: 3,
+      element: <Card image={data1} title={"Post 3"} />,
+      topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
+    },
+    {
+      id: 4,
+      element: <Card image={data1} title={"Post 4"} />,
+      topic: ["All", "Natural language Processing"],
+    },
+    {
+      id: 5,
+      element: <Card image={data1} title={"Post 5"} />,
+      topic: [
+        "All",
+        "Machine Learning",
+        "Natural language Processing",
+        "Deployment",
+      ],
+    },
+    {
+      id: 6,
+      element: <Card image={data2} title={"Post 6"} />,
+      topic: ["All", "Machine Learning", "Natural language Processing"],
+    },
+    {
+      id: 7,
+      element: <Card image={data4} title={"Post 7"} />,
+      topic: [
+        "All",
+        "Machine Learning",
+        "Natural language Processing",
+        "Deployment",
+      ],
+    },
+  ];
+};
 
 const WelcomeCards = [
   {
     id: 1,
-    title: "Front Development",
+    title: "Digital Development",
     image: front,
-    years: 2,
+    years: 5,
     text: "years trying to find the best way to communicate",
   },
   {
     id: 2,
     title: "Software Engineering",
     image: software,
-    years: 1,
+    years: 2,
     text: "years giving life and shape to my apps",
   },
   {
     id: 3,
-    title: "Data Science Development",
+    title: "Data Development",
     image: science,
     years: 1,
     text: "years making predictions and trying to find the right data",
@@ -215,6 +217,6 @@ export {
   // badgesData,
   // webProjects,
   // dataProjects,
-  // blogPosts,
+  // BlogPosts,
   WelcomeCards,
 };
