@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Contact from "../components/Contact/Contact";
 import Projects from "../components/SectionProjects/Projects";
 import { Footer } from "../components/Footer/Footer";
+import { About } from "../components/About/About";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
       <header className="w-full h-[450px] bg-blue-400">Header</header>
-      <section className="w-full h-[450px] bg-blue-200">About</section>
+      <About />
       <Projects />
       <Contact />
       <Footer />
