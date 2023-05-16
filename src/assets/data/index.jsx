@@ -1,31 +1,31 @@
 import {
-  html,
-  css,
-  js,
-  react,
-  sass,
-  tail,
-  three,
-  web1,
-  web2,
-  web3,
-  web4,
+  // html,
+  // css,
+  // js,
+  // react,
+  // sass,
+  // tail,
+  // three,
+  // web1,
+  // web2,
+  // web3,
+  // web4,
   data1,
   data2,
-  data3,
+  // data3,
   data4,
   front,
   software,
   science,
-  node,
-  flask,
-  fastAPI,
-  postgre,
-  firebase,
-  mongo,
-  sql,
-  python,
-  aws,
+  // node,
+  // flask,
+  // fastAPI,
+  // postgre,
+  // firebase,
+  // mongo,
+  // sql,
+  // python,
+  // aws,
 } from "../images/index";
 import Card from "../../components/Card";
 // const badgesFront = [
@@ -137,55 +137,53 @@ import Card from "../../components/Card";
 //   },
 // ];
 
-export const BlogPosts = () => {
-  [
-    {
-      id: 1,
-      element: <Card image={data1} title="Post 1" />,
-      topic: ["All", "Machine Learning"],
-    },
-    {
-      id: 2,
-      element: <Card image={data1} title={"Post 2"} />,
-      topic: ["All", "Machine Learning", "Deep Learning"],
-    },
-    {
-      id: 3,
-      element: <Card image={data1} title={"Post 3"} />,
-      topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
-    },
-    {
-      id: 4,
-      element: <Card image={data1} title={"Post 4"} />,
-      topic: ["All", "Natural language Processing"],
-    },
-    {
-      id: 5,
-      element: <Card image={data1} title={"Post 5"} />,
-      topic: [
-        "All",
-        "Machine Learning",
-        "Natural language Processing",
-        "Deployment",
-      ],
-    },
-    {
-      id: 6,
-      element: <Card image={data2} title={"Post 6"} />,
-      topic: ["All", "Machine Learning", "Natural language Processing"],
-    },
-    {
-      id: 7,
-      element: <Card image={data4} title={"Post 7"} />,
-      topic: [
-        "All",
-        "Machine Learning",
-        "Natural language Processing",
-        "Deployment",
-      ],
-    },
-  ];
-};
+const BlogPosts = [
+  {
+    id: 1,
+    element: <Card image={data1} title="Post 1" />,
+    topic: ["All", "Machine Learning"],
+  },
+  {
+    id: 2,
+    element: <Card image={data1} title={"Post 2"} />,
+    topic: ["All", "Machine Learning", "Deep Learning"],
+  },
+  {
+    id: 3,
+    element: <Card image={data1} title={"Post 3"} />,
+    topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
+  },
+  {
+    id: 4,
+    element: <Card image={data1} title={"Post 4"} />,
+    topic: ["All", "Natural language Processing"],
+  },
+  {
+    id: 5,
+    element: <Card image={data1} title={"Post 5"} />,
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
+  },
+  {
+    id: 6,
+    element: <Card image={data2} title={"Post 6"} />,
+    topic: ["All", "Machine Learning", "Natural language Processing"],
+  },
+  {
+    id: 7,
+    element: <Card image={data4} title={"Post 7"} />,
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
+  },
+];
 
 const WelcomeCards = [
   {
@@ -217,6 +215,6 @@ export {
   // badgesData,
   // webProjects,
   // dataProjects,
-  // BlogPosts,
+  BlogPosts,
   WelcomeCards,
 };
