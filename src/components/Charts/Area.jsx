@@ -93,7 +93,7 @@ export default function AreaChart({ gradientColor }) {
     if (!chart) {
       return;
     }
-    console.log(chart);
+    // console.log(chart);
 
     // Chart nos permite acceder al object ctx "contexto"
 
@@ -119,7 +119,7 @@ export default function AreaChart({ gradientColor }) {
       datasets: [
         {
           label: "Mis datos (Gradient)",
-          data: labels.map(() => faker.datatype.number({ min: 0, max: 10 })),
+          data: labels.map(() => faker.number.int({ min: 0, max: 10 })),
           tension: 0.3,
           backgroundColor: createGradientColor(),
         },

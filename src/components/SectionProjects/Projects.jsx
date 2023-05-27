@@ -3,13 +3,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import Tags from "./Tags";
 import { BlogPosts } from "../../assets/data";
 
-console.log(BlogPosts);
+// console.log(BlogPosts);
 
 export default function Blog() {
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeTopic, setActiveTopic] = useState("All");
-  console.log(filtered.map((item) => item.element));
+  // console.log(filtered.map((item) => item.element));
 
   useEffect(() => {
     fecthData();

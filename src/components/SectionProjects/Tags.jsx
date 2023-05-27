@@ -7,7 +7,7 @@ export default function Tags({
   activeTopic,
   setActiveTopic,
 }) {
-  console.log(popular);
+  // console.log(popular);
 
   useEffect(() => {
     if (activeTopic === "All") {
@@ -15,7 +15,7 @@ export default function Tags({
       return;
     }
     const filtered = popular.filter((item) => item.topic.includes(activeTopic));
-    console.log(filtered);
+    // console.log(filtered);
     setFiltered(filtered);
   }, [activeTopic, popular, setFiltered]);
 

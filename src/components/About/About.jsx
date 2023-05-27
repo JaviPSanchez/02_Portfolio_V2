@@ -3,7 +3,7 @@ import { Front } from "./Front";
 import { Back } from "./Back";
 import { DataStack } from "./DataStack";
 import DoughnutChart from "../Charts/Doughnut";
-import MultiVerticalBar from "../Charts/MultiVerticalBar";
+// import MultiVerticalBar from "../Charts/MultiVerticalBar";
 
 export const About = () => {
   return (
@@ -21,11 +21,11 @@ export const About = () => {
           <Back />
         </div>
         <DataStack />
-        <div className="row-start-3 row-end-6 col-start-1 col-end-4 bg-white dark:bg-dark2">
+        {/* <div className="row-start-3 row-end-6 col-start-1 col-end-4 bg-white dark:bg-dark2">
           <DoughnutChart />
-        </div>
+        </div> */}
         <div className="row-start-3 row-end-6 col-start-4 col-end-10 bg-white dark:bg-dark2">
-          <div className="w-full h-full p-10">{/* <MultiVerticalBar /> */}</div>
+          {/* <div className="w-full h-full p-10"><MultiVerticalBar /> </div> */}
         </div>
       </div>
     </motion.div>
