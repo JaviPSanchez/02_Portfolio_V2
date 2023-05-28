@@ -107,7 +107,7 @@ const Content = () => {
       {errors.message && touched.message && (
         <p className="text-error text-xl self-start ml-2">{errors.message}</p>
       )}
-      <Button text={"Submit"} />
+      <Button text="Submit" />
     </form>
   );
 };

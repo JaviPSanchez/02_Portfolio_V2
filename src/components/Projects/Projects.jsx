@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Tags from "./Tags";
-import { BlogPosts } from "../../assets/data";
+import { BlogPosts } from "../../assets/data/data";
 
 // console.log(BlogPosts);
 
@@ -23,7 +23,7 @@ export default function Blog() {
 
   return (
     <motion.div
-      className="h-5/6 mx-10 flex flex-col justify-center items-center"
+      className="w-2/3 h-screen flex flex-col justify-center items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}

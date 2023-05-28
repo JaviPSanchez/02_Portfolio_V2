@@ -1,4 +1,4 @@
-import { badgesFront } from "../../assets/data";
+import { badgesFront } from "../../assets/data/data";
 import Area from "../Charts/Area";
 
 export const Front = () => {

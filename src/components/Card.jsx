@@ -1,4 +1,4 @@
-import Tags from "./SectionProjects/Tags";
+import Tags from "./Projects/Tags";
 import { ButtonNormal } from "./Button";
 
 export default function Example({ image, title }) {

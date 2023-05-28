@@ -23,8 +23,8 @@ import {
   sql,
   python,
   aws,
-} from "../../public/images/index";
-import Card from "../components/Card";
+} from "../images/index";
+import Card from "../../components/Card";
 
 const badgesFront = [
   {
@@ -35,6 +35,7 @@ const badgesFront = [
     id: 2,
     image: <img src={js} alt="css" />,
   },
+
   {
     id: 3,
     image: <img src={js} alt="js" />,

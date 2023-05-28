@@ -1,14 +1,16 @@
 import Planet from "../Planet/Planet";
 import { Canvas } from "@react-three/fiber";
+import { Button } from "../Button";
+
 export const Header = () => {
   return (
-    <section className="h-5/6">
-      <div className="grid grid-cols-2 gap-24 items-center h-full max-w-screen-xl mx-auto px-8 py-8">
+    <section className="h-screen">
+      <div className="h-full grid grid-cols-2 gap-6 items-center p-16">
         <div className="w-full z-5">
-          <h1 className="text-6xl">
-            <span className="highlight-header">Digital Developer</span>
-          </h1>
-          <p className="hero-description">
+          <span className="bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] mt-12 font-Rubik text-center font-bold uppercase text-transparent text-8xl">
+            Digital Developer
+          </span>
+          <p className="font-Rubik text-3xl text-black">
             Hi, I`m glad to see you here. My name is Javier, and I am a Digital
             Developer. I work with various technologies and programming
             languages, gaining more than 5 years of experience in digital
@@ -16,16 +18,7 @@ export const Header = () => {
             hold the position of CTO in the automotive sector while also
             expanding my knowledge in Software Development.
           </p>
-          {/* <a
-            target="_blank"
-            href="https://www.linkedin.com/in/javierpalominosanchez/"
-            className="btn btn--white margin-right-sm"
-          >
-            Donwload CV
-          </a>
-          <a href="#projects" className="btn btn--outline btn--scroll-to-5">
-            View projects &darr;
-          </a> */}
+          <Button text="Projects" />
         </div>
         <Canvas className="w-full h-full">
           <Planet />

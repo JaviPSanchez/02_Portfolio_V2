@@ -1,4 +1,4 @@
-import { WelcomeCards } from "../assets/data";
+import { WelcomeCards } from "../assets/data/data";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
