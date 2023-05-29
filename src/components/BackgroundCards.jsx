@@ -1,7 +1,7 @@
 import { WelcomeCards } from "../assets/data/data";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import { cardsWelcome } from "../utils/motion";
 export const BackgroundCards = () => {
   return (
     <div className="max-w-[1200px] md:max-w-[900px] absolute z-20 top-[60%] xs:top-[65%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
@@ -11,9 +11,9 @@ export const BackgroundCards = () => {
             <>
               <Link to={"/home"}>
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0, transition: { duration: 0.2 } }}
+                  variants={cardsWelcome}
+                  initial="hidden"
+                  whileInView="show"
                   key={item.id}
                   className="mirror-effect hover:bg-white hover:scale-105 transition-all w-full md:max-w-[20rem] sm:max-w-[20rem] xxs:max-w-[16rem] md:h-[30rem] sm:h-[26rem] xs:h-[20rem] flex flex-col justify-start items-center font-Rubik text-black text-center"
                 >

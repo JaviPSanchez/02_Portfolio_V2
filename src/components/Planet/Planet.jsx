@@ -12,7 +12,7 @@ varying vec3 vertexNormal;
 
 void main() {
   vertexNormal = normalize(normalMatrix * normal);
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.65);
 }`;
 
 const atmosphereFragmentShader = `
@@ -31,23 +31,23 @@ export default function Planet() {
   const cloudsRef = useRef();
   const earthRef = useRef();
 
-  // const handleMouseMove = (event) => {
-  //   const mouse = {
-  //     x: (event.clientX / window.innerWidth) * 2 - 1,
-  //     y: -(event.clientY / window.innerHeight) * 2 + 1,
-  //   };
-  //   gsap.to(earthRef.current.rotation, {
-  //     x: -mouse.y * 0.3,
-  //     y: mouse.x * 0.3,
-  //     duration: 2,
-  //   });
-  // };
-
   useFrame(({ clock }) => {
     const elapsedTime = clock.getElapsedTime();
     // earthRef.current.rotation.y = elapsedTime / 6;
     cloudsRef.current.rotation.y = elapsedTime / 20;
   });
+
+  // Arc Line coordinates
+  const arcLinePositions = [];
+  const radius = 2.2;
+  const segments = 100;
+  const height = 3.03; // Adjust the height of the arc lines
+  for (let i = 0; i <= segments; i++) {
+    const theta = (i / segments) * Math.PI * 2;
+    const x = radius * Math.cos(theta);
+    const y = radius * Math.sin(theta);
+    arcLinePositions.push(x, y, height); // Use the adjusted height
+  }
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function Planet() {
       <pointLight color="#FFFFFF" position={[-1, 0, 10]} intensity={1.5} />
 
       <mesh ref={earthRef} position={[0, 0, 3]}>
-        <sphereGeometry args={[1, 32, 32]} />
+        <sphereGeometry args={[1, 20, 20]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial
           map={colorMap}
@@ -89,6 +89,18 @@ export default function Planet() {
           opacity={0.9}
         />
       </mesh>
+
+      <line>
+        <bufferGeometry attach="geometry">
+          <bufferAttribute
+            attachObject={["attributes", "position"]}
+            count={arcLinePositions.length / 3}
+            array={new Float32Array(arcLinePositions)}
+            itemSize={3}
+          />
+        </bufferGeometry>
+        <lineBasicMaterial color="white" />
+      </line>
     </>
   );
 }

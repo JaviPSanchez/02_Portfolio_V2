@@ -15,6 +15,25 @@ module.exports = {
         // Complex site-specific column configuration
         footer: "200px minmax(900px, 1fr) 100px",
       },
+      fontSize: {
+        "4xl": [
+          "2rem",
+          {
+            lineHeight: "2.8rem",
+            letterSpacing: "-0.01em",
+            fontWeight: "400",
+          },
+        ],
+        "12xl": [
+          "12rem",
+          {
+            lineHeight: "10.25rem",
+            letterSpacing: "-0.02em",
+            fontWeight: "700",
+          },
+        ],
+      },
+
       colors: {
         white: "#FFFFFF",
         grey1: "#FAFAFA",
@@ -41,19 +60,19 @@ module.exports = {
     screens: {
       /*
       'sm': '320px',
-      // => @media (min-width: 640px) { ... }
+      => @media (min-width: 640px) { ... }
 
       'md': '768px',
-      // => @media (min-width: 768px) { ... }
+      => @media (min-width: 768px) { ... }
 
       'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
+      => @media (min-width: 1024px) { ... }
 
       'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
+      => @media (min-width: 1280px) { ... }
 
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+      => @media (min-width: 1536px) { ... }
       */
       lg: { max: "1800px" },
       md: { max: "1200px" },
