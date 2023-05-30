@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, createContext } from "react";
 
 const getInitialTheme = () => {
   if (typeof window !== "undefined" && window.localStorage) {
@@ -13,10 +13,10 @@ const getInitialTheme = () => {
   return "light";
 };
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ initialTheme, children }) => {
-  const [theme, setTheme] = React.useState(getInitialTheme);
+  const [theme, setTheme] = useState(getInitialTheme);
 
   const checkTheme = (existing) => {
     const root = window.document.documentElement;
@@ -32,7 +32,7 @@ export const ThemeProvider = ({ initialTheme, children }) => {
     checkTheme(initialTheme);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     checkTheme(theme);
   }, [theme]);
 

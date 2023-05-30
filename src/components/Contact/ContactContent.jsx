@@ -4,7 +4,7 @@ import { collection, addDoc, Timestamp } from "firebase/firestore";
 import { Button } from "../Button";
 import { useFormik } from "formik";
 import basicSchema from "../../schemas";
-import styles from "../../styles/Global";
+import styles from "../../styles";
 
 const onSubmit = async (values, actions) => {
   console.log(values);

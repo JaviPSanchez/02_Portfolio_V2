@@ -25,6 +25,7 @@ import firebase from "./firebase.png";
 import mongo from "./mongo.png";
 import sql from "./sql.png";
 import python from "./python.png";
+import hero_background from "./hero_background_v1.png";
 
 import aws from "./aws.png";
 import azure from "./azure.png";
@@ -61,4 +62,5 @@ export {
   aws,
   azure,
   powerbi,
+  hero_background,
 };

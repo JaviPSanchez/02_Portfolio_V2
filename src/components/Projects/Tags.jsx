@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import styles from "../../styles/Global";
+import styles from "../../styles";
 
 export default function Tags({
   popular,

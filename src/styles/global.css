@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  /* font-family: "Eudoxus Sans", sans-serif; */
+  scroll-behavior: smooth;
 }
 html,
 body,
@@ -13,19 +16,36 @@ body,
   font-size: 62.5%; /*1 rem = 10px; 10px/16px = 0.625 = 62.5% (browser default) = 62.5*/
   width: 100vw;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   user-select: none;
   overflow-x: hidden;
-  background-color: hsla(3, 8%, 95%, 1);
-  background-image: radial-gradient(
-      at 25% 12%,
-      rgb(231, 231, 235) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 80% 47%, hsla(1, 0%, 83%, 1) 0px, transparent 50%),
-    radial-gradient(at 29% 29%, hsla(0, 0%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 95% 54%, hsla(192, 5%, 78%, 1) 0px, transparent 50%);
+  background-color: #1a232e;
+  background-image: radial-gradient(at 25% 12%, #363638 0px, transparent 50%),
+    radial-gradient(at 80% 47%, rgb(17, 17, 17) 0px, transparent 50%),
+    radial-gradient(at 29% 29%, rgb(43, 40, 40) 0px, transparent 50%),
+    radial-gradient(at 95% 54%, rgb(10, 14, 80) 0px, transparent 50%);
+
+  /* filter: blur(125px); */
+}
+
+.border-first {
+  border-radius: 30% 70% 70% 30% / 30% 19% 81% 70%;
+}
+.border-second {
+  border-radius: 78% 22% 84% 16% / 48% 81% 19% 52%;
+}
+
+.gradient-01 {
+  background-image: linear-gradient(
+    270deg,
+    #d123e1 0%,
+    hsl(284, 70%, 73%) 26%,
+    hsl(257deg 70% 86%) 39%,
+    hsl(202deg 92% 90%) 50%,
+    hsl(215deg 77% 81%) 61%,
+    hsl(221deg 73% 70%) 74%,
+    hsl(220deg 76% 51%) 100%
+  );
+  filter: blur(125px);
 }
 
 .card--item-1 {

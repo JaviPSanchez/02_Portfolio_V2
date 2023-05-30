@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Contact from "../components/Contact/Contact";
 import Projects from "../components/Projects/Projects";
 import { Footer } from "../components/Footer/Footer";
+import { Techstack } from "../components/Techstack/Techstack";
 import { About } from "../components/About/About";
 import { Header } from "../components/Header/Header";
 
@@ -15,6 +16,7 @@ export default function Home() {
     >
       <Header />
       <About />
+      <Techstack />
       <Projects />
       <Contact />
       <Footer />

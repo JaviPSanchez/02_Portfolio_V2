@@ -4,6 +4,7 @@ import EarthDayMap from "../../assets/images/8k_earth_daymap.jpg";
 import EarthNormalMap from "../../assets/images/8k_earth_normal_map.jpg";
 import EarthSpecularMap from "../../assets/images/8k_earth_specular_map.jpg";
 import EarthCloudsMap from "../../assets/images/8k_earth_clouds.jpg";
+import EarthTest from "../../assets/images/test.png";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 
@@ -36,18 +37,6 @@ export default function Planet() {
     // earthRef.current.rotation.y = elapsedTime / 6;
     cloudsRef.current.rotation.y = elapsedTime / 20;
   });
-
-  // Arc Line coordinates
-  const arcLinePositions = [];
-  const radius = 2.2;
-  const segments = 100;
-  const height = 3.03; // Adjust the height of the arc lines
-  for (let i = 0; i <= segments; i++) {
-    const theta = (i / segments) * Math.PI * 2;
-    const x = radius * Math.cos(theta);
-    const y = radius * Math.sin(theta);
-    arcLinePositions.push(x, y, height); // Use the adjusted height
-  }
 
   return (
     <>
@@ -89,18 +78,6 @@ export default function Planet() {
           opacity={0.9}
         />
       </mesh>
-
-      <line>
-        <bufferGeometry attach="geometry">
-          <bufferAttribute
-            attachObject={["attributes", "position"]}
-            count={arcLinePositions.length / 3}
-            array={new Float32Array(arcLinePositions)}
-            itemSize={3}
-          />
-        </bufferGeometry>
-        <lineBasicMaterial color="white" />
-      </line>
     </>
   );
 }
