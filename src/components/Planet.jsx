@@ -1,10 +1,9 @@
 import { useRef } from "react";
 import { useFrame, useLoader } from "@react-three/fiber";
-import EarthDayMap from "../../assets/images/8k_earth_daymap.jpg";
-import EarthNormalMap from "../../assets/images/8k_earth_normal_map.jpg";
-import EarthSpecularMap from "../../assets/images/8k_earth_specular_map.jpg";
-import EarthCloudsMap from "../../assets/images/8k_earth_clouds.jpg";
-import EarthTest from "../../assets/images/test.png";
+import EarthDayMap from "@images/8k_earth_daymap.jpg";
+import EarthNormalMap from "@images/8k_earth_normal_map.jpg";
+import EarthSpecularMap from "@images/8k_earth_specular_map.jpg";
+import EarthCloudsMap from "@images/8k_earth_clouds.jpg";
 import { TextureLoader } from "three";
 import * as THREE from "three";
 

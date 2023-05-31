@@ -1,5 +1,4 @@
-import Tags from "./Projects/Tags";
-import { ButtonNormal } from "./Button";
+import { Button } from "@components";
 
 export default function Example({ image, title }) {
   return (
@@ -11,11 +10,10 @@ export default function Example({ image, title }) {
             src={image}
             alt="picture1"
           />
-          {/* <Tags tagTitle={"Html"} /> */}
         </div>
       </div>
       <div className="w-fit mb-10">
-        <ButtonNormal text={title} />
+        <Button text={title} />
       </div>
     </div>
   );

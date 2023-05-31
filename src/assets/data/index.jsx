@@ -4,29 +4,23 @@ import {
   sass,
   tail,
   three,
-  web1,
-  web2,
-  web3,
-  web4,
   data1,
   data2,
-  data3,
   data4,
   front,
   software,
   science,
   node,
-  fastAPI,
   postgre,
   firebase,
   mongo,
   sql,
   python,
   aws,
-} from "../images/index";
-import Card from "../../components/Card";
+} from "@images";
+import { Card } from "@components";
 
-const badgesFront = [
+const BadgesFront = [
   {
     id: 1,
     image: <img src={js} alt="html" />,
@@ -57,7 +51,7 @@ const badgesFront = [
     image: <img src={three} alt="three" />,
   },
 ];
-const badgesBack = [
+const BadgesBack = [
   {
     id: 1,
     image: <img src={node} alt="node" />,
@@ -68,7 +62,7 @@ const badgesBack = [
   },
   {
     id: 3,
-    image: <img src={fastAPI} alt="fastAPI" />,
+    image: <img src={node} alt="fastAPI" />,
   },
   {
     id: 4,
@@ -83,7 +77,7 @@ const badgesBack = [
     image: <img src={mongo} alt="mongo" />,
   },
 ];
-const badgesData = [
+const BadgesData = [
   {
     id: 1,
     image: <img src={sql} alt="sql" />,
@@ -170,4 +164,4 @@ const WelcomeCards = [
   },
 ];
 
-export { badgesFront, badgesBack, badgesData, BlogPosts, WelcomeCards };
+export { BadgesFront, BadgesBack, BadgesData, BlogPosts, WelcomeCards };

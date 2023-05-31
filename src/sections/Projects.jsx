@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Tags from "./Tags";
-import { BlogPosts } from "../../assets/data/data";
+import { BlogPosts } from "@data";
+import { Tags } from "@components";
 
 // console.log(BlogPosts);
 
-export default function Blog() {
+const Blog = () => {
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [activeTopic, setActiveTopic] = useState("All");
@@ -61,4 +61,6 @@ export default function Blog() {
       </div>
     </motion.div>
   );
-}
+};
+
+export default Blog;

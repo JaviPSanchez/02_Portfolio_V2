@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Content from "./ContactContent";
+import { ContactContent } from "@components";
 
 export default function Contact() {
   return (
@@ -10,7 +10,7 @@ export default function Contact() {
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
       <div className="flex flex-col justify-center items-center bg-grey4 h-screen w-1/3 min-w-[600px] md:min-w-[500px] my-10 rounded-xl shadow-xl">
-        <Content />
+        <ContactContent />
       </div>
     </motion.div>
   );

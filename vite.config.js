@@ -6,8 +6,39 @@ import macros from "babel-plugin-macros";
 export default defineConfig({
   plugins: [react(), macros()],
   resolve: {
-    alias: {
-      "@components": "./components/",
-    },
+    alias: [
+      {
+        find: "@images",
+        replacement: "/src/assets/images",
+      },
+      {
+        find: "@data",
+        replacement: "/src/assets/data",
+      },
+      {
+        find: "@components",
+        replacement: "/src/components",
+      },
+      {
+        find: "@pages",
+        replacement: "/src/pages",
+      },
+      {
+        find: "@sections",
+        replacement: "/src/sections",
+      },
+      {
+        find: "@utils",
+        replacement: "/src/utils",
+      },
+      {
+        find: "@schemas",
+        replacement: "/src/schemas",
+      },
+      {
+        find: "@styles",
+        replacement: "/src/styles",
+      },
+    ],
   },
 });

@@ -1,4 +1,4 @@
-export const BackgroundText = () => {
+const BackgroundText = () => {
   return (
     <div className="w-2/3 absolute top-[25%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex flex-col justify-center items-center">
       <h1 className="font-Rubik text-3xl font-normal text-black text-center">
@@ -10,3 +10,5 @@ export const BackgroundText = () => {
     </div>
   );
 };
+
+export default BackgroundText;

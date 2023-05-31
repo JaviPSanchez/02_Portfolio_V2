@@ -18,18 +18,12 @@ import front from "./front.png";
 import software from "./software.png";
 import science from "./science.png";
 import node from "./node.png";
-import flask from "./flask.png";
-import fastAPI from "./fastAPI.png";
 import postgre from "./postgre.png";
 import firebase from "./firebase.png";
 import mongo from "./mongo.png";
 import sql from "./sql.png";
 import python from "./python.png";
-import hero_background from "./hero_background_v1.png";
-
 import aws from "./aws.png";
-import azure from "./azure.png";
-import powerbi from "./powerbi.png";
 
 export {
   html,
@@ -52,15 +46,10 @@ export {
   software,
   science,
   node,
-  flask,
-  fastAPI,
   postgre,
   firebase,
   mongo,
   sql,
   python,
   aws,
-  azure,
-  powerbi,
-  hero_background,
 };

@@ -1,4 +1,4 @@
-export const About = () => {
+const About = () => {
   return (
     <div className="w-2/3 max-w-6xl ml-40">
       <h2 className="text-3xl font-bold font-Rubik text-center">About</h2>
@@ -13,3 +13,5 @@ export const About = () => {
     </div>
   );
 };
+
+export default About;

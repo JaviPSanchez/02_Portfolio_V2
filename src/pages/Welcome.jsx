@@ -1,6 +1,4 @@
-import BackGround from "../components/Background";
-import { BackgroundCards } from "../components/BackgroundCards";
-import { BackgroundText } from "../components/BackgroundText";
+import { BackgroundCards, BackgroundText, Background } from "@components";
 import { motion } from "framer-motion";
 
 export const Welcome = () => {
@@ -11,7 +9,7 @@ export const Welcome = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
     >
-      <BackGround />
+      <Background />
       <BackgroundText />
       <BackgroundCards />
     </motion.div>

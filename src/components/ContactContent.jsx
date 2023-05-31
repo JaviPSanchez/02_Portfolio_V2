@@ -1,10 +1,10 @@
 // import React, { useState } from "react";
-import { db } from "../../utils/firebase";
+import { db } from "@utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { Button } from "../Button";
+import { Button } from "@components";
 import { useFormik } from "formik";
-import basicSchema from "../../schemas";
-import styles from "../../styles";
+import basicSchema from "@schemas";
+import styles from "@styles";
 
 const onSubmit = async (values, actions) => {
   console.log(values);

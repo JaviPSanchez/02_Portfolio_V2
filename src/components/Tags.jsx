@@ -1,12 +1,7 @@
 import { useEffect } from "react";
-import styles from "../../styles";
+import styles from "@styles";
 
-export default function Tags({
-  popular,
-  setFiltered,
-  activeTopic,
-  setActiveTopic,
-}) {
+const Tags = ({ popular, setFiltered, activeTopic, setActiveTopic }) => {
   // console.log(popular);
 
   useEffect(() => {
@@ -73,4 +68,6 @@ export default function Tags({
       </button>
     </div>
   );
-}
+};
+
+export default Tags;

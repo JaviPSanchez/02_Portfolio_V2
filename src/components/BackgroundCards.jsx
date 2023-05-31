@@ -1,8 +1,9 @@
-import { WelcomeCards } from "../assets/data/data";
+import { WelcomeCards } from "@data";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { cardsWelcome } from "../utils/motion";
-export const BackgroundCards = () => {
+import { cardsWelcome } from "@utils/motion";
+
+const BackgroundCards = () => {
   return (
     <div className="max-w-[1200px] md:max-w-[900px] absolute z-20 top-[60%] xs:top-[65%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
       <div className="w-[1200px] md:max-w-[900px] sm:max-w-[700px] xs:max-w-[450px] xxs:max-w-[390px] flex flex-wrap justify-center child:m-10 md:child:m-10 sm:child:m-4 child:p-10 md:child:p-2">
@@ -40,3 +41,5 @@ export const BackgroundCards = () => {
     </div>
   );
 };
+
+export default BackgroundCards;

@@ -1,7 +1,7 @@
-import { badgesBack } from "../../assets/data/data";
-import Area from "../Charts/Area";
+import { BadgesBack } from "@data";
+import { Area } from "@components";
 
-export const Back = () => {
+const BackStack = () => {
   return (
     <div className="card--item-2 w-full flex flex-col just justify-start items-center hover:scale-105 duration-300">
       <div className="w-full flex justify-between p-2">
@@ -10,7 +10,7 @@ export const Back = () => {
         </h1>
       </div>
       <div className="py-2 px-6 w-full h-full flex flex-wrap justify-start items-center child:m-2">
-        {badgesBack.map((items) => {
+        {BadgesBack.map((items) => {
           return (
             <div
               key={items.id}
@@ -27,3 +27,5 @@ export const Back = () => {
     </div>
   );
 };
+
+export default BackStack;

@@ -1,7 +1,7 @@
-import { badgesFront } from "../../assets/data/data";
-import Area from "../Charts/Area";
+import { BadgesFront } from "@data";
+import { Area } from "@components";
 
-export const Front = () => {
+const FrontStack = () => {
   return (
     <div className="card--item-1 w-full flex flex-col just justify-start items-center hover:scale-105 duration-300">
       <div className="w-full flex justify-between p-2">
@@ -10,7 +10,7 @@ export const Front = () => {
         </h1>
       </div>
       <div className="py-2 px-6 w-full h-full flex flex-wrap justify-start items-center child:m-2">
-        {badgesFront.map((items) => {
+        {BadgesFront.map((items) => {
           return (
             <div
               key={items.id}
@@ -27,3 +27,5 @@ export const Front = () => {
     </div>
   );
 };
+
+export default FrontStack;

@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
-import { Front } from "./FrontStack";
-import { Back } from "./BackStack";
-import { DataStack } from "./DataStack";
+import { FrontStack, BackStack, DataStack } from "@components";
 
-export const Techstack = () => {
+const Techstack = () => {
   return (
     <motion.div
       className="h-full w-2/3 flex justify-center items-center m-20"
@@ -13,10 +11,10 @@ export const Techstack = () => {
     >
       <div className="grid grid-rows-3 grid-cols-3 gap-6 w-full h-full child:rounded-2xl drop-shadow-md">
         <div className="row-start-1 row-end-2 col-start-1 col-end-2 bg-white dark:bg-dark2 overflow-hidden">
-          <Front />
+          <FrontStack />
         </div>
         <div className="row-start-2 row-end-3 col-start-3 col-end-4 bg-white dark:bg-dark2 overflow-hidden">
-          <Back />
+          <BackStack />
         </div>
         <div className="row-start-3 row-end-4 col-start-1 col-end-2 bg-white dark:bg-dark2 overflow-hidden">
           <DataStack />
@@ -25,3 +23,5 @@ export const Techstack = () => {
     </motion.div>
   );
 };
+
+export default Techstack;
