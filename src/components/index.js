@@ -10,6 +10,8 @@ import Card from "@components/Card";
 import ContactContent from "@components/ContactContent";
 import Planet from "@components/Planet";
 import Tags from "@components/Tags";
+import { TypingText, TitleText } from "@components/CustomText";
+import Scene from "@components/Scene";
 
 export {
   Area,
@@ -25,4 +27,7 @@ export {
   Planet,
   DataStack,
   Tags,
+  TypingText,
+  TitleText,
+  Scene,
 };

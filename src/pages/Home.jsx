@@ -1,5 +1,13 @@
 import { motion } from "framer-motion";
-import { Hero, Footer, About, Techstack, Contact, Projects } from "@sections";
+import {
+  Hero,
+  Footer,
+  About,
+  Techstack,
+  Contact,
+  Blog,
+  Projects,
+} from "@sections";
 
 export default function Home() {
   return (
@@ -13,6 +21,7 @@ export default function Home() {
       <About />
       <Techstack />
       <Projects />
+      <Blog />
       <Contact />
       <Footer />
     </motion.div>
