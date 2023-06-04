@@ -8,6 +8,10 @@ export default defineConfig({
   resolve: {
     alias: [
       {
+        find: "@svg",
+        replacement: "/public/svg",
+      },
+      {
         find: "@images",
         replacement: "/src/assets/images",
       },

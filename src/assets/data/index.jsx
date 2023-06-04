@@ -18,6 +18,7 @@ import {
   python,
   aws,
 } from "@images";
+import { GitHub } from "@svg";
 import { Card } from "@components";
 
 const BadgesFront = [
@@ -164,4 +165,30 @@ const WelcomeCards = [
   },
 ];
 
-export { BadgesFront, BadgesBack, BadgesData, BlogPosts, WelcomeCards };
+const Socials = [
+  // {
+  //   name: "twitter",
+  //   url: "/twitter.svg",
+  // },
+  // {
+  //   name: "linkedin",
+  //   url: "/linkedin.svg",
+  // },
+  {
+    name: "Github",
+    url: <GitHub fillColor={"#FFFFFF"} />,
+  },
+  // {
+  //   name: "facebook",
+  //   url: "/facebook.svg",
+  // },
+];
+
+export {
+  BadgesFront,
+  BadgesBack,
+  BadgesData,
+  BlogPosts,
+  WelcomeCards,
+  Socials,
+};

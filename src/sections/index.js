@@ -1,9 +1,23 @@
+import Navbar from "@sections/Navbar";
 import Hero from "./Hero";
 import About from "./About";
 import Contact from "./Contact";
-import Blog from "./Blog";
+import LatestArticles from "./LatestArticles";
 import Projects from "./Projects";
-import Techstack from "./Techstack";
 import Footer from "./Footer";
+import SoftwareDev from "./SoftwareDev";
+import DataDev from "./DataDev";
+import DigitalDev from "./DigitalDev";
 
-export { Hero, About, Contact, Projects, Blog, Techstack, Footer };
+export {
+  Navbar,
+  Hero,
+  About,
+  Contact,
+  Projects,
+  LatestArticles,
+  Footer,
+  SoftwareDev,
+  DataDev,
+  DigitalDev,
+};

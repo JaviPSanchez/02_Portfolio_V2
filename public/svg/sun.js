@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function sun({ fillColor }) {
   return (
     <svg

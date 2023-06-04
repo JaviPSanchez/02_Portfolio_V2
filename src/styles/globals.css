@@ -7,7 +7,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Eudoxus Sans", sans-serif; */
   scroll-behavior: smooth;
 }
 html,
@@ -23,8 +22,6 @@ body,
     radial-gradient(at 80% 47%, rgb(17, 17, 17) 0px, transparent 50%),
     radial-gradient(at 29% 29%, rgb(43, 40, 40) 0px, transparent 50%),
     radial-gradient(at 95% 54%, rgb(10, 14, 80) 0px, transparent 50%);
-
-  /* filter: blur(125px); */
 }
 
 .border-first {
@@ -54,9 +51,51 @@ body,
   height: 438px;
   top: 0px;
   right: 0px;
-
   background: #7aebfb;
   filter: blur(190px);
+}
+
+.gradient-03 {
+  position: absolute;
+  width: 404px;
+  height: 800px;
+  left: 20%;
+  top: 5%;
+
+  background: rgba(149, 66, 232, 0.35);
+  filter: blur(175px);
+  transform: rotate(-114.2deg);
+}
+
+.gradient-04 {
+  position: absolute;
+  width: 304px;
+  height: 100vh;
+  left: 30%;
+  top: 10%;
+
+  background: rgba(45, 72, 152, 0.75);
+  filter: blur(200px);
+  transform: rotate(-53.13deg);
+}
+
+.gradient-05 {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.footer-gradient {
+  position: absolute;
+  width: 500px;
+  height: 100px;
+  left: 37%;
+  bottom: 0;
+
+  background: #65c4fa;
+  filter: blur(150px);
 }
 
 .card--item-1 {

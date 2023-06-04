@@ -1,7 +1,7 @@
 import { BackgroundCards, BackgroundText, Background } from "@components";
 import { motion } from "framer-motion";
 
-export const Welcome = () => {
+const Welcome = () => {
   return (
     <motion.div
       className="h-full"
@@ -15,3 +15,5 @@ export const Welcome = () => {
     </motion.div>
   );
 };
+
+export default Welcome;

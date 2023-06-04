@@ -10,7 +10,7 @@ const BackgroundCards = () => {
         {WelcomeCards.map((item) => {
           return (
             <>
-              <Link to={"/home"}>
+              <Link to="/home">
                 <motion.div
                   variants={cardsWelcome}
                   initial="hidden"

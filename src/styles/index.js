@@ -1,10 +1,11 @@
 const styles = {
-  innerWidth: "2xl:max-w-[1280px] w-full",
+  innerWidth: "w-full max-w-[1480px] mx-auto",
   flexCenter: "flex justify-center items-center",
-  title:
-    "absolute z-50 w-fit p-4 bg-[#e3ac1b] -top-10 -translate-x-[50%] left-[50%] text-white font-Rubik uppercase text-3xl text-white shadow-xl rounded-xl",
-  tag: "font-Rubik skew-y-[-3deg] bg-grey5 text-black text-center absolute py-1 px-2 -bottom-5 left-2 drop-shadow-md border-solid border border-black uppercase text-xl",
+  yPaddings: "sm:py-16 xs:py-8 py-12",
+  xPaddings: "sm:px-16 px-6",
   paddings: "sm:p-16 xs:p-8 px-6 py-12",
+
+  tag: "font-Rubik skew-y-[-3deg] bg-grey5 text-black text-center absolute py-1 px-2 -bottom-5 left-2 drop-shadow-md border-solid border border-black uppercase text-xl",
   textareaCorrect:
     "resize-none h-[250px] text-2xl w-full mb-4 p-4 rounded-xl border-2 border-grey4 focus:placeholder-gray-200 focus:bg-white focus:border-grey4 focus:outline-none",
   textareaError:
