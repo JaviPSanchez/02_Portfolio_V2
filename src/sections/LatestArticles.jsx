@@ -3,8 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { BlogPosts } from "@data";
 import { Tags } from "@components";
 
-// console.log(BlogPosts);
-
 const LatestArticles = () => {
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
@@ -22,7 +20,7 @@ const LatestArticles = () => {
 
   return (
     <motion.section
-      className="w-5/6 h-screen flex flex-col justify-center items-center mx-auto"
+      className="w-5/6 h-screen flex flex-col justify-center items-center mx-auto mt-40"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1 } }}
@@ -47,10 +45,6 @@ const LatestArticles = () => {
         </div>
         <div className="flex flex-col justify-start items-left w-1/3 h-full ml-10 child:p-4">
           <div className="flex flex-col justify-center items-start">
-            {/* <h1 className="font-Rubik font-bold text-6xl text-white mt-6">
-              Explore tags
-            </h1> */}
-
             <Tags
               popular={popular}
               setFiltered={setFiltered}

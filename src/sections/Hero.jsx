@@ -2,7 +2,6 @@ import { Planet } from "@components";
 import { Canvas } from "@react-three/fiber";
 import { motion } from "framer-motion";
 import { slideIn, staggerContainer, textVariant } from "@utils/motion";
-import { Scene } from "@components";
 
 const Hero = () => {
   return (
@@ -38,9 +37,8 @@ const Hero = () => {
         </div>
       </motion.div>
 
-      <Canvas camera={{ position: [0, 0, 200] }} className="w-full h-full">
-        {/* <Planet /> */}
-        <Scene />
+      <Canvas camera={{ position: [0, 0, 15] }} className="w-full h-full">
+        <Planet />
       </Canvas>
     </section>
   );

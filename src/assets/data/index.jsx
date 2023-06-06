@@ -184,6 +184,21 @@ const Socials = [
   // },
 ];
 
+const NavLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+];
+
 export {
   BadgesFront,
   BadgesBack,
@@ -191,4 +206,5 @@ export {
   BlogPosts,
   WelcomeCards,
   Socials,
+  NavLinks,
 };

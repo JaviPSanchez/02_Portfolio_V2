@@ -8,10 +8,10 @@ import DataStack from "@components/DataStack";
 import { Button, ButtonNormal } from "@components/Button";
 import Card from "@components/Card";
 import ContactContent from "@components/ContactContent";
-import Planet from "@components/Planet";
+// import Planet from "@components/Planet";
 import Tags from "@components/Tags";
 import { TypingText, TitleText } from "@components/CustomText";
-import Scene from "@components/Scene";
+import Planet from "@components/PlanetEarth";
 
 export {
   Area,
@@ -24,10 +24,10 @@ export {
   Card,
   ContactContent,
   FrontStack,
-  Planet,
+  // Planet,
   DataStack,
   Tags,
   TypingText,
   TitleText,
-  Scene,
+  Planet,
 };

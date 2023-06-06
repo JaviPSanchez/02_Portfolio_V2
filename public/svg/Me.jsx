@@ -1,9 +1,9 @@
-export default function Me({ fillColor }) {
+export default function Me({ fillColor, width, height }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24"
-      width="24"
+      width={width}
+      height={height}
       viewBox="0 0 48 48"
       fill="none"
     >
