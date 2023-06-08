@@ -7,7 +7,7 @@ import { Sun, Moon, Me, Bars, Close } from "@svg";
 import { NavLinks } from "@data";
 
 export default function Navbar() {
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState(true);
   const [toggle, setToggle] = useState(false);
   return (
     <motion.nav
@@ -46,29 +46,52 @@ export default function Navbar() {
             </li>
           ))}
         </div>
-        <div className="flex justify-center items-center hidden sm:inline-block">
-          {toggle ? (
-            <Bars
-              fillColor="#FFFFFF"
-              width="3rem"
-              height="3rem"
-              onClick={() => setToggle(!toggle)}
-            />
-          ) : (
-            <Close
-              fillColor="#FFFFFF"
-              width="6rem"
-              height="6rem"
-              onClick={() => setToggle(!toggle)}
-            />
-          )}
+        <div className="flex flex-row gap-10">
+          <div
+            className="flex justify-center items-center hidden sm:flex"
+            onClick={() => setToggle(!toggle)}
+          >
+            {!toggle ? (
+              <Bars fillColor="#FFFFFF" width="3rem" height="3rem" />
+            ) : (
+              <Close fillColor="#FFFFFF" width="3rem" height="3rem" />
+            )}
+            <div
+              className={`${
+                !toggle ? "hidden" : "flex"
+              } flex-col p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl gap-4`}
+            >
+              <Link to="/blog">
+                <h2 className="font-Rubik font-extrabold text-5xl hover:text-white text-dark2">
+                  Blog
+                </h2>
+              </Link>
+              <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
+                {NavLinks.map((nav) => (
+                  <li
+                    key={nav.id}
+                    className={`${
+                      active === nav.title ? "text-white" : "text-dark2"
+                    } hover:text-white font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
+                    onClick={() => setActive(nav.title)}
+                  >
+                    <a href={`#${nav.id}`}>{nav.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div
+            className="cursor-pointer transition-all"
+            onClick={() => setActive(!active)}
+          >
+            {active ? (
+              <Sun fillColor="#FFFFFF" width="5rem" height="5rem" />
+            ) : (
+              <Moon fillColor="#FFFFFF" width="5rem" height="5rem" />
+            )}
+          </div>
         </div>
-
-        {active ? (
-          <Sun fillColor="#FFFFFF" width="6rem" height="6rem" />
-        ) : (
-          <Moon fillColor="#FFFFFF" width="6rem" height="6rem" />
-        )}
       </div>
     </motion.nav>
   );

@@ -9,7 +9,7 @@ export default defineConfig({
     alias: [
       {
         find: "@svg",
-        replacement: "/public/svg",
+        replacement: "/public/svg/index",
       },
       {
         find: "@images",
