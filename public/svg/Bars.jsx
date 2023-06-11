@@ -11,8 +11,8 @@ export default function Bars({ fillColor, width, height }) {
     >
       <path
         fill={fillColor}
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M57.6 0h8.7c2.8 0 5 2.2 5 5v51.1c0 2.8-2.2 5-5 5h-8.7c-2.8 0-5-2.2-5-5V5c0-2.7 2.2-5 5-5zM5 24.9h8.7c2.8 0 5 2.2 5 5v26.2c0 2.8-2.2 5-5 5H5c-2.8 0-5-2.2-5-5V29.9c0-2.8 2.2-5 5-5zM31.4 17.8h8.7c2.8 0 5 2.2 5 5v33.4c0 2.8-2.2 5-5 5h-8.7c-2.8 0-5-2.2-5-5V22.8c0-2.8 2.3-5 5-5z"
       />
     </svg>

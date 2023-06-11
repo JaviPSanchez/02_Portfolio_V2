@@ -11,7 +11,8 @@ import ContactContent from "@components/ContactContent";
 // import Planet from "@components/Planet";
 import Tags from "@components/Tags";
 import { TypingText, TitleText } from "@components/CustomText";
-import Planet from "@components/PlanetEarth";
+import PlanetCanvas from "@components/PlanetEarth";
+import CanvasLoader from "@components/Loader";
 
 export {
   Area,
@@ -29,5 +30,6 @@ export {
   Tags,
   TypingText,
   TitleText,
-  Planet,
+  PlanetCanvas,
+  CanvasLoader,
 };

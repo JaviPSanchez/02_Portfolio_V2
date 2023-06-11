@@ -14,19 +14,20 @@ export default function Navbar() {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.innerWidth} py-8 relative`}
+      className={`${styles.innerWidth} m-6 relative`}
     >
-      {/* <div className="absolute w-[50%] inset-0 gradient-01" /> */}
-      <div className="mx-auto flex justify-between gap-8">
-        <Link
-          to="/home"
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
-        >
-          <Me fillColor="#FFFFFF" width="3rem" height="3rem" />
-        </Link>
+      <div className={`${styles.xPaddings} mx-auto flex justify-between gap-8`}>
+        <div className="flex justify-center items-center">
+          <Link
+            to="/home"
+            onClick={() => {
+              setActive("");
+              window.scrollTo(0, 0);
+            }}
+          >
+            <Me fillColor="#FFFFFF" width="3rem" height="3rem" />
+          </Link>
+        </div>
         <div className="flex flex-row justify-center items-center gap-10 w-full sm:hidden">
           <Link to="/blog">
             <h2 className="font-Rubik font-extrabold text-5xl hover:text-white text-dark2">
@@ -48,7 +49,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-row gap-10">
           <div
-            className="flex justify-center items-center hidden sm:flex"
+            className="flex justify-center items-center hidden sm:flex hover:-rotate-270"
             onClick={() => setToggle(!toggle)}
           >
             {!toggle ? (
@@ -86,9 +87,9 @@ export default function Navbar() {
             onClick={() => setActive(!active)}
           >
             {active ? (
-              <Sun fillColor="#FFFFFF" width="5rem" height="5rem" />
+              <Sun fillColor="#FFFFFF" width="3rem" height="3rem" />
             ) : (
-              <Moon fillColor="#FFFFFF" width="5rem" height="5rem" />
+              <Moon fillColor="#FFFFFF" width="3rem" height="3rem" />
             )}
           </div>
         </div>

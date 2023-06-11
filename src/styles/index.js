@@ -3,7 +3,7 @@ const styles = {
   flexCenter: "flex justify-center items-center",
   yPaddings: "sm:py-16 xs:py-8 py-12",
   xPaddings: "sm:px-16 px-6",
-  paddings: "sm:p-16 xs:p-8 px-6 py-12",
+  paddings: "sm:p-0 xs:py-8 px-6 py-12",
 
   tag: "font-Rubik skew-y-[-3deg] bg-grey5 text-black text-center absolute py-1 px-2 -bottom-5 left-2 drop-shadow-md border-solid border border-black uppercase text-xl",
   textareaCorrect:

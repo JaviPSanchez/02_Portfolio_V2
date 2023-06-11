@@ -1,124 +1,82 @@
-import { useRef } from "react";
-import { useGLTF, useAnimations, OrbitControls } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { Suspense, useEffect, useState, useRef } from "react";
+import { useGLTF, OrbitControls, Preload } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { CanvasLoader } from "@components";
 
-export default function Planet(props) {
-  const group = useRef();
-  const { nodes, materials, animations } = useGLTF("./models/planet_earth.glb");
-  const { actions } = useAnimations(animations, group);
+const Planet = ({ isMobile }) => {
+  const ref = useRef();
+  const computer = useGLTF("./models/planet_earth/scene.gltf");
 
-  useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
-    // earthRef.current.rotation.y = elapsedTime / 6;
-    group.current.rotation.y = elapsedTime / 1.5;
+  useFrame((state, delta) => {
+    ref.current.rotation.y -= delta / 1.3;
   });
-  return (
-    <>
-      {/* <OrbitControls /> */}
-      <ambientLight intensity={1} />
-      <group ref={group} {...props} dispose={null}>
-        <group name="Sketchfab_Scene">
-          <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]}>
-            <group
-              name="578a67fb859c4432ad395a9d408af1e7fbx"
-              rotation={[Math.PI / 2, 0, 0]}
-              scale={0.01}
-            >
-              <group name="Object_2">
-                <group name="RootNode">
-                  <group
-                    name="Earth"
-                    rotation={[-Math.PI / 2, 0, 0.681]}
-                    scale={358.622}
-                  >
-                    <group
-                      name="Earth_Details"
-                      position={[0.163, -0.812, 0.592]}
-                      rotation={[-0.525, -0.789, -2.962]}
-                      scale={[0.006, 0.006, 0.009]}
-                    >
-                      <mesh
-                        name="Earth_Details_Wood_0"
-                        geometry={nodes.Earth_Details_Wood_0.geometry}
-                        material={materials.Wood}
-                      />
-                      <mesh
-                        name="Earth_Details_Tree_0"
-                        geometry={nodes.Earth_Details_Tree_0.geometry}
-                        material={materials.Tree}
-                      />
-                      <mesh
-                        name="Earth_Details_Tree_0_1"
-                        geometry={nodes.Earth_Details_Tree_0_1.geometry}
-                        material={materials.Tree}
-                      />
-                      <mesh
-                        name="Earth_Details_Ice_0"
-                        geometry={nodes.Earth_Details_Ice_0.geometry}
-                        material={materials.material}
-                      />
-                      <mesh
-                        name="Earth_Details_Blue_0"
-                        geometry={nodes.Earth_Details_Blue_0.geometry}
-                        material={materials.Blue}
-                      />
-                      <mesh
-                        name="Earth_Details_Sand_0"
-                        geometry={nodes.Earth_Details_Sand_0.geometry}
-                        material={materials.Sand}
-                      />
-                      <mesh
-                        name="Earth_Details_red_0"
-                        geometry={nodes.Earth_Details_red_0.geometry}
-                        material={materials.material_7}
-                      />
-                    </group>
-                    <group
-                      name="Clouds_and_Stars"
-                      position={[-0.577, -0.085, 0.844]}
-                      rotation={[-1.555, -0.135, 2.627]}
-                      scale={0.042}
-                    >
-                      <mesh
-                        name="Clouds_and_Stars_Ice_0"
-                        geometry={nodes.Clouds_and_Stars_Ice_0.geometry}
-                        material={materials.material}
-                      />
-                      <mesh
-                        name="Clouds_and_Stars_Star_0"
-                        geometry={nodes.Clouds_and_Stars_Star_0.geometry}
-                        material={materials.Star}
-                      />
-                    </group>
-                    <mesh
-                      name="Earth_Ice_0"
-                      geometry={nodes.Earth_Ice_0.geometry}
-                      material={materials.material}
-                    />
-                    <mesh
-                      name="Earth_Water_0"
-                      geometry={nodes.Earth_Water_0.geometry}
-                      material={materials.Water}
-                    />
-                    <mesh
-                      name="Earth_Sand_0"
-                      geometry={nodes.Earth_Sand_0.geometry}
-                      material={materials.Sand}
-                    />
-                    <mesh
-                      name="Earth_Grass_0"
-                      geometry={nodes.Earth_Grass_0.geometry}
-                      material={materials.Grass}
-                    />
-                  </group>
-                </group>
-              </group>
-            </group>
-          </group>
-        </group>
-      </group>
-    </>
-  );
-}
 
-useGLTF.preload("./models/planet_earth.glb");
+  return (
+    <mesh>
+      <hemisphereLight intensity={0.5} groundColor="black" />
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        penumbra={1}
+        intensity={1}
+        // castShadow
+        // shadow-mapSize={1024}
+      />
+      <pointLight intensity={1} />
+      <primitive
+        ref={ref}
+        object={computer.scene}
+        scale={isMobile ? 0.6 : 0.75}
+        position={isMobile ? [0, -1, -2.2] : [5, 0, -1.5]}
+        rotation={[-0.01, -0.2, -0.1]}
+      />
+    </mesh>
+  );
+};
+
+const PlanetCanvas = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  //Check if we are in mobile device
+  useEffect(() => {
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+  return (
+    <Canvas
+      frameloop="demand"
+      shadows
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 20], fov: 25 }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          autoRotate
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Planet isMobile={isMobile} />
+      </Suspense>
+
+      <Preload all />
+    </Canvas>
+  );
+};
+
+export default PlanetCanvas;

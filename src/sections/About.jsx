@@ -5,7 +5,9 @@ import { TypingText } from "@components";
 
 const About = () => {
   return (
-    <section className={`${styles.paddings} relative z-10 w-2/3 max-w-6xl`}>
+    <section
+      className={`${styles.paddings} relative z-10 sm:w-full w-2/3 max-w-6xl`}
+    >
       <div className="gradient-02 z-0 right-0" />
       <motion.div
         variants={staggerContainer}
@@ -18,7 +20,7 @@ const About = () => {
 
         <motion.p
           variants={fadeIn("up", "tween", 0.2, 1)}
-          className="font-Rubik text-4xl text-grey4 my-16 text-center"
+          className="font-Rubik sm:text-2xl sm:mx-2 text-4xl text-grey4 my-16 text-center"
         >
           Hi, I`m glad to see you here. My name is Javier, and I am a{" "}
           <span className="font-extrabold text-white">Digital Developer</span>.
