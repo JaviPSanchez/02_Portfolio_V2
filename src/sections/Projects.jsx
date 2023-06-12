@@ -1,12 +1,43 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { staggerContainer } from "@utils/motion";
+import styles from "@styles";
+import { TypingText, TitleText, ExploreCard } from "@components";
+import { ExploreProjects } from "@data";
+
 const Projects = () => {
+  const [active, setActive] = useState("project-2");
   return (
-    <section className="max-w-4xl text-center font-Rubik text-7xl font-bold text-white my-10">
-      Choose the project you want to explore
-      <div className="h-[340px] w-full flex flex-row text-white justify-between items-center ">
-        <div className="h-full w-full bg-grey4 rounded-md mr-2">Card 1</div>
-        <div className="h-full w-full bg-grey4 rounded-md mr-2">Card 2</div>
-        <div className="h-full w-full bg-grey4 rounded-md">Card 3</div>
-      </div>
+    <section className={`${styles.paddings} w-full`} id="work">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`${styles.innerWidth} mx-auto flex flex-col`}
+      >
+        <TypingText title="| My Work" textStyles="text-center" />
+        <TitleText
+          title={
+            <>
+              Choose the project you want <br className="md:block hidden" /> to
+              explore
+            </>
+          }
+          textStyles="text-center"
+        />
+        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+          {ExploreProjects.map((project, index) => (
+            <ExploreCard
+              key={project.id}
+              {...project}
+              index={index}
+              active={active}
+              handleClick={setActive}
+            />
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 };

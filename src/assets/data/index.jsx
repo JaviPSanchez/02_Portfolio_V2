@@ -17,6 +17,10 @@ import {
   sql,
   python,
   aws,
+  web1,
+  web2,
+  web3,
+  web4,
 } from "@images";
 import { GitHub } from "@svg";
 import { Card } from "@components";
@@ -199,6 +203,34 @@ const NavLinks = [
   },
 ];
 
+const ExploreProjects = [
+  {
+    id: "project-1",
+    imgUrl: web1,
+    title: "The Hogwarts",
+  },
+  {
+    id: "project-2",
+    imgUrl: web2,
+    title: "The Upside Down",
+  },
+  {
+    id: "project-3",
+    imgUrl: web3,
+    title: "Kadirojo Permai",
+  },
+  {
+    id: "project-4",
+    imgUrl: web4,
+    title: "Paradise Island",
+  },
+  {
+    id: "project-5",
+    imgUrl: web1,
+    title: "Hawkins Labs",
+  },
+];
+
 export {
   BadgesFront,
   BadgesBack,
@@ -207,4 +239,5 @@ export {
   WelcomeCards,
   Socials,
   NavLinks,
+  ExploreProjects,
 };

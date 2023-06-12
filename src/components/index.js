@@ -8,6 +8,7 @@ import DataStack from "@components/DataStack";
 import { Button, ButtonNormal } from "@components/Button";
 import Card from "@components/Card";
 import ContactContent from "@components/ContactContent";
+import ExploreCard from "@components/ExploreCard ";
 // import Planet from "@components/Planet";
 import Tags from "@components/Tags";
 import { TypingText, TitleText } from "@components/CustomText";
@@ -32,4 +33,5 @@ export {
   TitleText,
   PlanetCanvas,
   CanvasLoader,
+  ExploreCard,
 };
