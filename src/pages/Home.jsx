@@ -4,12 +4,10 @@ import {
   Hero,
   Footer,
   About,
-  SoftwareDev,
-  DataDev,
-  DigitalDev,
   Contact,
   LatestArticles,
   Projects,
+  Expertise,
 } from "@sections";
 import styles from "@styles";
 
@@ -23,12 +21,10 @@ export default function Home() {
       <About />
       <Projects />
       <div className="relative">
-        <SoftwareDev />
+        <Expertise />
         <div className="gradient-03 z-0" />
-        <DataDev />
       </div>
       <div className="relative">
-        <DigitalDev />
         <div className="gradient-04 z-0" />
         <LatestArticles />
       </div>

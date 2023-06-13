@@ -41,7 +41,7 @@ const Content = () => {
   return (
     <form
       autoComplete="off"
-      className="flex flex-col justify-center items-center w-5/6 h-5/6 font-Rubik"
+      className="flex flex-col justify-center items-center w-full h-5/6 font-Rubik"
       onSubmit={handleSubmit}
     >
       <h1 className="text-6xl mb-14 font-bold uppercase dark:text-white">

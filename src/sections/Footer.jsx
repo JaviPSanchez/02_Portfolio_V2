@@ -7,22 +7,14 @@ const Footer = () => (
     variants={footerVariants}
     initial="hidden"
     whileInView="show"
-    className={`${styles.xPaddings} py-8 relative`}
+    className={`${styles.xPaddings} py-8 relative mt-[20rem]`}
   >
     <div className="footer-gradient" />
     <div className={`${styles.innerWidth} mx-auto flex flex-col gap-8`}>
       <div className="flex items-center justify-between flex-wrap gap-5">
         <h4 className="font-bold md:text-[64px] text-[44px] text-white">
-          Enter the Metaverse
+          Thank you for visiting
         </h4>
-        <button
-          type="button"
-          className="flex items-center h-fit py-4 px-6 bg-[#25618B] rounded-[32px] gap-[12px]"
-        >
-          <span className="font-normal text-[16px] text-white">
-            Enter Metaverse
-          </span>
-        </button>
       </div>
 
       <div className="flex flex-col">

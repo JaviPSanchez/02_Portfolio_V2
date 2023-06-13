@@ -1,11 +1,13 @@
-import html from "./html.png";
-import css from "./css.png";
-import js from "./js.png";
+import js from "./javascript.png";
 import react from "./react.png";
-import sass from "./sass.png";
-import tail from "./tailwindcss.png";
+import next from "./next.png";
+import tail from "./tailwind.png";
 import three from "./three.png";
-import motion from "./motion.png";
+import node from "./node.png";
+import firebase from "./firebase.png";
+import mongo from "./mongo.png";
+import postgres from "./postgres.png";
+import python from "./python.png";
 import web1 from "./project1.jpg";
 import web2 from "./project2.jpg";
 import web3 from "./project3.jpg";
@@ -17,23 +19,13 @@ import data4 from "./data1.png";
 import front from "./front.png";
 import software from "./software.png";
 import science from "./science.png";
-import node from "./node.png";
-import postgre from "./postgre.png";
-import firebase from "./firebase.png";
-import mongo from "./mongo.png";
-import sql from "./sql.png";
-import python from "./python.png";
-import aws from "./aws.png";
 
 export {
-  html,
-  css,
   js,
   react,
-  sass,
+  next,
   tail,
   three,
-  motion,
   web1,
   web2,
   web3,
@@ -46,10 +38,8 @@ export {
   software,
   science,
   node,
-  postgre,
+  postgres,
   firebase,
   mongo,
-  sql,
   python,
-  aws,
 };

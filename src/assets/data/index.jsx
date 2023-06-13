@@ -1,7 +1,7 @@
 import {
   js,
   react,
-  sass,
+  next,
   tail,
   three,
   data1,
@@ -11,12 +11,10 @@ import {
   software,
   science,
   node,
-  postgre,
+  postgres,
   firebase,
   mongo,
-  sql,
   python,
-  aws,
   web1,
   web2,
   web3,
@@ -25,27 +23,26 @@ import {
 import { GitHub } from "@svg";
 import { Card } from "@components";
 
-const BadgesFront = [
+const Badges = [
   {
     id: 1,
-    image: <img src={js} alt="html" />,
+    image: <img src={js} alt="javascript" />,
   },
   {
     id: 2,
-    image: <img src={js} alt="css" />,
-  },
-
-  {
-    id: 3,
-    image: <img src={js} alt="js" />,
-  },
-  {
-    id: 4,
     image: <img src={react} alt="react" />,
   },
   {
+    id: 3,
+    image: <img src={next} alt="next" />,
+  },
+  {
+    id: 4,
+    image: <img src={node} alt="node" />,
+  },
+  {
     id: 5,
-    image: <img src={sass} alt="sass" />,
+    image: <img src={firebase} alt="firebase" />,
   },
   {
     id: 6,
@@ -55,45 +52,17 @@ const BadgesFront = [
     id: 7,
     image: <img src={three} alt="three" />,
   },
-];
-const BadgesBack = [
   {
-    id: 1,
-    image: <img src={node} alt="node" />,
-  },
-  {
-    id: 2,
-    image: <img src={node} alt="flask" />,
-  },
-  {
-    id: 3,
-    image: <img src={node} alt="fastAPI" />,
-  },
-  {
-    id: 4,
-    image: <img src={postgre} alt="postgres" />,
-  },
-  {
-    id: 5,
-    image: <img src={firebase} alt="firebase" />,
-  },
-  {
-    id: 6,
-    image: <img src={mongo} alt="mongo" />,
-  },
-];
-const BadgesData = [
-  {
-    id: 1,
-    image: <img src={sql} alt="sql" />,
-  },
-  {
-    id: 2,
+    id: 8,
     image: <img src={python} alt="python" />,
   },
   {
-    id: 5,
-    image: <img src={aws} alt="aws" />,
+    id: 9,
+    image: <img src={postgres} alt="postgres" />,
+  },
+  {
+    id: 10,
+    image: <img src={mongo} alt="mongo" />,
   },
 ];
 
@@ -231,13 +200,46 @@ const ExploreProjects = [
   },
 ];
 
+const StartingFeatures = [
+  "Software-Development",
+  "Data Development",
+  "Digital Management",
+];
+
+const Testimonials = [
+  {
+    testimonial:
+      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+    name: "Sara Lee",
+    designation: "CFO",
+    company: "Acme Co",
+    image: "https://randomuser.me/api/portraits/women/4.jpg",
+  },
+  {
+    testimonial:
+      "I've never met a web developer who truly cares about their clients' success like Rick does.",
+    name: "Chris Brown",
+    designation: "COO",
+    company: "DEF Corp",
+    image: "https://randomuser.me/api/portraits/men/5.jpg",
+  },
+  {
+    testimonial:
+      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+    name: "Lisa Wang",
+    designation: "CTO",
+    company: "456 Enterprises",
+    image: "https://randomuser.me/api/portraits/women/6.jpg",
+  },
+];
+
 export {
-  BadgesFront,
-  BadgesBack,
-  BadgesData,
+  Badges,
   BlogPosts,
   WelcomeCards,
   Socials,
   NavLinks,
   ExploreProjects,
+  StartingFeatures,
+  Testimonials,
 };

@@ -106,14 +106,8 @@ body,
   filter: blur(150px);
 }
 
-.card--item-1 {
+.gradient-card {
   background-image: linear-gradient(90deg, #5555ff 0%, #9787ff 100%);
-}
-.card--item-2 {
-  background-image: linear-gradient(90deg, #ff55b8 0%, #ff8787 100%);
-}
-.card--item-3 {
-  background-image: linear-gradient(90deg, #888888 0%, #aaaaaa 100%);
 }
 
 .mirror-effect {

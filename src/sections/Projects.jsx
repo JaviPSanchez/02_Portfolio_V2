@@ -8,7 +8,7 @@ import { ExploreProjects } from "@data";
 const Projects = () => {
   const [active, setActive] = useState("project-2");
   return (
-    <section className={`${styles.paddings} w-full`} id="work">
+    <section className={`${styles.paddings} w-full mt-[20rem]`} id="work">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -26,7 +26,7 @@ const Projects = () => {
           }
           textStyles="text-center"
         />
-        <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
+        <div className="mt-[50px] flex lg:flex-row flex-col h-[50vh] gap-5">
           {ExploreProjects.map((project, index) => (
             <ExploreCard
               key={project.id}

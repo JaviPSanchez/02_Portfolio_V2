@@ -1,61 +1,62 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { BlogPosts } from "@data";
-import { Tags } from "@components";
+import { motion } from "framer-motion";
+import styles from "@styles";
+import { fadeIn } from "@utils/motion";
+import { Testimonials } from "@data";
+import { TypingText, TitleText } from "@components";
 
-const LatestArticles = () => {
-  const [popular, setPopular] = useState([]);
-  const [filtered, setFiltered] = useState([]);
-  const [activeTopic, setActiveTopic] = useState("All");
+const FeedbackCard = ({
+  index,
+  testimonial,
+  name,
+  designation,
+  company,
+  image,
+}) => (
+  <motion.div
+    variants={fadeIn("", "spring", index * 0.5, 0.75)}
+    className="flex flex-row bg-black p-10 rounded-3xl xs:w-[320px] w-5/6"
+  >
+    <p className="text-white font-black text-[48px]">"</p>
 
-  useEffect(() => {
-    fecthData();
-  }, []);
+    <div className="mt-1">
+      <p className="text-white tracking-wider text-[18px]">{testimonial}</p>
 
-  const fecthData = () => {
-    const tags = BlogPosts;
-    setPopular(tags);
-    setFiltered(tags);
-  };
-
-  return (
-    <motion.section
-      className="w-5/6 h-screen flex flex-col justify-center items-center mx-auto mt-40"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 1 } }}
-    >
-      <h1 className="font-Rubik font-bold text-6xl text-white">
-        Latest Articles
-      </h1>
-      <div className="w-11/12 h-full my-10 flex flex-row bg-transparent">
-        <div className="flex flex-col items-start w-2/3 h-full child:p-4">
-          <motion.div
-            layout
-            className="w-full h-fit grid grid-cols-fit grid-flow-row gap-8 overflow-scroll overflow-x-hidden scrollbar-hide"
-          >
-            {
-              <AnimatePresence>
-                {filtered.map((item) => {
-                  return <div key={item.id}>{item.element}</div>;
-                })}
-              </AnimatePresence>
-            }
-          </motion.div>
+      <div className="mt-7 flex justify-between items-center gap-1">
+        <div className="flex-1 flex flex-col">
+          <p className="text-white font-medium text-[16px]">
+            <span className="blue-text-gradient">@</span> {name}
+          </p>
+          <p className="mt-1 text-secondary text-[12px]">
+            {designation} of {company}
+          </p>
         </div>
-        <div className="flex flex-col justify-start items-left w-1/3 h-full ml-10 child:p-4">
-          <div className="flex flex-col justify-center items-start">
-            <Tags
-              popular={popular}
-              setFiltered={setFiltered}
-              activeTopic={activeTopic}
-              setActiveTopic={setActiveTopic}
-            />
-          </div>
-        </div>
+
+        <img
+          src={image}
+          alt={`feedback_by-${name}`}
+          className="w-10 h-10 rounded-full object-cover"
+        />
       </div>
-    </motion.section>
+    </div>
+  </motion.div>
+);
+
+const Feedbacks = () => {
+  return (
+    <div className="mt-[20rem] bg-black-100 rounded-[20px]">
+      <div
+        className={`rounded-2xl ${styles.padding} min-h-[150px] text-center`}
+      >
+        <TypingText title="| Latest Articles" textStyles="text-center" />
+        <TitleText title={<>Let me show some of the newest articles</>} />
+      </div>
+      <div className={`pb-14 ${styles.paddingX} flex flex-row gap-7`}>
+        {Testimonials.map((testimonial, index) => (
+          <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
+        ))}
+      </div>
+    </div>
   );
 };
 
-export default LatestArticles;
+export default Feedbacks;

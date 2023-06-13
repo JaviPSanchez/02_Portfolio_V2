@@ -6,7 +6,7 @@ import { TypingText } from "@components";
 const About = () => {
   return (
     <section
-      className={`${styles.paddings} relative z-10 sm:w-full w-2/3 max-w-6xl mb-[20rem]`}
+      className={`${styles.paddings} relative z-10 sm:w-full w-2/3 max-w-6xl mt-[20rem]`}
       id="about"
     >
       <div className="gradient-02 z-0 right-0" />

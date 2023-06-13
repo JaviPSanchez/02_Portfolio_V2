@@ -5,9 +5,7 @@ import Contact from "./Contact";
 import LatestArticles from "./LatestArticles";
 import Projects from "./Projects";
 import Footer from "./Footer";
-import SoftwareDev from "./SoftwareDev";
-import DataDev from "./DataDev";
-import DigitalDev from "./DigitalDev";
+import Expertise from "./Expertise";
 
 export {
   Navbar,
@@ -17,7 +15,5 @@ export {
   Projects,
   LatestArticles,
   Footer,
-  SoftwareDev,
-  DataDev,
-  DigitalDev,
+  Expertise,
 };
