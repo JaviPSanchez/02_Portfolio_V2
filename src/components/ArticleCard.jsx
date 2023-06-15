@@ -1,6 +1,6 @@
 import { Button } from "@components";
 
-export default function Example({ image, title }) {
+const ArticleCard = ({ image, title }) => {
   return (
     <div className="w-full max-w-[350px] h-[350px] flex flex-col justify-start items-center bg-grey4 rounded-lg p-2 shadow-xl">
       <div className="relative">
@@ -17,4 +17,6 @@ export default function Example({ image, title }) {
       </div>
     </div>
   );
-}
+};
+
+export default ArticleCard;

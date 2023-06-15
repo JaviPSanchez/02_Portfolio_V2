@@ -1,8 +1,13 @@
 import { useEffect } from "react";
 import styles from "@styles";
 
-const Tags = ({ popular, setFiltered, activeTopic, setActiveTopic }) => {
-  // console.log(popular);
+export default function ExploreTags({
+  popular,
+  setFiltered,
+  activeTopic,
+  setActiveTopic,
+}) {
+  console.log(popular);
 
   useEffect(() => {
     if (activeTopic === "All") {
@@ -10,9 +15,10 @@ const Tags = ({ popular, setFiltered, activeTopic, setActiveTopic }) => {
       return;
     }
     const filtered = popular.filter((item) => item.topic.includes(activeTopic));
-    // console.log(filtered);
+    console.log(filtered);
+
     setFiltered(filtered);
-  }, [activeTopic, popular, setFiltered]);
+  }, [activeTopic]);
 
   return (
     <div className="flex flex-wrap w-full mt-10">
@@ -68,6 +74,4 @@ const Tags = ({ popular, setFiltered, activeTopic, setActiveTopic }) => {
       </button>
     </div>
   );
-};
-
-export default Tags;
+}

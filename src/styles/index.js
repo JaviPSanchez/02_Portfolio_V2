@@ -4,6 +4,8 @@ const styles = {
   yPaddings: "sm:py-16 xs:py-8 py-12",
   xPaddings: "sm:px-16 px-6",
   paddings: "sm:p-0 xs:py-8 px-12 py-12",
+  customGradient:
+    "bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]",
 
   tag: "font-Rubik skew-y-[-3deg] bg-grey5 text-black text-center absolute py-1 px-2 -bottom-5 left-2 drop-shadow-md border-solid border border-black uppercase text-xl",
   textareaCorrect:

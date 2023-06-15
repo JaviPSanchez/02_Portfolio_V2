@@ -42,10 +42,12 @@ export const cardsWelcome = {
 
 export const planetVariants = (direction) => ({
   hidden: {
+    opacity: 0,
     x: direction === "left" ? "-100%" : "100%",
     rotate: 120,
   },
   show: {
+    opacity: 1,
     x: 0,
     rotate: 0,
     transition: {
@@ -55,6 +57,31 @@ export const planetVariants = (direction) => ({
     },
   },
 });
+
+export const boxVariants = {
+  out: {
+    y: 600,
+  },
+  in: {
+    y: 0,
+    transition: {
+      duration: 0.6,
+      // The first child will appear AFTER the parrent has appeared on the screen
+      delayChildren: 1.2,
+      // The next sibling will appear 0.5s after the previous one
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+export const iconVariants = {
+  out: {
+    x: -600,
+  },
+  in: {
+    x: 0,
+  },
+};
 
 export const slideIn = (direction, type, delay, duration) => ({
   hidden: {

@@ -21,7 +21,7 @@ import {
   web4,
 } from "@images";
 import { GitHub } from "@svg";
-import { Card } from "@components";
+import { ArticleCard } from "@components";
 
 const Badges = [
   {
@@ -69,27 +69,27 @@ const Badges = [
 const BlogPosts = [
   {
     id: 1,
-    element: <Card image={data1} title="Post 1" />,
+    element: <ArticleCard image={data1} title="Post 1" />,
     topic: ["All", "Machine Learning"],
   },
   {
     id: 2,
-    element: <Card image={data1} title={"Post 2"} />,
+    element: <ArticleCard image={data1} title={"Post 2"} />,
     topic: ["All", "Machine Learning", "Deep Learning"],
   },
   {
     id: 3,
-    element: <Card image={data1} title={"Post 3"} />,
+    element: <ArticleCard image={data1} title={"Post 3"} />,
     topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
   },
   {
     id: 4,
-    element: <Card image={data1} title={"Post 4"} />,
+    element: <ArticleCard image={data1} title={"Post 4"} />,
     topic: ["All", "Natural language Processing"],
   },
   {
     id: 5,
-    element: <Card image={data1} title={"Post 5"} />,
+    element: <ArticleCard image={data1} title={"Post 5"} />,
     topic: [
       "All",
       "Machine Learning",
@@ -99,12 +99,12 @@ const BlogPosts = [
   },
   {
     id: 6,
-    element: <Card image={data2} title={"Post 6"} />,
+    element: <ArticleCard image={data2} title={"Post 6"} />,
     topic: ["All", "Machine Learning", "Natural language Processing"],
   },
   {
     id: 7,
-    element: <Card image={data4} title={"Post 7"} />,
+    element: <ArticleCard image={data4} title={"Post 7"} />,
     topic: [
       "All",
       "Machine Learning",
@@ -139,22 +139,10 @@ const WelcomeCards = [
 ];
 
 const Socials = [
-  // {
-  //   name: "twitter",
-  //   url: "/twitter.svg",
-  // },
-  // {
-  //   name: "linkedin",
-  //   url: "/linkedin.svg",
-  // },
   {
     name: "Github",
-    url: <GitHub fillColor={"#FFFFFF"} />,
+    element: <GitHub fillColor={"#FFFFFF"} />,
   },
-  // {
-  //   name: "facebook",
-  //   url: "/facebook.svg",
-  // },
 ];
 
 const NavLinks = [
@@ -202,8 +190,8 @@ const ExploreProjects = [
 
 const StartingFeatures = [
   "Software-Development",
-  "Data Development",
-  "Digital Management",
+  "Data-Driven Decisions",
+  "Digital Development",
 ];
 
 const Testimonials = [

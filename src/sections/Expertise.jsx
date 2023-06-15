@@ -25,8 +25,15 @@ const Expertise = () => (
         className="flex-[0.75] flex justify-center flex-col"
       >
         <TypingText title="| What Do I do?" />
-        <TitleText title={<>Get started with just a few clicks</>} />
-        <div className="mt-[31px] flex flex-col max-w-[370px] gap-[24px]">
+        <TitleText
+          title={
+            <>
+              Transforming the digital landscape through innovation and
+              efficiency across key areas of expertise.
+            </>
+          }
+        />
+        <div className="mt-[31px] flex flex-col max-w-[470px] gap-[24px]">
           {StartingFeatures.map((feature, index) => (
             <StartSteps
               key={feature}

@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { slideIn, staggerContainer, textVariant } from "@utils/motion";
+import {
+  iconVariants,
+  boxVariants,
+  staggerContainer,
+  textVariant,
+} from "@utils/motion";
 import { PlanetCanvas } from "@components";
+import { GitHub, LinkedIn, Twitter } from "@svg";
+import { Link } from "react-router-dom";
+import styles from "@styles";
 
 const Hero = () => {
   return (
@@ -14,26 +22,58 @@ const Hero = () => {
       >
         <motion.h1
           variants={textVariant(1)}
-          className="sm:text-7xl sm:mt-12 text-12xl bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] font-Rubik font-bold uppercase text-transparent"
+          className={`sm:text-7xl sm:mt-12 text-12xl ${styles.customGradient} font-Rubik font-bold uppercase text-transparent`}
         >
           Digital Developer
         </motion.h1>
 
-        <div className="flex flex-row">
-          <motion.div variants={slideIn} className="my-20">
-            <a href="#about" className="border-first p-10 bg-white text-3xl">
-              G
-            </a>
-          </motion.div>
-          <motion.div className="mt-20 ml-10">
-            <a
-              href="#projects"
-              className="border-second p-10 bg-white text-3xl"
+        <motion.div
+          variants={boxVariants}
+          initial="out"
+          animate="in"
+          className="flex flex-row w-2/3 mt-8"
+        >
+          <motion.div
+            layout
+            variants={iconVariants}
+            className=" cursor-pointer hover:scale-110 transition-all"
+          >
+            <Link
+              to="https://github.com/JaviPSanchez"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-20"
             >
-              G
-            </a>
+              <GitHub fillColor={"#FFFFFF"} />
+            </Link>
           </motion.div>
-        </div>
+          <motion.div
+            variants={iconVariants}
+            className="ml-6 cursor-pointer hover:scale-110 transition-all"
+          >
+            <Link
+              to="https://www.linkedin.com/in/javierpalominosanchez/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-20"
+            >
+              <LinkedIn fillColor={"#FFFFFF"} />
+            </Link>
+          </motion.div>
+          <motion.div
+            variants={iconVariants}
+            className="ml-6 cursor-pointer hover:scale-110 transition-all"
+          >
+            <Link
+              to="https://twitter.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-20"
+            >
+              <Twitter fillColor={"#FFFFFF"} />
+            </Link>
+          </motion.div>
+        </motion.div>
       </motion.div>
       <PlanetCanvas />
       <div className="absolute xs:hidden bottom-48 w-full flex justify-center items-center z-20">
