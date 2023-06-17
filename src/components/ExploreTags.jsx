@@ -21,7 +21,7 @@ export default function ExploreTags({
   }, [activeTopic]);
 
   return (
-    <div className="flex flex-wrap w-full mt-10">
+    <div className="flex flex-wrap w-full">
       <button
         className={
           activeTopic === "All"
@@ -71,6 +71,26 @@ export default function ExploreTags({
         onClick={() => setActiveTopic("Deep Learning")}
       >
         Deep Learning
+      </button>
+      <button
+        className={
+          activeTopic === "CSS"
+            ? `${styles.buttonTagsActive}`
+            : `${styles.buttonTagsInactive}`
+        }
+        onClick={() => setActiveTopic("CSS")}
+      >
+        CSS
+      </button>
+      <button
+        className={
+          activeTopic === "JS"
+            ? `${styles.buttonTagsActive}`
+            : `${styles.buttonTagsInactive}`
+        }
+        onClick={() => setActiveTopic("JS")}
+      >
+        JS
       </button>
     </div>
   );

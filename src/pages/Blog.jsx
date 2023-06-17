@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Navbar } from "@sections";
-import { Articles } from "@components";
+import { Navbar } from "@components";
+import { Articles } from "@sections";
 import styles from "@styles";
 
 export default function Home() {

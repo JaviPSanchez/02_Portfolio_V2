@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
         <div className="flex flex-row justify-center items-center gap-10 w-full sm:hidden">
           <Link to="/blog">
-            <h2 className="font-Rubik font-extrabold text-5xl hover:text-white text-dark2">
+            <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
               Blog
             </h2>
           </Link>
@@ -39,8 +39,8 @@ export default function Navbar() {
             <li
               key={nav.id}
               className={`${
-                active === nav.title ? "text-white" : "text-dark2"
-              } hover:text-white font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
+                active === nav.title ? "text-white" : "text-grey4"
+              } hover:text-[#ff5478] font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
               onClick={() => setActive(nav.title)}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>

@@ -1,3 +1,13 @@
+export const staggerContainer = (staggerChildren, delayChildren) => ({
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren,
+      delayChildren,
+    },
+  },
+});
+
 export const navVariants = {
   hidden: {
     opacity: 0,
@@ -14,7 +24,7 @@ export const navVariants = {
     transition: {
       type: "spring",
       stiffness: 80,
-      delay: 1,
+      delay: 0.2,
     },
   },
 };
@@ -100,16 +110,6 @@ export const slideIn = (direction, type, delay, duration) => ({
   },
 });
 
-export const staggerContainer = (staggerChildren, delayChildren) => ({
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren,
-      delayChildren,
-    },
-  },
-});
-
 export const textVariant = (delay) => ({
   hidden: {
     y: 50,
@@ -120,7 +120,7 @@ export const textVariant = (delay) => ({
     opacity: 1,
     transition: {
       type: "spring",
-      duration: 1.25,
+      duration: 1,
       delay,
     },
   },
@@ -186,7 +186,7 @@ export const footerVariants = {
     transition: {
       type: "spring",
       stiffness: 80,
-      delay: 0.5,
+      delay: 0.2,
     },
   },
 };

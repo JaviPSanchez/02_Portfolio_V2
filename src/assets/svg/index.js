@@ -6,5 +6,18 @@ import Bars from "./Bars";
 import Close from "./Close";
 import Moon from "./Moon";
 import Sun from "./Sun";
+import Calendar from "./Calendar";
+import Clock from "./Clock";
 
-export { Me, GitHub, Bars, Moon, Sun, Close, LinkedIn, Twitter };
+export {
+  Me,
+  GitHub,
+  Bars,
+  Moon,
+  Sun,
+  Close,
+  LinkedIn,
+  Twitter,
+  Calendar,
+  Clock,
+};

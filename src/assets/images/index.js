@@ -19,6 +19,9 @@ import data4 from "./data1.png";
 import front from "./front.png";
 import software from "./software.png";
 import science from "./science.png";
+import project1 from "./styling_react.png";
+import project2 from "./coding_animals.png";
+import project3 from "./react_patterns.png";
 
 export {
   js,
@@ -42,4 +45,7 @@ export {
   firebase,
   mongo,
   python,
+  project1,
+  project2,
+  project3,
 };

@@ -19,6 +19,9 @@ import {
   web2,
   web3,
   web4,
+  project1,
+  project2,
+  project3,
 } from "@images";
 import { GitHub } from "@svg";
 import { ArticleCard } from "@components";
@@ -63,54 +66,6 @@ const Badges = [
   {
     id: 10,
     image: <img src={mongo} alt="mongo" />,
-  },
-];
-
-const BlogPosts = [
-  {
-    id: 1,
-    element: <ArticleCard image={data1} title="Post 1" />,
-    topic: ["All", "Machine Learning"],
-  },
-  {
-    id: 2,
-    element: <ArticleCard image={data1} title={"Post 2"} />,
-    topic: ["All", "Machine Learning", "Deep Learning"],
-  },
-  {
-    id: 3,
-    element: <ArticleCard image={data1} title={"Post 3"} />,
-    topic: ["All", "Machine Learning", "Deep Learning", "Deployment"],
-  },
-  {
-    id: 4,
-    element: <ArticleCard image={data1} title={"Post 4"} />,
-    topic: ["All", "Natural language Processing"],
-  },
-  {
-    id: 5,
-    element: <ArticleCard image={data1} title={"Post 5"} />,
-    topic: [
-      "All",
-      "Machine Learning",
-      "Natural language Processing",
-      "Deployment",
-    ],
-  },
-  {
-    id: 6,
-    element: <ArticleCard image={data2} title={"Post 6"} />,
-    topic: ["All", "Machine Learning", "Natural language Processing"],
-  },
-  {
-    id: 7,
-    element: <ArticleCard image={data4} title={"Post 7"} />,
-    topic: [
-      "All",
-      "Machine Learning",
-      "Natural language Processing",
-      "Deployment",
-    ],
   },
 ];
 
@@ -194,40 +149,52 @@ const StartingFeatures = [
   "Digital Development",
 ];
 
-const Testimonials = [
+const ArticleData = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
+    title: "Styling Techniques",
+    subtitle: "Some awesome styling techniques to learn",
+    time: 5,
+    topic: [
+      "All",
+      "Machine Learning",
+      "Natural language Processing",
+      "Deployment",
+    ],
+    image: project1,
+    date: "June 16, 2023",
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
+    title: "React Arquichecture",
+    subtitle: "Lorem ipsun y mas cositas interesantes",
+    time: 10,
+    topic: ["All", "CSS", "Machine Learning", "Deployment"],
+    image: project2,
+    date: "Janvier 23, 2023",
   },
   {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["All", "JS", "Machine Learning"],
+    image: project3,
+    date: "May 06, 2023",
+  },
+  {
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["JS"],
+    image: project3,
+    date: "May 06, 2023",
   },
 ];
 
 export {
   Badges,
-  BlogPosts,
   WelcomeCards,
   Socials,
   NavLinks,
   ExploreProjects,
   StartingFeatures,
-  Testimonials,
+  ArticleData,
 };

@@ -5,6 +5,9 @@ import { Button } from "@components";
 import { useFormik } from "formik";
 import basicSchema from "@schemas";
 import styles from "@styles";
+import { TypingText } from "@components";
+import { motion } from "framer-motion";
+import { staggerContainer } from "@utils/motion";
 
 const onSubmit = async (values, actions) => {
   console.log(values);
@@ -39,16 +42,20 @@ const Content = () => {
     });
 
   return (
-    <form
+    <motion.form
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
       autoComplete="off"
       className="flex flex-col justify-center items-center w-full h-5/6 font-Rubik"
       onSubmit={handleSubmit}
     >
-      <h1 className="text-6xl mb-14 font-bold uppercase dark:text-white">
-        Contact Me 🚀
-      </h1>
+      <TypingText
+        title="Contact Me"
+        textStyles="text-6xl mb-14 font-bold uppercase text-grey4"
+      />
 
-      <label htmlFor="name" className="text-2xl w-full mb-2 p-4">
+      <label htmlFor="name" className="text-2xl w-full mb-2 p-4 text-grey4">
         Name
       </label>
       <input
@@ -68,7 +75,7 @@ const Content = () => {
         <p className="text-error text-xl self-start ml-2">{errors.name}</p>
       )}
 
-      <label htmlFor="email" className="text-2xl w-full mb-2 p-4">
+      <label htmlFor="email" className="text-2xl w-full mb-2 p-4 text-grey4">
         Email
       </label>
       <input
@@ -88,7 +95,7 @@ const Content = () => {
         <p className="text-error text-xl self-start ml-2">{errors.email}</p>
       )}
 
-      <label htmlFor="message" className="text-2xl w-full mb-2 p-4">
+      <label htmlFor="message" className="text-2xl text-grey4 w-full mb-2 p-4">
         Message
       </label>
       <textarea
@@ -108,7 +115,7 @@ const Content = () => {
         <p className="text-error text-xl self-start ml-2">{errors.message}</p>
       )}
       <Button text="Submit" />
-    </form>
+    </motion.form>
   );
 };
 

@@ -21,7 +21,7 @@ const Hero = () => {
         className="flex flex-col justify-center items-start w-2/3 max-w-6xl absolute z-10"
       >
         <motion.h1
-          variants={textVariant(1)}
+          variants={textVariant(0.4)}
           className={`sm:text-7xl sm:mt-12 text-12xl ${styles.customGradient} font-Rubik font-bold uppercase text-transparent`}
         >
           Digital Developer
@@ -30,34 +30,42 @@ const Hero = () => {
         <motion.div
           variants={boxVariants}
           initial="out"
+          whileInView="show"
           animate="in"
-          className="flex flex-row w-2/3 mt-8"
+          className="flex flex-row w-fit mt-8"
         >
           <motion.div
             layout
+            initial="hidden"
+            whileInView="show"
             variants={iconVariants}
-            className=" cursor-pointer hover:scale-110 transition-all"
+            className="cursor-pointer"
           >
             <Link
               to="https://github.com/JaviPSanchez"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-20"
             >
-              <GitHub fillColor={"#FFFFFF"} />
+              <GitHub
+                fillColor={"#FFFFFF"}
+                textStyles="hover:scale-110 transition-all"
+                width={60}
+                height={60}
+              />
             </Link>
           </motion.div>
-          <motion.div
-            variants={iconVariants}
-            className="ml-6 cursor-pointer hover:scale-110 transition-all"
-          >
+          <motion.div variants={iconVariants} className="ml-6 cursor-pointer">
             <Link
               to="https://www.linkedin.com/in/javierpalominosanchez/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-20"
             >
-              <LinkedIn fillColor={"#FFFFFF"} />
+              <LinkedIn
+                fillColor={"#FFFFFF"}
+                textStyles="hover:scale-110 transition-all"
+                width={60}
+                height={60}
+              />
             </Link>
           </motion.div>
           <motion.div
@@ -68,9 +76,13 @@ const Hero = () => {
               to="https://twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-20"
             >
-              <Twitter fillColor={"#FFFFFF"} />
+              <Twitter
+                fillColor={"#FFFFFF"}
+                textStyles="hover:scale-110 transition-all"
+                width={60}
+                height={60}
+              />
             </Link>
           </motion.div>
         </motion.div>
