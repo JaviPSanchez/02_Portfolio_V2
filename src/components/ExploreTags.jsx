@@ -9,20 +9,31 @@ export default function ExploreTags({
 }) {
   console.log(popular);
 
+  // useEffect(() => {
+  //   if (activeTopic === "All") {
+  //     setFiltered(popular);
+  //     return;
+  //   }
+  //   const filtered = popular.filter((item) => item.topic.includes(activeTopic));
+  //   console.log(filtered);
+
+  //   setFiltered(filtered);
+  // }, [activeTopic]);
+
   useEffect(() => {
     if (activeTopic === "All") {
       setFiltered(popular);
-      return;
+    } else {
+      const filtered = popular.filter((item) =>
+        item.topic.includes(activeTopic)
+      );
+      setFiltered(filtered);
     }
-    const filtered = popular.filter((item) => item.topic.includes(activeTopic));
-    console.log(filtered);
-
-    setFiltered(filtered);
-  }, [activeTopic]);
+  }, [activeTopic, popular, setFiltered]);
 
   return (
     <div className="flex flex-wrap w-full">
-      <button
+      {/* <button
         className={
           activeTopic === "All"
             ? `${styles.buttonTagsActive}`
@@ -31,8 +42,25 @@ export default function ExploreTags({
         onClick={() => setActiveTopic("All")}
       >
         All
-      </button>
-      <button
+      </button> */}
+      {popular
+        .flatMap((item) => item.topic)
+        .filter((value, index, self) => self.indexOf(value) === index)
+        .map((topic) => (
+          <button
+            key={topic}
+            className={
+              activeTopic === topic
+                ? `${styles.buttonTagsActive}`
+                : `${styles.buttonTagsInactive}`
+            }
+            onClick={() => setActiveTopic(topic)}
+          >
+            {topic}
+          </button>
+        ))}
+
+      {/* <button
         className={
           activeTopic === "Machine Learning"
             ? `${styles.buttonTagsActive}`
@@ -91,7 +119,7 @@ export default function ExploreTags({
         onClick={() => setActiveTopic("JS")}
       >
         JS
-      </button>
+      </button> */}
     </div>
   );
 }

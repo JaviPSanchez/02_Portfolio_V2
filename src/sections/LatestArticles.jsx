@@ -4,6 +4,7 @@ import { staggerContainer } from "@utils/motion";
 import { ArticleData } from "@data";
 import { TypingText, TitleText } from "@components";
 import { ArticleCard } from "@components";
+import { fadeIn } from "@utils/motion";
 
 console.log(ArticleData);
 
@@ -22,10 +23,16 @@ const LatestArticles = () => {
         <TitleText title={<>Let me show some of my newest articles</>} />
       </div>
       <div
-        className={`pb-14 ${styles.paddingX} flex flex-row gap-7 cursor-pointer `}
+        className={`${styles.paddingX} flex flex-row gap-7 cursor-pointer pb-14 `}
       >
-        {ArticleData.map((data, index) => (
-          <ArticleCard key={data.name} index={index} {...data} />
+        {ArticleData.slice(0, 4).map((data, index) => (
+          <ArticleCard
+            variants={fadeIn("", "spring", index * 0.5, 0.75)}
+            key={data.name}
+            index={index}
+            {...data}
+            customStyles={"w-full"}
+          />
         ))}
       </div>
     </motion.section>

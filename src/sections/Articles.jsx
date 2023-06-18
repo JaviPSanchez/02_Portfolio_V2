@@ -10,15 +10,14 @@ const Articles = () => {
   const [filtered, setFiltered] = useState([]);
   const [activeTopic, setActiveTopic] = useState("All");
 
-  useEffect(() => {
-    fecthData();
-  }, []);
-
-  const fecthData = () => {
-    const tags = ArticleData;
-    setPopular(tags);
-    setFiltered(tags);
+  const fetchAndSetData = () => {
+    setPopular(ArticleData);
+    setFiltered(ArticleData);
   };
+
+  useEffect(() => {
+    fetchAndSetData();
+  }, []);
 
   return (
     <motion.div
@@ -34,18 +33,23 @@ const Articles = () => {
         title={<>Enjoy some of my articles.</>}
       />
 
-      <div className="w-11/12 h-full my-10 flex flex-row bg-transparent">
-        <div className="flex flex-col items-start w-2/3 h-full child:p-4">
-          <motion.div
-            layout
-            className="w-full h-fit grid grid-cols-fit grid-flow-row gap-8 overflow-scroll overflow-x-hidden scrollbar-hide"
-          >
-            {filtered.map((item, index) => {
-              return <div key={index}>{item.element}</div>;
-            })}
-          </motion.div>
-        </div>
-        <div className="flex flex-col justify-start items-left w-1/3 h-full ml-10 child:p-4">
+      <div className="w-full h-full my-40 flex flex-row bg-transparent">
+        <motion.div layout className="w-full h-96 flex flex-wrap gap-4">
+          {filtered.map((item) => (
+            <ArticleCard
+              key={item.id}
+              index={item.id}
+              title={item.title}
+              subtitle={item.subtitle}
+              time={item.time}
+              image={item.image}
+              topic={item.topic}
+              date={item.date}
+              customStyles={"w-4/12"}
+            />
+          ))}
+        </motion.div>
+        <div className="flex flex-col justify-start items-left w-4/12 h-full ml-10 child:p-4">
           <div className="flex flex-col justify-center items-start">
             <ExploreTags
               popular={popular}

@@ -4,9 +4,6 @@ import {
   next,
   tail,
   three,
-  data1,
-  data2,
-  data4,
   front,
   software,
   science,
@@ -23,8 +20,6 @@ import {
   project2,
   project3,
 } from "@images";
-import { GitHub } from "@svg";
-import { ArticleCard } from "@components";
 
 const Badges = [
   {
@@ -93,13 +88,6 @@ const WelcomeCards = [
   },
 ];
 
-const Socials = [
-  {
-    name: "Github",
-    element: <GitHub fillColor={"#FFFFFF"} />,
-  },
-];
-
 const NavLinks = [
   {
     id: "about",
@@ -151,6 +139,7 @@ const StartingFeatures = [
 
 const ArticleData = [
   {
+    id: 1,
     title: "Styling Techniques",
     subtitle: "Some awesome styling techniques to learn",
     time: 5,
@@ -164,6 +153,7 @@ const ArticleData = [
     date: "June 16, 2023",
   },
   {
+    id: 2,
     title: "React Arquichecture",
     subtitle: "Lorem ipsun y mas cositas interesantes",
     time: 10,
@@ -172,6 +162,7 @@ const ArticleData = [
     date: "Janvier 23, 2023",
   },
   {
+    id: 3,
     title: "Some coding",
     subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
     time: 2,
@@ -180,10 +171,47 @@ const ArticleData = [
     date: "May 06, 2023",
   },
   {
+    id: 4,
     title: "Some coding",
     subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
     time: 2,
     topic: ["JS"],
+    image: project3,
+    date: "May 06, 2023",
+  },
+  {
+    id: 5,
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["JS"],
+    image: project3,
+    date: "May 06, 2023",
+  },
+  {
+    id: 6,
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["CSS"],
+    image: project3,
+    date: "May 06, 2023",
+  },
+  {
+    id: 7,
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["All"],
+    image: project3,
+    date: "May 06, 2023",
+  },
+  {
+    id: 8,
+    title: "Some coding",
+    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+    time: 2,
+    topic: ["Machine Learning"],
     image: project3,
     date: "May 06, 2023",
   },
@@ -192,7 +220,6 @@ const ArticleData = [
 export {
   Badges,
   WelcomeCards,
-  Socials,
   NavLinks,
   ExploreProjects,
   StartingFeatures,

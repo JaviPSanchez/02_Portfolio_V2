@@ -1,12 +1,21 @@
 import { motion } from "framer-motion";
-import { fadeIn } from "@utils/motion";
 import { Calendar, Clock } from "@svg";
 
-const ArticleCard = ({ index, title, subtitle, time, image, topic, date }) => {
+const ArticleCard = ({
+  index,
+  title,
+  subtitle,
+  time,
+  image,
+  topic,
+  date,
+  variants,
+  customStyles,
+}) => {
   return (
     <motion.div
-      variants={fadeIn("", "spring", index * 0.5, 0.75)}
-      className="flex flex-col bg-[#100d25] rounded-3xl w-5/6 h-fit overflow-hidden border-[0.5px] border-grey4"
+      variants={variants}
+      className={`${customStyles} flex flex-col bg-[#100d25] rounded-3xl h-fit overflow-hidden border-[0.5px] border-grey4`}
     >
       <div className="h-[250px] w-full">
         <img
@@ -29,11 +38,11 @@ const ArticleCard = ({ index, title, subtitle, time, image, topic, date }) => {
           <p className="text-white text-2xl">{subtitle}</p>
         </div>
         <div className="mt-10 flex flex-wrap flex-row gap-2">
-          {topic.map((item, index) => {
+          {topic.map((item) => {
             return (
               <span
                 className="text-grey4 border-[0.5px] border-grey4 text-2xl px-4 py-2 rounded-full mb-4"
-                key={index}
+                key={item.id}
               >
                 {item}
               </span>
