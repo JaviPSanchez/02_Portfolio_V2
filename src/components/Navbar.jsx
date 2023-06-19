@@ -6,7 +6,7 @@ import { navVariants } from "@utils/motion";
 import { Sun, Moon, Me, Bars, Close } from "@svg";
 import { NavLinks } from "@data";
 
-export default function Navbar() {
+const Navbar = ({ links }) => {
   const [active, setActive] = useState(true);
   const [toggle, setToggle] = useState(false);
   return (
@@ -29,23 +29,38 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="flex flex-row justify-center items-center gap-10 w-full sm:hidden">
-          <Link to="/blog">
-            <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
-              Blog
-            </h2>
-          </Link>
-
-          {NavLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-white" : "text-grey4"
-              } hover:text-[#ff5478] font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
+          {links === "home" ? (
+            <Link to="/blog">
+              <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
+                Blog
+              </h2>
+            </Link>
+          ) : links === "blog" ? (
+            <Link to="/home">
+              <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
+                Home
+              </h2>
+            </Link>
+          ) : null}
+          {links === "home" ? (
+            NavLinks.map((nav) => (
+              <li
+                key={nav.id}
+                className={`${
+                  active === nav.title ? "text-white" : "text-grey4"
+                } hover:text-[#ff5478] font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
+                onClick={() => setActive(nav.title)}
+              >
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              </li>
+            ))
+          ) : links === "blog" ? null : (
+            <Link to="/blog">
+              <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
+                Blog
+              </h2>
+            </Link>
+          )}
         </div>
         <div className="flex flex-row gap-10">
           <div
@@ -96,4 +111,6 @@ export default function Navbar() {
       </div>
     </motion.nav>
   );
-}
+};
+
+export default Navbar;

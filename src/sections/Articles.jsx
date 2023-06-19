@@ -34,7 +34,7 @@ const Articles = () => {
       />
 
       <div className="w-full h-full my-40 flex flex-row bg-transparent">
-        <motion.div layout className="w-full h-96 flex flex-wrap gap-4">
+        <motion.div layout className="w-full h-96 flex flex-wrap gap-6">
           {filtered.map((item) => (
             <ArticleCard
               key={item.id}
@@ -45,7 +45,9 @@ const Articles = () => {
               image={item.image}
               topic={item.topic}
               date={item.date}
-              customStyles={"w-4/12"}
+              customStyles={
+                "w-4/12 cursor-pointer hover:scale-95 transition-all"
+              }
             />
           ))}
         </motion.div>

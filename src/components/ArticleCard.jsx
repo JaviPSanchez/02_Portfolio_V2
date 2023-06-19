@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock } from "@svg";
-
+import { useNavigate } from "react-router-dom";
 const ArticleCard = ({
   index,
   title,
@@ -12,10 +12,15 @@ const ArticleCard = ({
   variants,
   customStyles,
 }) => {
+  const navigate = useNavigate();
+  const handleClick = (id) => {
+    navigate(`/blog/:${id}`);
+  };
   return (
     <motion.div
       variants={variants}
       className={`${customStyles} flex flex-col bg-[#100d25] rounded-3xl h-fit overflow-hidden border-[0.5px] border-grey4`}
+      onClick={() => handleClick(index)}
     >
       <div className="h-[250px] w-full">
         <img
