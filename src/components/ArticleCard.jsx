@@ -13,8 +13,8 @@ const ArticleCard = ({
   customStyles,
 }) => {
   const navigate = useNavigate();
-  const handleClick = (id) => {
-    navigate(`/blog/:${id}`);
+  const handleClick = (index) => {
+    navigate(`/blog/:${index}`);
   };
   return (
     <motion.div
