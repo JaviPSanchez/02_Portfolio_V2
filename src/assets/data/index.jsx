@@ -21,7 +21,7 @@ import {
   project3,
 } from "@images";
 
-const Badges = [
+export const Badges = [
   {
     id: 1,
     image: <img src={js} alt="javascript" />,
@@ -64,31 +64,31 @@ const Badges = [
   },
 ];
 
-const WelcomeCards = [
+export const WelcomeCards = [
   {
     id: 1,
-    title: "Digital Development",
+    title: "Digital Management",
     image: front,
-    years: 5,
-    text: "years trying to find the best way to communicate",
+    years: 6,
+    text: "Unleashing the boundless potential of digital evolution",
   },
   {
     id: 2,
-    title: "Software Engineering",
+    title: "Software Development",
     image: software,
     years: 2,
-    text: "years giving life and shape to my apps",
+    text: "years shaping my apps with the latest technologies",
   },
   {
     id: 3,
-    title: "Data Development",
+    title: "Data Engineering",
     image: science,
     years: 1,
-    text: "years making predictions and trying to find the right data",
+    text: "years making predictions and trying to find the right pattern",
   },
 ];
 
-const NavLinks = [
+export const NavLinks = [
   {
     id: "about",
     title: "About",
@@ -103,7 +103,7 @@ const NavLinks = [
   },
 ];
 
-const ExploreProjects = [
+export const ExploreProjects = [
   {
     id: "project-1",
     imgUrl: web1,
@@ -131,97 +131,84 @@ const ExploreProjects = [
   },
 ];
 
-const StartingFeatures = [
+export const StartingFeatures = [
   "Software-Development",
   "Data-Driven Decisions",
   "Digital Development",
 ];
 
-const ArticleData = [
+export const ArticleData = [
   {
     id: 1,
-    title: "Styling Techniques",
-    subtitle: "Some awesome styling techniques to learn",
-    time: 5,
-    topic: [
-      "All",
-      "Machine Learning",
-      "Natural language Processing",
-      "Deployment",
-    ],
+    title: "Visual Studio Code Set Up v2023",
+    subtitle:
+      "May be the perfect combo to set the highest level of productivity",
+    time: 8,
+    topic: ["All", "IDE", "Visual Studio Code"],
     image: project1,
-    date: "June 16, 2023",
+    date: "June 20, 2023",
   },
   {
     id: 2,
-    title: "React Arquichecture",
+    title: "Deploy a FullStack App",
     subtitle: "Lorem ipsun y mas cositas interesantes",
     time: 10,
-    topic: ["All", "CSS", "Machine Learning", "Deployment"],
+    topic: ["All", "Deployment"],
     image: project2,
     date: "Janvier 23, 2023",
   },
   {
     id: 3,
-    title: "Some coding",
+    title: "Clean Code - JS Tips",
     subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
     time: 2,
-    topic: ["All", "JS", "Machine Learning"],
+    topic: ["All", "JS"],
     image: project3,
     date: "May 06, 2023",
   },
-  {
-    id: 4,
-    title: "Some coding",
-    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
-    time: 2,
-    topic: ["JS"],
-    image: project3,
-    date: "May 06, 2023",
-  },
-  {
-    id: 5,
-    title: "Some coding",
-    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
-    time: 2,
-    topic: ["JS"],
-    image: project3,
-    date: "May 06, 2023",
-  },
-  {
-    id: 6,
-    title: "Some coding",
-    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
-    time: 2,
-    topic: ["CSS"],
-    image: project3,
-    date: "May 06, 2023",
-  },
-  {
-    id: 7,
-    title: "Some coding",
-    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
-    time: 2,
-    topic: ["All"],
-    image: project3,
-    date: "May 06, 2023",
-  },
-  {
-    id: 8,
-    title: "Some coding",
-    subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
-    time: 2,
-    topic: ["Machine Learning"],
-    image: project3,
-    date: "May 06, 2023",
-  },
+  // {
+  //   id: 4,
+  //   title: "Some coding",
+  //   subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+  //   time: 2,
+  //   topic: ["JS"],
+  //   image: project3,
+  //   date: "May 06, 2023",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Some coding",
+  //   subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+  //   time: 2,
+  //   topic: ["JS"],
+  //   image: project3,
+  //   date: "May 06, 2023",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Some coding",
+  //   subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+  //   time: 2,
+  //   topic: ["CSS"],
+  //   image: project3,
+  //   date: "May 06, 2023",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Some coding",
+  //   subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+  //   time: 2,
+  //   topic: ["All"],
+  //   image: project3,
+  //   date: "May 06, 2023",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Some coding",
+  //   subtitle: "Como organizar el codigo con las ultimas tecnicas de software",
+  //   time: 2,
+  //   topic: ["Machine Learning"],
+  //   image: project3,
+  //   date: "May 06, 2023",
+  // },
 ];
-
-export {
-  Badges,
-  WelcomeCards,
-  NavLinks,
-  ExploreProjects,
-  StartingFeatures,
-  ArticleData,
-};

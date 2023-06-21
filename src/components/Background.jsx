@@ -28,7 +28,7 @@ const Buildings = () => {
   ));
 };
 
-export default function BackGround() {
+const BackGround = () => {
   return (
     <Canvas
       shadows
@@ -74,4 +74,6 @@ export default function BackGround() {
       />
     </Canvas>
   );
-}
+};
+
+export default BackGround;

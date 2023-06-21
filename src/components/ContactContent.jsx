@@ -52,7 +52,7 @@ const Content = () => {
     >
       <TypingText
         title="Contact Me"
-        textStyles="text-6xl mb-14 font-bold uppercase text-grey4"
+        customStyles="text-6xl mb-14 font-bold uppercase text-grey4"
       />
 
       <label htmlFor="name" className="text-2xl w-full mb-2 p-4 text-grey4">

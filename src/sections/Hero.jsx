@@ -6,7 +6,7 @@ import {
   textVariant,
 } from "@utils/motion";
 import { PlanetCanvas } from "@components";
-import { GitHub, LinkedIn, Twitter } from "@svg";
+import { GitHub, LinkedIn, Twitter, DownArrow } from "@svg";
 import { Link } from "react-router-dom";
 import styles from "@styles";
 
@@ -22,7 +22,7 @@ const Hero = () => {
       >
         <motion.h1
           variants={textVariant(0.4)}
-          className={`sm:text-7xl sm:mt-12 text-12xl ${styles.customGradient} font-Rubik font-bold uppercase text-transparent`}
+          className={`sm:text-7xl sm:mt-12 text-12xl bg-clip-text ${styles.customGradient} font-Rubik font-bold uppercase text-transparent`}
         >
           Digital Developer
         </motion.h1>
@@ -46,12 +46,14 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHub
-                fillColor={"#FFFFFF"}
-                textStyles="hover:scale-110 transition-all"
-                width={60}
-                height={60}
-              />
+              <div className="rounded-full overflow-hidden">
+                <GitHub
+                  fillColor={"#FFFFFF"}
+                  textStyles="hover:scale-110 transition-all "
+                  width={55}
+                  height={55}
+                />
+              </div>
             </Link>
           </motion.div>
           <motion.div variants={iconVariants} className="ml-6 cursor-pointer">
@@ -60,12 +62,14 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedIn
-                fillColor={"#FFFFFF"}
-                textStyles="hover:scale-110 transition-all"
-                width={60}
-                height={60}
-              />
+              <div className="rounded-full overflow-hidden">
+                <LinkedIn
+                  fillColor={"#FFFFFF"}
+                  customStyles="hover:scale-110 transition-all"
+                  width={60}
+                  height={60}
+                />
+              </div>
             </Link>
           </motion.div>
           <motion.div
@@ -80,29 +84,28 @@ const Hero = () => {
               <Twitter
                 fillColor={"#FFFFFF"}
                 textStyles="hover:scale-110 transition-all"
-                width={60}
-                height={60}
+                width={55}
+                height={55}
               />
             </Link>
           </motion.div>
         </motion.div>
       </motion.div>
       <PlanetCanvas />
-      <div className="absolute xs:hidden bottom-48 w-full flex justify-center items-center z-20">
+      <div className="absolute xs:hidden bottom-[17rem] w-full flex justify-center items-center z-20">
         <a href="#about">
-          <div className="w-[30px] h-[64px] rounded-3xl border-2 border-white flex justify-center items-start p-2">
-            <motion.div
-              animate={{
-                y: [0, 40, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="w-3 h-3 rounded-full bg-white mb-1"
-            />
-          </div>
+          <motion.div
+            animate={{
+              y: [0, 40, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+          >
+            <DownArrow fillColor={"#FFFFFF"} width={60} height={60} />
+          </motion.div>
         </a>
       </div>
     </section>

@@ -27,9 +27,9 @@ const Articles = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
     >
-      <TypingText title="| Articles" textStyles="text-center mt-20" />
+      <TypingText title="| Articles" customStyles="text-center mt-20" />
       <TitleText
-        textStyles="w-2/3 text-center"
+        customStyles="w-2/3 text-6xl text-white font-Rubik font-bold text-center mt-16"
         title={<>Enjoy some of my articles.</>}
       />
 

@@ -8,6 +8,7 @@ import Moon from "./Moon";
 import Sun from "./Sun";
 import Calendar from "./Calendar";
 import Clock from "./Clock";
+import DownArrow from "./DownArrow";
 
 export {
   Me,
@@ -20,4 +21,5 @@ export {
   Twitter,
   Calendar,
   Clock,
+  DownArrow,
 };

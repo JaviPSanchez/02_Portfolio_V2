@@ -27,8 +27,14 @@ const Article = () => {
       className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} flex-col`}
     >
       <Navbar links={"article"} />
-      <TypingText title={`| Article ${index}`} textStyles="text-center mt-20" />
-      <TitleText title={articleData.title} textStyles="w-2/3 text-center" />
+      <TypingText
+        title={`| Article ${index}`}
+        customStyles="text-center mt-20"
+      />
+      <TitleText
+        title={articleData.title}
+        customStyles="w-2/3 text-6xl text-white font-Rubik font-bold text-center mt-16"
+      />
     </motion.div>
   );
 };

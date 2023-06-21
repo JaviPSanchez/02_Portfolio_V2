@@ -20,7 +20,10 @@ const LatestArticles = () => {
         className={`rounded-2xl ${styles.padding} min-h-[150px] text-center`}
       >
         <TypingText title="| Latest Articles" textStyles="text-center" />
-        <TitleText title={<>Let me show some of my newest articles</>} />
+        <TitleText
+          title={<>Let me show some of my newest articles</>}
+          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
+        />
       </div>
       <div
         className={`${styles.paddingX} flex flex-row gap-7 cursor-pointer pb-14 `}

@@ -14,19 +14,21 @@ const Navbar = ({ links }) => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.innerWidth} m-6 relative`}
+      className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings} relative `}
     >
       <div className={`${styles.xPaddings} mx-auto flex justify-between gap-8`}>
         <div className="flex justify-center items-center">
-          <Link
-            to="/home"
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
-          >
-            <Me fillColor="#FFFFFF" width="3rem" height="3rem" />
-          </Link>
+          {links !== "welcome" ? (
+            <Link
+              to="/"
+              onClick={() => {
+                setActive("");
+                window.scrollTo(0, 0);
+              }}
+            >
+              <Me fillColor="#FFFFFF" width="3rem" height="3rem" />
+            </Link>
+          ) : null}
         </div>
         <div className="flex flex-row justify-center items-center gap-10 w-full sm:hidden">
           {links === "home" ? (
@@ -54,13 +56,13 @@ const Navbar = ({ links }) => {
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
             ))
-          ) : links === "blog" ? null : (
+          ) : links === "article" ? (
             <Link to="/blog">
               <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
                 Blog
               </h2>
             </Link>
-          )}
+          ) : null}
         </div>
         <div className="flex flex-row gap-10">
           <div

@@ -32,6 +32,7 @@ const Expertise = () => (
               efficiency across key areas of expertise.
             </>
           }
+          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
         />
         <div className="mt-[31px] flex flex-col max-w-[470px] gap-[24px]">
           {StartingFeatures.map((feature, index) => (

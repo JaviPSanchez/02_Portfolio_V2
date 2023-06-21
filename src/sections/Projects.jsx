@@ -16,7 +16,7 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <TypingText title="| My Work" textStyles="text-center" />
+        <TypingText title="| My Work" />
         <TitleText
           title={
             <>
@@ -24,7 +24,7 @@ const Projects = () => {
               explore
             </>
           }
-          textStyles="text-center"
+          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
         />
         <div className="mt-[50px] flex lg:flex-row flex-col h-[50vh] gap-5">
           {ExploreProjects.map((project, index) => (
