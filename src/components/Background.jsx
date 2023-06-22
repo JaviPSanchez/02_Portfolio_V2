@@ -32,7 +32,6 @@ const BackGround = () => {
   return (
     <Canvas
       shadows
-      colorManagement
       camera={{ position: [5, 5, 10], fov: 75, ncp: 0.1, fcp: 1000 }}
     >
       <ambientLight intensity={0.3} />

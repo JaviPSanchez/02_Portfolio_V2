@@ -1,4 +1,4 @@
-export default function Bars({ fillColor, width, height, textStyles }) {
+export default function Bars({ fillColor, width, height, customStyles }) {
   return (
     <svg
       width={width}
@@ -7,7 +7,7 @@ export default function Bars({ fillColor, width, height, textStyles }) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 71.4 61.2"
       fill="none"
-      className={`${textStyles}`}
+      className={`${customStyles}`}
     >
       <path
         fill={fillColor}

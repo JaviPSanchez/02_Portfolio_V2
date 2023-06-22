@@ -14,7 +14,7 @@ const Navbar = ({ links }) => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings} relative `}
+      className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings}`}
     >
       <div className={`${styles.xPaddings} mx-auto flex justify-between gap-8`}>
         <div className="flex justify-center items-center">
@@ -66,11 +66,16 @@ const Navbar = ({ links }) => {
         </div>
         <div className="flex flex-row gap-10">
           <div
-            className="flex justify-center items-center hidden sm:flex hover:-rotate-270"
+            className="flex justify-center items-center hidden sm:flex"
             onClick={() => setToggle(!toggle)}
           >
             {!toggle ? (
-              <Bars fillColor="#FFFFFF" width="3rem" height="3rem" />
+              <Bars
+                fillColor="#FFFFFF"
+                width="3rem"
+                height="3rem"
+                customStyles={"-rotate-90"}
+              />
             ) : (
               <Close fillColor="#FFFFFF" width="3rem" height="3rem" />
             )}

@@ -6,8 +6,6 @@ import { TypingText, TitleText } from "@components";
 import { ArticleCard } from "@components";
 import { fadeIn } from "@utils/motion";
 
-console.log(ArticleData);
-
 const LatestArticles = () => {
   return (
     <motion.section
@@ -26,15 +24,17 @@ const LatestArticles = () => {
         />
       </div>
       <div
-        className={`${styles.paddingX} flex flex-row gap-7 cursor-pointer pb-14 `}
+        className={`${styles.paddingX} flex flex-row gap-7 cursor-pointer pb-14`}
       >
-        {ArticleData.slice(0, 4).map((data, index) => (
+        {ArticleData.slice(0, 4).map((item, index) => (
           <ArticleCard
             variants={fadeIn("", "spring", index * 0.5, 0.75)}
-            key={data.name}
-            index={index}
-            {...data}
-            customStyles={"w-full"}
+            key={item.name}
+            index={item.id}
+            {...item}
+            customStyles={
+              "w-full cursor-pointer hover:scale-105 transition-all"
+            }
           />
         ))}
       </div>

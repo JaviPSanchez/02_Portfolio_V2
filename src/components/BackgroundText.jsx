@@ -10,15 +10,15 @@ const BackgroundText = () => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
-      className="w-2/3 absolute top-[20%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex flex-col justify-center items-center"
+      className="sm:w-11/12 w-2/3 absolute sm:top-[20%] top-[20%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-20 flex flex-col justify-center items-center"
     >
       <TypingText
         title="Hi, glad to see you here!"
-        textStyles="font-Rubik text-3xl font-normal text-white text-center"
+        customStyles="font-Rubik sm:text-2xl text-3xl font-normal text-white text-center"
       />
       <TitleText
-        customStyles={`${styles.customGradient} bg-clip-text mt-12 font-Rubik text-center font-bold uppercase text-transparent text-[64px]`}
-        title={<>Things I do.</>}
+        customStyles={`${styles.customGradient} bg-clip-text mt-12 font-Rubik text-center font-bold uppercase text-transparent sm:text-8xl text-9xl`}
+        title={<>Things I do</>}
       />
     </motion.div>
   );

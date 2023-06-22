@@ -58,27 +58,11 @@ module.exports = {
       },
     },
     screens: {
-      /*
-      'sm': '320px',
-      => @media (min-width: 640px) { ... }
-
-      'md': '768px',
-      => @media (min-width: 768px) { ... }
-
-      'lg': '1024px',
-      => @media (min-width: 1024px) { ... }
-
-      'xl': '1280px',
-      => @media (min-width: 1280px) { ... }
-
-      '2xl': '1536px',
-      => @media (min-width: 1536px) { ... }
-      */
-      lg: { max: "1800px" },
-      md: { max: "1200px" },
-      sm: { max: "900px" },
-      xs: { max: "700px" },
       xxs: { max: "450px" },
+      xs: { max: "700px" },
+      sm: { max: "640px" },
+      md: { max: "1200px" },
+      lg: { max: "1800px" },
     },
     fontFamily: {
       Rubik: ["Rubik", "sans-serif"],

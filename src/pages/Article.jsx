@@ -5,8 +5,6 @@ import styles from "@styles";
 import { TypingText, TitleText } from "@components";
 import { ArticleData } from "@data";
 
-console.log(ArticleData);
-
 const getArticleData = (index) => {
   console.log(index);
   return ArticleData.find((article) => article.id === index);
@@ -24,7 +22,7 @@ const Article = () => {
 
   return (
     <motion.div
-      className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} flex-col`}
+      className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} ${styles.margings} flex-col`}
     >
       <Navbar links={"article"} />
       <TypingText
@@ -35,6 +33,30 @@ const Article = () => {
         title={articleData.title}
         customStyles="w-2/3 text-6xl text-white font-Rubik font-bold text-center mt-16"
       />
+      <div className="relative w-5/6 max-h-[40rem] mt-20 rounded-lg overflow-hidden border-[0.5px] border-grey4`">
+        <img className="top-0 w-full h-[60rem]" src={articleData.image} />
+      </div>
+      <div className="w-5/6 flex flex-col mt-20">
+        <h1 className="text-Rubik text-5xl text-white font-bold">
+          {articleData.subtitle}
+        </h1>
+        <p className="text-4xl text-white w-full mt-20">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, vel
+          temporibus doloremque, dicta corporis fugit, suscipit molestiae
+          assumenda accusantium omnis quis maxime praesentium quas itaque illo
+          possimus est nulla. Id. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eum, vel temporibus doloremque, dicta corporis
+          fugit, suscipit molestiae assumenda accusantium omnis quis maxime
+          praesentium quas itaque illo possimus est nulla. Id. Lorem ipsum dolor
+          sit amet consectetur adipisicing elit. Eum, vel temporibus doloremque,
+          dicta corporis fugit, suscipit molestiae assumenda accusantium omnis
+          quis maxime praesentium quas itaque illo possimus est nulla. Id. Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Eum, vel temporibus
+          doloremque, dicta corporis fugit, suscipit molestiae assumenda
+          accusantium omnis quis maxime praesentium quas itaque illo possimus
+          est nulla. Id.
+        </p>
+      </div>
     </motion.div>
   );
 };

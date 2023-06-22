@@ -8,12 +8,24 @@ export const staggerContainer = (staggerChildren, delayChildren) => ({
   },
 });
 
+export const pageMotion = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: { delay: 1 },
+  },
+};
+
 export const cardsWelcome = {
   hidden: {
     opacity: 0,
     y: -80,
     transition: {
-      damping: 40,
+      type: "spring",
+      stiffness: 300,
+      damping: 140,
     },
   },
   show: {
