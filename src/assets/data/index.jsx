@@ -107,27 +107,27 @@ export const ExploreProjects = [
   {
     id: "project-1",
     imgUrl: web1,
-    title: "The Hogwarts",
+    title: "Custom 3D Layout",
   },
   {
     id: "project-2",
     imgUrl: web2,
-    title: "The Upside Down",
+    title: "Custom Personal Page",
   },
   {
     id: "project-3",
     imgUrl: web3,
-    title: "Kadirojo Permai",
+    title: "Random Business",
   },
   {
     id: "project-4",
     imgUrl: web4,
-    title: "Paradise Island",
+    title: "Web3",
   },
   {
     id: "project-5",
     imgUrl: web1,
-    title: "Hawkins Labs",
+    title: "Custom WebApp",
   },
 ];
 

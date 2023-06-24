@@ -5,12 +5,8 @@ export default function DownArrow({ fillColor, textStyles, width, height }) {
       width={width}
       className={`${textStyles}`}
       height={height}
-      version="1.1"
       id="Layer_1"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 330 330"
-      xml:space="preserve"
     >
       <path
         id="XMLID_10_"

@@ -4,11 +4,15 @@ import { staggerContainer } from "@utils/motion";
 import styles from "@styles";
 import { TypingText, TitleText, ExploreCard } from "@components";
 import { ExploreProjects } from "@data";
+import { Button } from "@components";
 
 const Projects = () => {
   const [active, setActive] = useState("project-2");
   return (
-    <section className={`${styles.paddings} w-full mt-[20rem]`} id="work">
+    <section
+      className={`${styles.paddings} w-full mt-[20rem] flex flex-col justify-center`}
+      id="work"
+    >
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -38,6 +42,9 @@ const Projects = () => {
           ))}
         </div>
       </motion.div>
+      <div className="text-center mt-20">
+        <Button text="See all projects" />
+      </div>
     </section>
   );
 };
