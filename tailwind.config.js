@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      scrollbarWidth: ["hover", "focus"],
       gridTemplateColumns: {
         // Simple 16 column grid
         fit: "repeat(auto-fit, minmax(250px, 1fr))",

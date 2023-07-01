@@ -7,7 +7,7 @@ import styles from "@styles";
 const BackgroundCards = () => {
   return (
     <div
-      className={`${styles.welcomeCardsPosition} sm:h-2/3 h-fit sm:overflow-scroll overflow-x-hidden`}
+      className={`${styles.welcomeCardsPosition} sm:h-2/3 h-fit sm:overflow-x-hidden hide-scrollbar overflow-x-hidden`}
     >
       <div className=" sm:flex sm:flex-col flex flex-row justify-center items-center gap-12">
         {WelcomeCards.map((item) => {

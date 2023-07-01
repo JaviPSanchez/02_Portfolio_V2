@@ -21,7 +21,7 @@ const Articles = () => {
 
   return (
     <motion.div
-      className="w-full h-5/6 mx-10 flex flex-col justify-center items-center"
+      className="w-full mx-10 flex flex-col justify-center items-center"
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
@@ -33,8 +33,11 @@ const Articles = () => {
         title={<>Enjoy some of my articles.</>}
       />
 
-      <div className="w-full h-full my-40 flex flex-row bg-transparent">
-        <motion.div layout className="w-full h-96 flex flex-wrap gap-6">
+      <div className="flex flex-row my-40 bg-transparent">
+        <motion.div
+          layout
+          className="w-ful flex flex-wrap justify-center gap-12"
+        >
           {filtered.map((item) => (
             <ArticleCard
               key={item.id}
@@ -46,12 +49,12 @@ const Articles = () => {
               topic={item.topic}
               date={item.date}
               customStyles={
-                "w-4/12 cursor-pointer hover:scale-95 transition-all"
+                "w-1/4 cursor-pointer hover:scale-95 transition-all"
               }
             />
           ))}
         </motion.div>
-        <div className="flex flex-col justify-start items-left w-4/12 h-full ml-10 child:p-4">
+        <div className="flex flex-col justify-start items-left w-3/12 h-full">
           <div className="flex flex-col justify-center items-start">
             <ExploreTags
               popular={popular}

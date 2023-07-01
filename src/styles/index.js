@@ -1,5 +1,5 @@
 const styles = {
-  innerWidth: "w-full max-w-[1480px] mx-auto",
+  innerWidth: "w-full h-fit max-w-[1680px]  mx-auto",
   flexCenter: "flex justify-center items-center",
   yPaddings: "sm:py-16 xs:py-8 py-12",
   xPaddings: "sm:px-4 px-6",

@@ -37,10 +37,10 @@ const ArticleCard = ({
       </div>
 
       <div className="h-[250px] w-full p-6">
-        <p className="text-white font-bold text-5xl">{title}</p>
+        <p className="w-fit h-28 text-white font-bold text-5xl">{title}</p>
 
         <div className="mt-7 flex flex-col justify-center items-start">
-          <p className="text-white text-2xl">{subtitle}</p>
+          <p className="h-20 text-white text-2xl">{subtitle}</p>
         </div>
         <div className="mt-10 flex flex-wrap flex-row gap-2">
           {topic.map((item) => {
