@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Calendar, Clock } from "@svg";
 import { useNavigate } from "react-router-dom";
+
 const ArticleCard = ({
   index,
   title,
@@ -43,11 +44,11 @@ const ArticleCard = ({
           <p className="h-20 text-white text-2xl">{subtitle}</p>
         </div>
         <div className="mt-10 flex flex-wrap flex-row gap-2">
-          {topic.map((item) => {
+          {topic.map((item, index) => {
             return (
               <span
                 className="text-grey4 border-[0.5px] border-grey4 text-2xl px-4 py-2 rounded-full mb-4"
-                key={item.id}
+                key={index}
               >
                 {item}
               </span>

@@ -16,7 +16,7 @@ const Home = () => {
     <motion.div
       className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} flex-col`}
     >
-      <Navbar links={"home"} />
+      <Navbar links="home" />
       <Hero />
       <About />
       <Projects />

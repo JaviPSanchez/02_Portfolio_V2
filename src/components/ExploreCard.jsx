@@ -37,9 +37,9 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
           </h2>
         </div>
 
-        <bottom className="text-black text-center uppercase font-bold hover:scale-105 text-4xl self-center p-4 bg-white rounded-lg w-1/3 mt-4">
+        <button className="text-black text-center uppercase font-bold hover:scale-105 text-4xl self-center p-4 bg-white rounded-lg w-1/3 mt-4">
           Go
-        </bottom>
+        </button>
       </div>
     )}
   </motion.div>

@@ -1,5 +1,5 @@
 import {
-  js,
+  ts,
   react,
   next,
   tail,
@@ -24,7 +24,19 @@ import {
 export const Badges = [
   {
     id: 1,
-    image: <img src={js} alt="javascript" />,
+    image: <img src={ts} alt="javascript" />,
+  },
+  {
+    id: 8,
+    image: <img src={python} alt="python" />,
+  },
+  {
+    id: 6,
+    image: <img src={tail} alt="tail" />,
+  },
+  {
+    id: 7,
+    image: <img src={three} alt="three" />,
   },
   {
     id: 2,
@@ -43,25 +55,13 @@ export const Badges = [
     image: <img src={firebase} alt="firebase" />,
   },
   {
-    id: 6,
-    image: <img src={tail} alt="tail" />,
-  },
-  {
-    id: 7,
-    image: <img src={three} alt="three" />,
-  },
-  {
-    id: 8,
-    image: <img src={python} alt="python" />,
-  },
-  {
     id: 9,
     image: <img src={postgres} alt="postgres" />,
   },
-  {
-    id: 10,
-    image: <img src={mongo} alt="mongo" />,
-  },
+  // {
+  //   id: 10,
+  //   image: <img src={mongo} alt="mongo" />,
+  // },
 ];
 
 export const WelcomeCards = [

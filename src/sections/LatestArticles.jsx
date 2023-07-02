@@ -29,7 +29,7 @@ const LatestArticles = () => {
         {ArticleData.slice(0, 4).map((item, index) => (
           <ArticleCard
             variants={fadeIn("", "spring", index * 0.5, 0.75)}
-            key={item.name}
+            key={index}
             index={item.id}
             {...item}
             customStyles={

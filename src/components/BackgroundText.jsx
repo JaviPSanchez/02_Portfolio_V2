@@ -14,10 +14,10 @@ const BackgroundText = () => {
     >
       <TypingText
         title="Hi, glad to see you here!"
-        customStyles="font-Rubik sm:text-2xl text-3xl font-normal text-white text-center"
+        customStyles="font-Rubik sm:text-2xl sm:mt-10 text-3xl font-normal text-black dark:text-[#FFFFFF] text-center"
       />
       <TitleText
-        customStyles={`${styles.customGradient} bg-clip-text mt-12 font-Rubik text-center font-bold uppercase text-transparent sm:text-8xl text-9xl`}
+        customStyles={`${styles.customGradient} bg-clip-text mt-12 font-Rubik text-center font-bold uppercase text-transparent sm:text-7xl sm:mt-10 text-9xl`}
         title={<>Things I do</>}
       />
     </motion.div>

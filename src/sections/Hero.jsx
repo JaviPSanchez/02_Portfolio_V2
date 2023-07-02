@@ -6,7 +6,7 @@ import {
   textVariant,
 } from "@utils/motion";
 import { PlanetCanvas } from "@components";
-import { GitHub, LinkedIn, Twitter, DownArrow } from "@svg";
+import { GitHub, LinkedIn, Twitter } from "@svg";
 import { Link } from "react-router-dom";
 import styles from "@styles";
 
@@ -81,33 +81,17 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Twitter
+              {/* <Twitter
                 fillColor={"#FFFFFF"}
                 textStyles="hover:scale-110 transition-all"
-                width={55}
-                height={55}
-              />
+                width={50}
+                height={50}
+              /> */}
             </Link>
           </motion.div>
         </motion.div>
       </motion.div>
       <PlanetCanvas />
-      <div className="absolute xs:hidden bottom-[17rem] w-full flex justify-center items-center z-20">
-        <a href="#about">
-          <motion.div
-            animate={{
-              y: [0, 40, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-          >
-            <DownArrow fillColor={"#FFFFFF"} width={60} height={60} />
-          </motion.div>
-        </a>
-      </div>
     </section>
   );
 };

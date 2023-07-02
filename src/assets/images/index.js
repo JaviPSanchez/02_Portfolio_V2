@@ -1,13 +1,13 @@
-import js from "./javascript.png";
+import ts from "./typescript.png";
+import python from "./python.png";
 import react from "./react.png";
-import next from "./next.png";
 import tail from "./tailwind.png";
-import three from "./three.png";
+import next from "./next.png";
 import node from "./node.png";
+import three from "./three.png";
 import firebase from "./firebase.png";
 import mongo from "./mongo.png";
 import postgres from "./postgres.png";
-import python from "./python.png";
 import web1 from "./project1.jpg";
 import web2 from "./project2.jpg";
 import web3 from "./project3.jpg";
@@ -18,9 +18,10 @@ import science from "./science.png";
 import project1 from "./styling_react.png";
 import project2 from "./coding_animals.png";
 import project3 from "./react_patterns.png";
+import javi from "./javi.png";
 
 export {
-  js,
+  ts,
   react,
   next,
   tail,
@@ -40,4 +41,5 @@ export {
   project1,
   project2,
   project3,
+  javi,
 };

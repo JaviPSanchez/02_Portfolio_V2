@@ -1,14 +1,34 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styles from "@styles";
 import { navVariants } from "@utils/motion";
-import { Sun, Moon, Me, Bars, Close } from "@svg";
+import { Sun, Moon, Bars } from "@svg";
 import { NavLinks } from "@data";
+import { javi } from "@images";
+import { ThemeContext } from "@context";
 
 const Navbar = ({ links }) => {
+  const { theme, setTheme } = useContext(ThemeContext);
   const [active, setActive] = useState(true);
   const [toggle, setToggle] = useState(false);
+  const toggleRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (toggleRef.current && !toggleRef.current.contains(event.target)) {
+        setToggle(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <motion.nav
       variants={navVariants}
@@ -16,8 +36,10 @@ const Navbar = ({ links }) => {
       whileInView="show"
       className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings}`}
     >
-      <div className={`${styles.xPaddings} mx-auto flex justify-between gap-8`}>
-        <div className="flex justify-center items-center">
+      <div
+        className={`${styles.xPaddings} mx-auto flex justify-between items-center gap-12`}
+      >
+        <div className="flex flex-row justify-center items-center hover:scale-110 transition-all">
           {links !== "welcome" ? (
             <Link
               to="/"
@@ -26,14 +48,19 @@ const Navbar = ({ links }) => {
                 window.scrollTo(0, 0);
               }}
             >
-              <Me fillColor="#FFFFFF" width="3rem" height="3rem" />
+              <img
+                src={javi}
+                alt="logo"
+                width={`${links !== "welcome" ? "50rem" : "60rem"} `}
+                height={`${links !== "welcome" ? "50rem" : "60rem"} `}
+              />
             </Link>
           ) : null}
         </div>
-        <div className="flex flex-row justify-center items-center gap-10 w-full sm:hidden">
+        <div className="flex flex-row justify-center items-center gap-16 w-full sm:hidden">
           {links === "home" ? (
             <Link to="/blog">
-              <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] text-grey4">
+              <h2 className="font-Rubik font-extrabold text-5xl text-[#ff5478] dark:text-grey4 dark:hover:text-[#ff5478] hover:text-[#ff8a05]">
                 Blog
               </h2>
             </Link>
@@ -48,9 +75,7 @@ const Navbar = ({ links }) => {
             NavLinks.map((nav) => (
               <li
                 key={nav.id}
-                className={`${
-                  active === nav.title ? "text-white" : "text-grey4"
-                } hover:text-[#ff5478] font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
+                className={`text-[#ff5478] dark:text-grey4 dark:hover:text-[#ff5478] hover:text-[#ff8a05] font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
                 onClick={() => setActive(nav.title)}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>
@@ -64,43 +89,55 @@ const Navbar = ({ links }) => {
             </Link>
           ) : null}
         </div>
-        <div className="flex flex-row gap-10">
+        <div className="relative flex flex-row gap-10">
           <div
-            className="flex justify-center items-center hidden sm:flex"
+            className="relative flex justify-center items-center hidden sm:flex"
             onClick={() => setToggle(!toggle)}
           >
             {!toggle ? (
               <Bars
-                fillColor="#FFFFFF"
+                fillColor={theme === "dark" ? "#FFFFFF" : "#ff5478"}
                 width="3rem"
                 height="3rem"
-                customStyles={"-rotate-90"}
               />
-            ) : (
-              <Close fillColor="#FFFFFF" width="3rem" height="3rem" />
-            )}
+            ) : null}
             <div
+              ref={toggleRef}
               className={`${
                 !toggle ? "hidden" : "flex"
-              } flex-col p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl gap-4`}
+              }  h-[650px] w-[650px] absolute -top-[350px] -right-[450px] z-40 flex-col justify-center items-center gap-4 bg-black dark:bg-[#FFFFFF] rounded-full transition-all`}
             >
-              <Link to="/blog">
-                <h2 className="font-Rubik font-extrabold text-5xl hover:text-white text-dark2">
-                  Blog
-                </h2>
-              </Link>
-              <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
-                {NavLinks.map((nav) => (
-                  <li
-                    key={nav.id}
-                    className={`${
-                      active === nav.title ? "text-white" : "text-dark2"
-                    } hover:text-white font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
-                    onClick={() => setActive(nav.title)}
-                  >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
-                  </li>
-                ))}
+              <ul
+                className={`absolute ${
+                  links !== "welcome"
+                    ? "top-[350px] right-[420px] gap-4"
+                    : "top-[390px] right-[420px] gap-6"
+                }  flex flex-col justify-center items-center list-none`}
+              >
+                <Link to="/blog">
+                  <h2 className="font-Rubik font-extrabold text-5xl hover:text-white text-white dark:text-[#ff5478]">
+                    Blog
+                  </h2>
+                </Link>
+                {links !== "welcome" ? (
+                  NavLinks.map((nav) => (
+                    <li
+                      key={nav.id}
+                      className={`${
+                        active === nav.title ? "text-white" : "text-dark2"
+                      } hover:text-white font-Rubik font-extrabold text-5xl cursor-pointer list-none`}
+                      onClick={() => setActive(nav.title)}
+                    >
+                      <a href={`#${nav.id}`}>{nav.title}</a>
+                    </li>
+                  ))
+                ) : (
+                  <Link to="/home">
+                    <h2 className="font-Rubik font-extrabold text-5xl hover:text-[#ff5478] hover:text-white text-white dark:text-[#ff5478]">
+                      Home
+                    </h2>
+                  </Link>
+                )}
               </ul>
             </div>
           </div>
@@ -109,15 +146,45 @@ const Navbar = ({ links }) => {
             onClick={() => setActive(!active)}
           >
             {active ? (
-              <Sun fillColor="#FFFFFF" width="3rem" height="3rem" />
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Sun
+                  fillColor={theme === "dark" ? "#FFFFFF" : "#ff5478"}
+                  width="3rem"
+                  height="3rem"
+                />
+              </button>
             ) : (
-              <Moon fillColor="#FFFFFF" width="3rem" height="3rem" />
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <Moon
+                  fillColor={theme === "dark" ? "#FFFFFF" : "#ff5478"}
+                  width="3rem"
+                  height="3rem"
+                />
+              </button>
             )}
           </div>
         </div>
       </div>
     </motion.nav>
   );
+};
+
+// const PropTypes = {
+//   links(props, propLink, componentName) {
+//     if (typeof props[propLink] !== "string") {
+//       return new Error(
+//         `String type required for ${propLink} in ${componentName} but you passed a ${props[propLink]}`
+//       );
+//     }
+//   },
+// };
+
+Navbar.propTypes = {
+  links: PropTypes.string.isRequired,
 };
 
 export default Navbar;

@@ -7,7 +7,7 @@ import styles from "@styles";
 const BackgroundCards = () => {
   return (
     <div
-      className={`${styles.welcomeCardsPosition} sm:h-2/3 h-fit sm:overflow-x-hidden hide-scrollbar overflow-x-hidden`}
+      className={`${styles.welcomeCardsPosition} sm:h-2/3 h-fit sm:overflow-x-hidden sm:mt-10 hide-scrollbar overflow-x-hidden`}
     >
       <div className=" sm:flex sm:flex-col flex flex-row justify-center items-center gap-12">
         {WelcomeCards.map((item) => {
@@ -30,10 +30,10 @@ const BackgroundCards = () => {
                     {item.title}
                   </div>
                   <div className="flex flex-row justify-center items-start p-4 mt-4">
-                    <span className="h-full text-6xl text-[#5555ff] dark:text-[#000000] font-bold mr-4">
+                    <span className="h-full text-6xl text-[#5555ff]  font-bold mr-4">
                       +{item.years}
                     </span>
-                    <p className="sm:text-xl font-Rubik text-2xl text-white text-left tracking-normal group-hover:text-black">
+                    <p className="sm:text-xl font-Rubik text-2xl dark:text-[#FFFFFF] text-left tracking-normal group-hover:text-black">
                       {item.text}
                     </p>
                   </div>

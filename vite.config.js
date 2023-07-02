@@ -43,6 +43,10 @@ export default defineConfig({
         find: "@styles",
         replacement: "/src/styles",
       },
+      {
+        find: "@context",
+        replacement: "/src/context/ThemeContext",
+      },
     ],
   },
 });
