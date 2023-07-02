@@ -33,10 +33,10 @@ const Articles = () => {
         title={<>Enjoy some of my articles.</>}
       />
 
-      <div className="flex flex-row my-40 bg-transparent">
+      <div className="w-full flex flex-row my-40">
         <motion.div
           layout
-          className="w-ful flex flex-wrap justify-center gap-12"
+          className="w-5/6 flex flex-wrap justify-start gap-12"
         >
           {filtered.map((item) => (
             <ArticleCard
@@ -54,7 +54,7 @@ const Articles = () => {
             />
           ))}
         </motion.div>
-        <div className="flex flex-col justify-start items-left w-3/12 h-full">
+        <div className="flex flex-col justify-start items-left w-1/6 h-full">
           <div className="flex flex-col justify-center items-start">
             <ExploreTags
               popular={popular}

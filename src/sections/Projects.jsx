@@ -4,7 +4,7 @@ import { staggerContainer } from "@utils/motion";
 import styles from "@styles";
 import { TypingText, TitleText, ExploreCard } from "@components";
 import { ExploreProjects } from "@data";
-import { Button } from "@components";
+// import { Button } from "@components";
 
 const Projects = () => {
   const [active, setActive] = useState("project-2");
@@ -30,7 +30,7 @@ const Projects = () => {
           }
           customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
         />
-        <div className="mt-[50px] flex lg:flex-row flex-col h-[50vh] gap-5">
+        <div className="mt-[50px] flex flex-row sm:flex-col h-[50vh] gap-5">
           {ExploreProjects.map((project, index) => (
             <ExploreCard
               key={project.id}
@@ -42,9 +42,9 @@ const Projects = () => {
           ))}
         </div>
       </motion.div>
-      <div className="text-center mt-20">
+      {/* <div className="text-center mt-20">
         <Button text="See all projects" />
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -19,14 +19,7 @@ body,
   overflow-x: hidden;
 }
 .light {
-  background-color: rgb(233, 232, 232);
-  background-image: radial-gradient(
-      at 25% 12%,
-      rgba(219, 219, 219, 0.9) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 29% 29%, rgba(247, 243, 243, 0.9) 0px, transparent 50%),
-    radial-gradient(at 95% 54%, rgba(231, 231, 231, 0.9) 0px, transparent 50%);
+  background-color: #ffffff;
 }
 
 .dark {
