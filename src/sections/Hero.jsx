@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { motion } from "framer-motion";
 import {
   iconVariants,
@@ -9,20 +10,22 @@ import { PlanetCanvas } from "@components";
 import { GitHub, LinkedIn, Twitter } from "@svg";
 import { Link } from "react-router-dom";
 import styles from "@styles";
+import { ThemeContext } from "@context";
 
 const Hero = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <section className="relative h-screen w-full flex sm:flex-col flex-row items-center p-16 sm:p-0">
+    <section className="relative h-screen w-full flex sm:flex-col flex-row items-center">
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
-        className="flex flex-col justify-center items-start w-2/3 max-w-6xl absolute z-10"
+        className="flex flex-col justify-center items-start sm:w-full w-2/3 max-w-6xl absolute z-10"
       >
         <motion.h1
           variants={textVariant(0.4)}
-          className={`sm:text-7xl sm:mt-12 text-12xl bg-clip-text ${styles.customGradient} font-Rubik font-bold uppercase text-transparent`}
+          className={`${styles.customGradient} ${styles.xPaddings} sm:text-8xl sm:mt-12 text-12xl bg-clip-text font-Rubik font-bold uppercase text-transparent`}
         >
           Digital Developer
         </motion.h1>
@@ -32,7 +35,7 @@ const Hero = () => {
           initial="out"
           whileInView="show"
           animate="in"
-          className="flex flex-row w-fit mt-8"
+          className={`${styles.xPaddings} flex flex-row w-fit mt-8`}
         >
           <motion.div
             layout
@@ -48,8 +51,8 @@ const Hero = () => {
             >
               <div className="rounded-full overflow-hidden">
                 <GitHub
-                  fillColor={"#FFFFFF"}
-                  textStyles="hover:scale-110 transition-all "
+                  fillColor={theme === "dark" ? "#FFFFFF" : "#000000"}
+                  textStyles="hover:scale-110 transition-all"
                   width={55}
                   height={55}
                 />
@@ -64,7 +67,7 @@ const Hero = () => {
             >
               <div className="rounded-full overflow-hidden">
                 <LinkedIn
-                  fillColor={"#FFFFFF"}
+                  fillColor={theme === "dark" ? "#FFFFFF" : "#000000"}
                   customStyles="hover:scale-110 transition-all"
                   width={60}
                   height={60}

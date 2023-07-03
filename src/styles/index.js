@@ -1,11 +1,16 @@
 const styles = {
-  innerWidth: "w-full h-fit max-w-[1680px]  mx-auto",
+  innerWidth: "w-full h-fit max-w-[1680px] mx-auto",
   flexCenter: "flex justify-center items-center",
   yPaddings: "sm:py-16 xs:py-8 py-12",
   xPaddings: "sm:px-4 px-6",
-  paddings: "sm:p-0 xs:py-8 px-12 py-12",
-  margings: "mb-20",
-  customGradient: "bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]",
+  paddings: "sm:p-4 xs:py-8 px-12 py-12",
+  yMargings: "sm:my-[10rem] my-[20rem]",
+  xMargings: "px-2",
+  margings: "sm:my-2 mb-20",
+  customGradient:
+    "text-transparent bg-clip-text bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]",
+  customGradientBadge:
+    "bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6]",
   welcomeCardsPosition:
     "absolute z-20 top-[65%] left-[50%] translate-x-[-50%] translate-y-[-50%]",
 
