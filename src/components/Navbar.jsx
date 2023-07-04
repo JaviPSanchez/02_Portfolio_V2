@@ -34,7 +34,7 @@ const Navbar = ({ links }) => {
       variants={navVariants}
       initial="hidden"
       whileInView="show"
-      className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings}`}
+      className={`${styles.innerWidth} ${styles.yPaddings} ${styles.xPaddings} z-40`}
     >
       <div
         className={`${styles.xPaddings} mx-auto flex justify-between items-center gap-12`}

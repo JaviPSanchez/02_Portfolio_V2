@@ -17,8 +17,8 @@ const About = () => {
         className={`${styles.innerWidth} mx-auto ${styles.flexCenter} flex-col`}
       >
         <TypingText
-          title="| About Me"
-          customStyles={`${styles.customGradient} text-center dark:text-[#FFFFFF]`}
+          title="👉 About Me"
+          customStyles={`text-center dark:text-[#FFFFFF]`}
         />
 
         <motion.p

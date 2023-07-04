@@ -19,6 +19,15 @@ const Home = () => {
     <motion.div
       className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} flex-col`}
     >
+      <div className="relative">
+        <div
+          className={
+            theme === "dark"
+              ? "gradient-02 -z-10 right-0"
+              : "gradient-08 z-0 right-0"
+          }
+        />
+      </div>
       <Navbar links="home" />
       <Hero />
       <div className="relative">
@@ -26,8 +35,8 @@ const Home = () => {
         <div
           className={
             theme === "dark"
-              ? "gradient-02 z-0 right-0"
-              : "gradient-08 z-0 right-0"
+              ? "gradient-02 -z-10 right-0"
+              : "gradient-08 -z-10 right-0"
           }
         />
       </div>

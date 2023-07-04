@@ -88,12 +88,12 @@ body,
 
 .gradient-08 {
   position: absolute;
-  width: 200px;
-  height: 438px;
+  width: 600px;
+  height: 600px;
   top: 0px;
   right: 0px;
-  background: #aaa8a8;
-  filter: blur(190px);
+  background: #d1d0d0;
+  filter: blur(150px);
 }
 
 .gradient-03 {

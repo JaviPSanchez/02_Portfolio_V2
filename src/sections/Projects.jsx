@@ -20,15 +20,13 @@ const Projects = () => {
         viewport={{ once: false, amount: 0.25 }}
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
-        <TypingText title="| My Work" />
+        <TypingText
+          title="⚙️ My Work"
+          customStyles={`text-center dark:text-[#FFFFFF]`}
+        />
         <TitleText
-          title={
-            <>
-              Choose the project you want <br className="md:block hidden" /> to
-              explore
-            </>
-          }
-          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
+          title={<>Choose the project you want to explore</>}
+          customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center mt-16`}
         />
         <div className="mt-[50px] flex flex-row sm:flex-col h-[50vh] gap-5">
           {ExploreProjects.map((project, index) => (

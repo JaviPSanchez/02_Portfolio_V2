@@ -106,27 +106,32 @@ export const ExploreProjects = [
   {
     id: "project-1",
     imgUrl: web1,
-    title: "Custom 3D Layout",
+    title: "3D App",
+    href: "https://jpsanchez.netlify.app/",
   },
   {
     id: "project-2",
     imgUrl: web2,
-    title: "Custom Personal Page",
+    title: "Custom Web",
+    href: "https://javipsanchez.netlify.app/",
   },
   {
     id: "project-3",
     imgUrl: web3,
-    title: "Random Business",
+    title: "E-commerce",
+    href: "https://beer-jps.netlify.app/",
   },
   {
     id: "project-4",
     imgUrl: web4,
     title: "Web3",
+    href: "https://crypto-sentiment-dashboard.netlify.app/",
   },
   {
     id: "project-5",
     imgUrl: web1,
-    title: "Custom WebApp",
+    title: "Booking App",
+    href: "https://javips.digital",
   },
 ];
 

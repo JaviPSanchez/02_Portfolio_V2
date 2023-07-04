@@ -3,7 +3,15 @@ import styles from "@styles";
 import { fadeIn } from "@utils/motion";
 import { react } from "@images";
 
-const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
+const ExploreCard = ({
+  id,
+  imgUrl,
+  title,
+  index,
+  active,
+  handleClick,
+  href,
+}) => (
   <motion.div
     variants={fadeIn("right", "spring", index * 0.5, 0.75)}
     className={`relative group ${
@@ -14,15 +22,23 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
     <img
       src={imgUrl}
       alt="imagen"
-      className="absolute w-full h-full object-cover rounded-[24px] group-hover:scale-95 transition-all"
+      className="absolute w-full h-full object-cover rounded-[24px] group-hover:scale-95 transition-all border-[0.5px] dark:border-none border-[#CCDBE0] drop-shadow-xl"
     />
     {active !== id ? (
       <h3 className="font-semibold sm:text-[26px] text-[18px] text-white absolute z-0 lg:bottom-20 lg:rotate-[-90deg] lg:origin-[0,0]">
         {/* {title} */}
       </h3>
     ) : (
-      <div className="group-hover:scale-95 transition-all absolute bottom-0 p-8 flex justify-start w-full flex-col bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
-        <div className="flex flex-row justify-start items-center">
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="group-hover:scale-95 transition-all absolute p-8 flex justify-start w-full h-full flex-col bg-[rgba(0,0,0,0.5)] rounded-[24px]"
+      >
+        <h2 className="font-semibold sm:text-[32px] text-5xl text-white m-8 glassmorphism w-fit p-6 rounded-[24px]">
+          {title}
+        </h2>
+        <div className="flex flex-row justify-start items-center gap-6 m-8">
           <div
             className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism`}
           >
@@ -32,15 +48,17 @@ const ExploreCard = ({ id, imgUrl, title, index, active, handleClick }) => (
               className="w-1/2 h-1/2 object-contain"
             />
           </div>
-          <h2 className=" font-semibold sm:text-[32px] text-4xl text-white ml-6">
-            {title}
-          </h2>
+          <div
+            className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism`}
+          >
+            <img
+              src={react}
+              alt="headset"
+              className="w-1/2 h-1/2 object-contain"
+            />
+          </div>
         </div>
-
-        <button className="text-black text-center uppercase font-bold hover:scale-105 text-4xl self-center p-4 bg-white rounded-lg w-1/3 mt-4">
-          Go
-        </button>
-      </div>
+      </a>
     )}
   </motion.div>
 );
