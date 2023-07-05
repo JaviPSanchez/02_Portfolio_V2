@@ -24,7 +24,10 @@ const Expertise = () => (
         variants={fadeIn("left", "tween", 0.2, 1)}
         className="flex-[0.75] flex justify-center flex-col"
       >
-        <TypingText title="| What Do I do?" />
+        <TypingText
+          title="😊 What Do I do?"
+          customStyles={`text-center dark:text-[#FFFFFF]`}
+        />
         <TitleText
           title={
             <>
@@ -32,9 +35,9 @@ const Expertise = () => (
               efficiency across key areas of expertise.
             </>
           }
-          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
+          customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16`}
         />
-        <div className="mt-[31px] flex flex-col max-w-[470px] gap-[24px]">
+        <div className="mt-12 flex flex-col gap-8">
           {StartingFeatures.map((feature, index) => (
             <StartSteps
               key={feature}

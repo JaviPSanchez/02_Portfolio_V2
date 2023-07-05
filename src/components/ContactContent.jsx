@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import { db } from "@utils/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { Button } from "@components";
+import { Button, ButtonNormal } from "@components";
 import { useFormik } from "formik";
 import basicSchema from "@schemas";
 import styles from "@styles";
@@ -52,7 +52,7 @@ const Content = () => {
     >
       <TypingText
         title="Contact Me"
-        customStyles="text-6xl mb-14 font-bold uppercase text-grey4"
+        customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center uppercase m-10`}
       />
 
       <label htmlFor="name" className="text-2xl w-full mb-2 p-4 text-grey4">

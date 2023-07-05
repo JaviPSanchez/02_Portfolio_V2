@@ -4,9 +4,9 @@ export const Button = ({ text }) => {
       type="submit"
       className="relative mt-10 skew-y-[-3deg] p-4 inline-flex items-center justify-center overflow-hidden group rounded-md"
     >
-      <span className="absolute w-full h-full bg-gradient-to-br from-[#ff8a05] via-[#ff5478] to-[#ff00c6] group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05]"></span>
+      <span className="absolute w-full h-full border-2 group-hover:border-none group-hover:bg-gradient-to-br group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05]"></span>
       <span className="relative py-3 transition-all ease-out bg-grey5 rounded-md group-hover:bg-opacity-0 duration-200">
-        <span className="font-Rubik p-6 text-black text-4xl hover:text-white uppercase">
+        <span className="font-Rubik p-6 text-white text-4xl uppercase">
           {text}
         </span>
       </span>

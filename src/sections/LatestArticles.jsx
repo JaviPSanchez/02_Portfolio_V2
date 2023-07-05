@@ -17,15 +17,16 @@ const LatestArticles = () => {
       <div
         className={`rounded-2xl ${styles.padding} min-h-[150px] text-center`}
       >
-        <TypingText title="| Latest Articles" textStyles="text-center" />
+        <TypingText
+          title="🙌 Latest Articles"
+          customStyles={`text-center dark:text-[#FFFFFF]`}
+        />
         <TitleText
           title={<>Let me show some of my newest articles</>}
-          customStyles="text-6xl text-white font-Rubik font-bold text-center mt-16"
+          customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center mt-16`}
         />
       </div>
-      <div
-        className={`${styles.paddingX} flex flex-row gap-7 cursor-pointer pb-14`}
-      >
+      <div className={`${styles.paddingX} flex flex-row gap-8 cursor-pointer `}>
         {ArticleData.slice(0, 4).map((item, index) => (
           <ArticleCard
             variants={fadeIn("", "spring", index * 0.5, 0.75)}
@@ -33,7 +34,7 @@ const LatestArticles = () => {
             index={item.id}
             {...item}
             customStyles={
-              "w-full cursor-pointer hover:scale-105 transition-all"
+              "w-full cursor-pointer hover:drop-shadow-customLight dark:hover:drop-shadow-customDark transition-all"
             }
           />
         ))}

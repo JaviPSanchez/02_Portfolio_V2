@@ -43,7 +43,11 @@ const Home = () => {
       <Projects />
       <div className="relative">
         <Expertise />
-        <div className="gradient-03 z-0" />
+        <div
+          className={
+            theme === "dark" ? "gradient-02 -z-10" : "gradient-08 -z-10"
+          }
+        />
       </div>
       <LatestArticles />
       <Contact />
