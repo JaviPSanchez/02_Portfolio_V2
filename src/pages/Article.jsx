@@ -27,14 +27,14 @@ const Article = () => {
       <Navbar links={"article"} />
       <TypingText
         title={`🦠 Article ${index}`}
-        customStyles={`text-center dark:text-[#FFFFFF] mt-20`}
+        customStyles={`text-center dark:text-[#FFFFFF] mt-20 sm:mt-10`}
       />
       <TitleText
         title={articleData.title}
-        customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16`}
+        customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16 sm:text-center`}
       />
-      <div className="relative w-2/3 max-h-96 mt-20 rounded-lg overflow-hidden border-[0.5px] border-grey4`">
-        <img className="top-0 w-full h-[60rem]" src={articleData.image} />
+      <div className="relative w-2/3 sm:w-full max-h-96 mt-20 rounded-lg overflow-hidden border-[0.5px] border-grey4`">
+        <img className="top-0 w-full h-[60rem] " src={articleData.image} />
       </div>
       <div className="w-5/6 flex flex-col mt-20">
         <h1 className="text-Rubik text-5xl text-primary dark:text-white font-bold">
