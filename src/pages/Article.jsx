@@ -26,21 +26,21 @@ const Article = () => {
     >
       <Navbar links={"article"} />
       <TypingText
-        title={`| Article ${index}`}
-        customStyles="text-center mt-20"
+        title={`🦠 Article ${index}`}
+        customStyles={`text-center dark:text-[#FFFFFF] mt-20`}
       />
       <TitleText
         title={articleData.title}
-        customStyles="w-2/3 text-6xl text-white font-Rubik font-bold text-center mt-16"
+        customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16`}
       />
-      <div className="relative w-5/6 max-h-[40rem] mt-20 rounded-lg overflow-hidden border-[0.5px] border-grey4`">
+      <div className="relative w-2/3 max-h-96 mt-20 rounded-lg overflow-hidden border-[0.5px] border-grey4`">
         <img className="top-0 w-full h-[60rem]" src={articleData.image} />
       </div>
       <div className="w-5/6 flex flex-col mt-20">
-        <h1 className="text-Rubik text-5xl text-white font-bold">
+        <h1 className="text-Rubik text-5xl text-primary dark:text-white font-bold">
           {articleData.subtitle}
         </h1>
-        <p className="text-4xl text-white w-full mt-20">
+        <p className="text-4xl text-primary dark:text-white w-full mt-20">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, vel
           temporibus doloremque, dicta corporis fugit, suscipit molestiae
           assumenda accusantium omnis quis maxime praesentium quas itaque illo

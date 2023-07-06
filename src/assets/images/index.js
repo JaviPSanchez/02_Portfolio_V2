@@ -12,6 +12,7 @@ import web1 from "./project1.jpg";
 import web2 from "./project2.jpg";
 import web3 from "./project3.jpg";
 import web4 from "./project4.jpg";
+import web5 from "./project5.jpg";
 import front from "./front.png";
 import software from "./software.png";
 import science from "./science.png";
@@ -30,6 +31,7 @@ export {
   web2,
   web3,
   web4,
+  web5,
   front,
   software,
   science,

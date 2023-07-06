@@ -3,7 +3,7 @@ import { Area } from "@components";
 
 const TechStack = () => {
   return (
-    <div className="gradient-card h-5/6 w-5/6 rounded-3xl flex flex-col just justify-start items-center hover:scale-105 duration-300">
+    <div className="gradient-card h-5/6 w-5/6 sm:w-full sm:h-[360px] rounded-3xl flex flex-col just justify-start items-center hover:scale-105 duration-300">
       <div className="w-full">
         <h1 className="font-Rubik font-bold text-6xl p-6 text-white">
           Tech-Stack

@@ -28,7 +28,7 @@ const Projects = () => {
           title={<>Choose the project you want to explore</>}
           customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center mt-16`}
         />
-        <div className="mt-[50px] flex flex-row sm:flex-col h-[50vh] gap-5">
+        <div className="mt-[50px] flex flex-row sm:flex-col h-[50vh] sm:h-[90vh] gap-5 sm:gap-6">
           {ExploreProjects.map((project, index) => (
             <ExploreCard
               key={project.id}

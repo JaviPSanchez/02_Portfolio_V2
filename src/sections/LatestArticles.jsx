@@ -26,15 +26,17 @@ const LatestArticles = () => {
           customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center mt-16`}
         />
       </div>
-      <div className={`${styles.paddingX} flex flex-row gap-8 cursor-pointer `}>
-        {ArticleData.slice(0, 4).map((item, index) => (
+      <div
+        className={`${styles.paddingX} flex flex-row sm:flex-col sm:justify-center sm:items-center gap-8 cursor-pointer sm:mt-12`}
+      >
+        {ArticleData.slice(0, 3).map((item, index) => (
           <ArticleCard
             variants={fadeIn("", "spring", index * 0.5, 0.75)}
             key={index}
             index={item.id}
             {...item}
             customStyles={
-              "w-full cursor-pointer hover:drop-shadow-customLight dark:hover:drop-shadow-customDark transition-all"
+              "w-full sm:w-5/6 cursor-pointer hover:drop-shadow-customLight dark:hover:drop-shadow-customDark transition-all"
             }
           />
         ))}

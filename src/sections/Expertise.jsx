@@ -35,7 +35,7 @@ const Expertise = () => (
               efficiency across key areas of expertise.
             </>
           }
-          customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16`}
+          customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start sm:text-center mt-16`}
         />
         <div className="mt-12 flex flex-col gap-8">
           {StartingFeatures.map((feature, index) => (

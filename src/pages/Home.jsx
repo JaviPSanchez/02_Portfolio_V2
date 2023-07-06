@@ -14,7 +14,7 @@ import { Navbar } from "@components";
 import { ThemeContext } from "@context";
 
 const Home = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <motion.div
       className={`${styles.innerWidth} ${styles.flexCenter} ${styles.paddings} flex-col`}

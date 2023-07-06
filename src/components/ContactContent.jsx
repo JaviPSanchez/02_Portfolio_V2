@@ -55,7 +55,10 @@ const Content = () => {
         customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-center uppercase m-10`}
       />
 
-      <label htmlFor="name" className="text-2xl w-full mb-2 p-4 text-grey4">
+      <label
+        htmlFor="name"
+        className="text-2xl w-full mb-2 p-4 text-primary dark:text-grey4 font-bold"
+      >
         Name
       </label>
       <input
@@ -75,7 +78,10 @@ const Content = () => {
         <p className="text-error text-xl self-start ml-2">{errors.name}</p>
       )}
 
-      <label htmlFor="email" className="text-2xl w-full mb-2 p-4 text-grey4">
+      <label
+        htmlFor="email"
+        className="text-2xl w-full mb-2 p-4 text-primary dark:text-grey4 font-bold"
+      >
         Email
       </label>
       <input
@@ -95,7 +101,10 @@ const Content = () => {
         <p className="text-error text-xl self-start ml-2">{errors.email}</p>
       )}
 
-      <label htmlFor="message" className="text-2xl text-grey4 w-full mb-2 p-4">
+      <label
+        htmlFor="message"
+        className="text-2xl w-full mb-2 p-4 text-primary dark:text-grey4 font-bold"
+      >
         Message
       </label>
       <textarea

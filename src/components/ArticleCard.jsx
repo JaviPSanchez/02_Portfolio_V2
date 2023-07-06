@@ -53,7 +53,7 @@ const ArticleCard = ({
       </div>
 
       <div className="h-[250px] w-full p-6">
-        <p className="w-fit h-28 text-dark2 dark:text-white font-bold text-5xl">
+        <p className="w-fit h-28 text-black dark:text-white font-bold text-5xl">
           {title}
         </p>
 

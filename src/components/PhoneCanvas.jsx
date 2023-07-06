@@ -18,10 +18,10 @@ const Phone = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={phone.scene}
-        scale={isMobile ? 0.6 : 0.9}
+        scale={isMobile ? 0.7 : 0.9}
         // position-y={0}
         rotation-y={0.9}
-        position={isMobile ? [0, -1, -2.2] : [0, 0, 0]}
+        position={isMobile ? [0, -0.5, 0] : [0, 0, 0]}
       />
     </mesh>
   );

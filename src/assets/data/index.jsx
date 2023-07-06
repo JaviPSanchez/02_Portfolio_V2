@@ -15,6 +15,7 @@ import {
   web2,
   web3,
   web4,
+  web5,
   project1,
   project2,
   project3,
@@ -129,15 +130,15 @@ export const ExploreProjects = [
   },
   {
     id: "project-5",
-    imgUrl: web1,
+    imgUrl: web5,
     title: "Booking App",
     href: "https://javips.digital",
   },
 ];
 
 export const StartingFeatures = [
-  "Software-Development",
-  "Data-Driven Decisions",
+  "Software Development",
+  "Data Driven Decisions",
   "Digital Development",
 ];
 

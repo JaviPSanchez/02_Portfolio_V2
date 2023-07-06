@@ -2,14 +2,9 @@ export const Button = ({ text }) => {
   return (
     <button
       type="submit"
-      className="relative mt-10 skew-y-[-3deg] p-4 inline-flex items-center justify-center overflow-hidden group rounded-md"
+      className="w-fit text-white hover:scale-110 text-4xl uppercase mt-10 skew-y-[-3deg] rounded-md p-6 border-2 border-black border-none bg-gradient-to-br from-[#ff00c6] via-[#ff5478] to-[#ff8a05] transition-all"
     >
-      <span className="absolute w-full h-full border-2 group-hover:border-none group-hover:bg-gradient-to-br group-hover:from-[#ff00c6] group-hover:via-[#ff5478] group-hover:to-[#ff8a05]"></span>
-      <span className="relative py-3 transition-all ease-out bg-grey5 rounded-md group-hover:bg-opacity-0 duration-200">
-        <span className="font-Rubik p-6 text-white text-4xl uppercase">
-          {text}
-        </span>
-      </span>
+      {text}
     </button>
   );
 };

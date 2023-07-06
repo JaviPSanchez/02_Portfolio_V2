@@ -4,6 +4,7 @@ import { ExploreTags, TypingText, TitleText } from "@components";
 import { ArticleCard } from "@components";
 import { staggerContainer } from "@utils/motion";
 import { ArticleData } from "@data";
+import styles from "@styles";
 
 const Articles = () => {
   const [popular, setPopular] = useState([]);
@@ -27,10 +28,13 @@ const Articles = () => {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
     >
-      <TypingText title="| Articles" customStyles="text-center mt-20" />
+      <TypingText
+        title="🧪 Articles"
+        customStyles={`text-center dark:text-[#FFFFFF] mt-20`}
+      />
       <TitleText
-        customStyles="w-2/3 text-6xl text-white font-Rubik font-bold text-center mt-16"
         title={<>Enjoy some of my articles.</>}
+        customStyles={`${styles.customGradient} text-6xl font-Rubik font-bold text-start mt-16`}
       />
 
       <div className="w-full flex flex-row my-40">

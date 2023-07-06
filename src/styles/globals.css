@@ -128,7 +128,18 @@ body,
   );
 }
 
-.footer-gradient {
+.footer-gradient--light {
+  position: absolute;
+  width: 600px;
+  height: 200px;
+  top: 0px;
+  right: 100px;
+  background: #d1d0d0;
+  filter: blur(150px);
+  z-index: -10;
+}
+
+.footer-gradient--dark {
   position: absolute;
   width: 500px;
   height: 100px;
