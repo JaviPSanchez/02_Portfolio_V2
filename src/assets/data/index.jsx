@@ -126,7 +126,7 @@ export const ExploreProjects = [
     id: "project-4",
     imgUrl: web4,
     title: "Web3",
-    href: "https://crypto-sentiment-dashboard.netlify.app/",
+    href: "https://sentilify.com/",
   },
   {
     id: "project-5",
